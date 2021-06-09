@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/*For primary background & secondary text*/
+/*For secondary background & primary text*/
+/*For tertiary text*/
+/*For tertiary background*/
+/*Border for tags*/
+/*General variables*/
+/*Desktop size*/
+/*Breakpoints*/
+/* Main elements of the page */
+html,
+body {
+  height: 100%;
+  background: #fff;
+  color: #901C1C;
+  font-family: "DMSans", Arial, serif;
+  font-size: 1rem;
+  margin: auto;
+}
+
+/*border-box tells the browser to account for any border and padding in the values specify for an element's width and height*/
+* {
+  box-sizing: border-box;
+}
+
+/*set max width*/
+.header, .main, .footer {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+a {
+  color: #901C1C;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@font-face {
+  /* Définition of font called DM Sans*/
+  font-family: "DMSans";
+  src: url("../fonts/DMSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+  /* float: left;
+   width: 73%;*/
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    display: block;
+  }
+}
+.header img {
+  height: 3.125rem;
+}
+@media only screen and (max-width: 768px) {
+  .header img {
+    height: 1.875rem;
+    position: relative;
+    top: 0.5rem;
+    left: 0.625rem;
+  }
+}
+.header_nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  /*remove point*/
+  padding: 0.5rem;
+  gap: 0.625rem;
+}
+.header_title {
+  /*display: inline;*/
+  font-size: 2.25rem;
+  white-space: nowrap;
+  /*line-height: 47px;*/
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .header_title {
+    position: absolute;
+    top: 0.313rem;
+    right: 0.625rem;
+    font-size: 1.25rem;
+  }
+}
+.header_nav a {
+  border: 0.5px solid #C4C4C4;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+}
+.header_nav a:hover {
+  background: #901C1C;
+  color: white;
+  border: 1px solid #901C1C;
+}
+
+/*# sourceMappingURL=style.css.map */

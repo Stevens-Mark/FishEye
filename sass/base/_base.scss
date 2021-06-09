@@ -1,0 +1,32 @@
+
+/* Main elements of the page */
+html,
+body {
+  height: 100%;
+  background: #fff;
+  color: $primary;
+  font-family: "DMSans", Arial, serif;
+  font-size: 1rem;
+  margin: auto;
+}
+
+/*border-box tells the browser to account for any border and padding in the values specify for an element's width and height*/
+* {
+    box-sizing: border-box;
+  }
+
+/*set max width*/
+.header, .main, .footer{
+  max-width: 1440px;
+  margin: auto;
+}
+
+.d-flex{
+  display: flex;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  cursor: pointer;
+}

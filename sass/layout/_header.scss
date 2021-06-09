@@ -1,0 +1,60 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+       /* float: left;
+        width: 73%;*/
+        @media only screen and (max-width: $tablette) { 
+            display: block;
+        }
+
+    img {
+        height: $fisheyelogo;
+        @media only screen and (max-width: $tablette) {
+            height: 1.875rem;
+            position: relative;
+            top: 0.5rem;
+            left: 0.625rem;
+        }
+    }
+    &_nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style-type: none; /*remove point*/
+        padding: 0.5rem;      
+        gap: 0.625rem;
+    }
+    &_title{
+        /*display: inline;*/
+        font-size: 2.25rem;
+        white-space: nowrap;
+        /*line-height: 47px;*/
+        position: relative;
+        
+        @media only screen and (max-width: $tablette) {
+            position: absolute;
+            top: 0.313rem;
+            right: 0.625rem;
+            font-size: 1.25rem;
+        }
+    }
+    &_nav a{
+        border: 0.5px solid $tag-border;
+        border-radius: 1rem;
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        text-align: center;
+        padding: 0.3rem;
+        &:hover{
+            background: $primary;
+            color: white;
+            border: 1px solid $primary;
+        }
+    }
+    
+}
+
+
