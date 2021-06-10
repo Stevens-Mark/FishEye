@@ -12,9 +12,9 @@
 </head>    
 <body>
     <header class="header">
-        <a class="header_logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye home page" role="img"></a>
-        <nav aria-label="photographer categories" aria-label="main navigation" role="navigation">
-            <ul class="header_nav">
+        <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye home page" role="img"></a>
+        <nav aria-label="photographer categories" role="navigation">
+            <ul class="header__nav">
                 <li class="tag"><a href="#">#Portrait</a></li>
                 <li class="tag"><a href="#">#Art</a></li>
                 <li class="tag"><a href="#">#Fashion</a></li>
@@ -25,12 +25,14 @@
                 <li class="tag"><a href="#">#Events</a></li>
             </ul>
         </nav>
-        <h1 class="header_title">Nos photographes</h1>
+        <h1 class="header__title">Nos photographes</h1>
     </header>		 
-<main>	
-</main>		
+    <main id="main" class="photographers-container d-flex">
+            <!--Place to put Pphotographer cards-->
+    </main>		
 
-	<footer></footer>	<!--START of FOOTER --> 
+	<footer>
+    </footer>	
 <script src="scripts.js"></script>
 <!--<script src="./node_modules/babel-polyfill/browser.js"></script>-->
 </body>

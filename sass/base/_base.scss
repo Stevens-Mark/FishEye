@@ -5,7 +5,7 @@ body {
   height: 100%;
   background: #fff;
   color: $primary;
-  font-family: "DMSans", Arial, serif;
+  font-family: "DMSans";
   font-size: 1rem;
   margin: auto;
 }
@@ -16,17 +16,20 @@ body {
   }
 
 /*set max width*/
-.header, .main, .footer{
+.header, #main {
   max-width: 1440px;
   margin: auto;
 }
 
+/*Help to avoid repeatedly added display:flex often*/
 .d-flex{
   display: flex;
 }
 
+/*Set style for all links*/
 a {
   color: $primary;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 }

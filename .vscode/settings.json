@@ -4,6 +4,8 @@
       },
       "eslint.validate": [
         "javascript"
-      ]
+      ],
+      "editor.fontSize": 9,
+      "editor.tabSize": 3
 
 }
