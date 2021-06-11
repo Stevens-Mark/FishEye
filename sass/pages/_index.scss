@@ -42,7 +42,15 @@
    &__price{
       font-size: 9px;
       line-height: 12px;
+      font-weight: 400;;
       color: $price-color;
       margin: 4px;
+   }
+   &__tags{
+      display: flex;
+      cursor: pointer;
+      padding: 0;
+      margin: 4px;
+      gap: 5px;
    }
 }

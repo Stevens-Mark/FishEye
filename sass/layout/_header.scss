@@ -48,12 +48,36 @@
         line-height: 1rem;
         text-align: center;
         padding: 0.3rem;
-        &:hover{
+        position: relative;
+        z-index: 1;  
+        /*&:hover{
             background: $primary;
             color: white;
             border: 1px solid $primary;
+        }*/
+        &:hover{  
+            color: white;         
+            &::after {
+                opacity: 1;    /*set opacity to 1 so the layer is visible on hover*/
+            }
         }
+        &::after{             /*every mention of primary button creates a duplicate layer*/  
+            content:"";                
+            position: absolute;         
+            top: 0;                  
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 1rem;
+            background: $primary;
+            border: 1px solid $primary;
+            opacity: 0;                                     /*layer hidden until hover*/
+            z-index: -1;                                    /*Z-index changes stacking order so background is behind*/
+            transition: opacity $transition-timing;    /*text but infront of original button background*/ 
+        } 
     }
 }
+
+
 
 

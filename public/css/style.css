@@ -7,6 +7,7 @@
 /*Mai page price style*/
 /*General variables*/
 /*Desktop size*/
+/*transition time for tag animation hover*/
 /*Breakpoints*/
 /* Main elements of the page */
 html,
@@ -43,6 +44,10 @@ a {
   text-align: center;
 }
 
+ul {
+  list-style: none;
+}
+
 @font-face {
   /* Définition of font called DM Sans*/
   font-family: "DMSans";
@@ -50,6 +55,45 @@ a {
   font-weight: 400;
   font-style: normal;
 }
+/* MY NEED TO REMOVE THIS*/
+.tags {
+  border: 0.5px solid #C4C4C4;
+  border-radius: 1rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+.tags:hover {
+  color: white;
+}
+.tags:hover::after {
+  opacity: 1;
+  /*set opacity to 1 so the layer is visible on hover*/
+}
+.tags::after {
+  /*every mention of primary button creates a duplicate layer*/
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  background: #901C1C;
+  color: white;
+  border: 1px solid #901C1C;
+  opacity: 0;
+  /*layer hidden until hover*/
+  z-index: -1;
+  /*Z-index changes stacking order so background is behind*/
+  transition: opacity 500ms;
+  /*text but infront of original button background*/
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -106,11 +150,38 @@ a {
   line-height: 1rem;
   text-align: center;
   padding: 0.3rem;
+  position: relative;
+  z-index: 1;
+  /*&:hover{
+      background: $primary;
+      color: white;
+      border: 1px solid $primary;
+  }*/
 }
 .header__nav a:hover {
-  background: #901C1C;
   color: white;
+}
+.header__nav a:hover::after {
+  opacity: 1;
+  /*set opacity to 1 so the layer is visible on hover*/
+}
+.header__nav a::after {
+  /*every mention of primary button creates a duplicate layer*/
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  background: #901C1C;
   border: 1px solid #901C1C;
+  opacity: 0;
+  /*layer hidden until hover*/
+  z-index: -1;
+  /*Z-index changes stacking order so background is behind*/
+  transition: opacity 500ms;
+  /*text but infront of original button background*/
 }
 
 /*container that holds all the photographer cards*/
@@ -159,8 +230,16 @@ a {
 .profile__price {
   font-size: 9px;
   line-height: 12px;
+  font-weight: 400;
   color: #757575;
   margin: 4px;
+}
+.profile__tags {
+  display: flex;
+  cursor: pointer;
+  padding: 0;
+  margin: 4px;
+  gap: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
