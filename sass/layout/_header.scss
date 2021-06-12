@@ -1,80 +1,46 @@
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.header {
+    display: block;
     padding: 0.5rem;
        /* float: left;
         width: 73%;*/
-        @media only screen and (max-width: $tablette) { 
-            display: block;
+        @media only screen and (min-width: $desktop) {    
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
         }
-
+    
     img {
-        height: $fisheyelogo;
-        @media only screen and (max-width: $tablette) {
-            height: 1.875rem;
-            position: relative;
-            top: 0.5rem;
-            left: 0.625rem;
-        }
+        height: 1.875rem;
+        position: relative;
+        top: 0.5rem;
+        left: 0.625rem;
+            @media only screen and (min-width: $tablette) {
+                height: 3.125rem;
+            }
     }
     &__nav {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         list-style-type: none; /*remove point*/
-        padding: 0.5rem;      
+        /*padding: 0.5rem; */
+        padding: 0rem;   
         gap: 0.625rem;
     }
     &__title{
-        /*display: inline;*/
-        font-size: 2.25rem;
-        white-space: nowrap;
-        /*line-height: 47px;*/
-        position: relative;
-        
-        @media only screen and (max-width: $tablette) {
-            position: absolute;
-            top: 0.313rem;
-            right: 0.625rem;
-            font-size: 1.25rem;
-        }
-    }
-    &__nav a{
-        border: 0.5px solid $tag-border;
-        border-radius: 1rem;
-        font-weight: 500;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        text-align: center;
-        padding: 0.3rem;
-        position: relative;
-        z-index: 1;  
-        /*&:hover{
-            background: $primary;
-            color: white;
-            border: 1px solid $primary;
-        }*/
-        &:hover{  
-            color: white;         
-            &::after {
-                opacity: 1;    /*set opacity to 1 so the layer is visible on hover*/
+        position: absolute;
+        top: 0.313rem;
+        right: 0.625rem;
+        font-size: 1.25rem;     
+        @media only screen and (min-width: $tablette) {
+            font-size: 2.25rem;
+            top: -7px;
+            white-space: nowrap;
+            /*line-height: 47px;*/
+            }   
+            @media only screen and (min-width:  $desktop) {
+                position: relative;
             }
-        }
-        &::after{             /*every mention of primary button creates a duplicate layer*/  
-            content:"";                
-            position: absolute;         
-            top: 0;                  
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border-radius: 1rem;
-            background: $primary;
-            border: 1px solid $primary;
-            opacity: 0;                                     /*layer hidden until hover*/
-            z-index: -1;                                    /*Z-index changes stacking order so background is behind*/
-            transition: opacity $transition-timing;    /*text but infront of original button background*/ 
-        } 
     }
 }
 

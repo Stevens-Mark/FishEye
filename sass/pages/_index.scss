@@ -2,7 +2,6 @@
 .photographers-container{
    justify-content: space-around;
    flex-wrap: wrap;
-   border: 1px solid blue;
    margin-top: 20px;
 }
 /*styling for each photographer card/profile*/
@@ -13,7 +12,6 @@
    width: 30%;
    min-width: 305px;
    margin-bottom: 25px;
-   border: 1px solid black;
    &__portrait {
       height: 250px;
       width: 250px;
