@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 
 /* Fetch the photographer data from the Json file */
@@ -7,8 +9,6 @@ fetch('./public/data.json')
     /* console.log(data); */
     /* Using DESTRUCTERING get just the photographers data array (not the MEDIA data) */
     const { photographers } = data;
-    console.log(photographers);
-    // eslint-disable-next-line no-use-before-define
     CreatePage(photographers);
   })
   .catch((error) => console.error(error));
@@ -35,26 +35,41 @@ const CreatePage = (photographers) => {
     photographerElement.innerHTML = photographerhtml;
     /* .map & .join etc solution found on the internet https://www.javascripttutorial.net/es6/javascript-template-literals/ */
   });
+  // EVENTLISTENER ON PAGE FOR TAG FILTER CHOICE
+  document.addEventListener('click', (event) => {
+    /* check if function should be invoked: was the selected element (clicked on)
+      the one we care about? The element that was clicked on is made available at "event.target" */
+    const selector = '.tags';
+    const el = event.target;
+    if (!el.matches(selector)) {
+      console.log('fail');
+      return;
+    }
+    // Make sure tag name is lowercase & remove the "#"*/
+    const tagSelected = event.target.textContent.toLowerCase().slice(1);
+    DisplayByTagSelected(tagSelected, photographers);
+  });
 };
 
-// EVENTLISTENER ON PAGE FOR TAG FILTER CHOICE
-document.addEventListener('click', (event) => {
-  /* check if function should be invoked: was the selected element (clicked on)
-    the one we care about? The element that was clicked on is made available at "event.target" */
-  const selector = '.tags';
-  const el = event.target;
-  if (!el.matches(selector)) {
-    console.log('fail');
-    return;
+const DisplayByTagSelected = (selectedTag, photographers) => {
+  const allPhotographers = document.getElementsByTagName('article');
+  /* check/loop through each photographer in array JSON */
+  for (let i = 0; i < photographers.length; i++) {
+    let showPhotographer = false;
+    /* check/loop through each tag in array of tags for each photographer */
+    for (let j = 0; j < photographers[i].tags.length; j++) {
+      /* if selected tag is present set to show photographer otherwise do nothing
+      (ie, don't set back to false) */
+      if (photographers[i].tags[j] === selectedTag) {
+        showPhotographer = true;
+      }
+      /* Either show or "remove" corresponding photographer "article" in DOM */
+      /* position [i] in the JSON is the same as position [i] of the article in the DOM */
+      if (showPhotographer) {
+        allPhotographers[i].style.display = 'flex';
+      } else {
+        allPhotographers[i].style.display = 'none';
+      }
+    }
   }
-  // Make sure tag name is lowercase & remove the "#"*/
-  const tagSelected = event.target.textContent.toLowerCase().slice(1);
-  // eslint-disable-next-line no-use-before-define
-  DisplayByTagSelected(tagSelected);
-});
-
-const DisplayByTagSelected = (tagValue) => {
-  console.log(`User selected ${tagValue}`);
-  /* const allPhotographers = document.getElementsByTagName('article');
-  allPhotographers[1].style.display = 'none'; */
 };
