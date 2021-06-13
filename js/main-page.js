@@ -30,7 +30,7 @@ const CreatePage = (photographers) => {
         <h3 class="profile__address">${person.city}, ${person.country}</h3>
         <h4 class="profile__tagline">${person.tagline}</h4>
         <h5 class="profile__price">${person.price}€/jour</h5>
-        <ul class="profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags">#${tag}</li>`).join('')}</ul> 
+        <ul class="profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul> 
     </article>`;
     photographerElement.innerHTML = photographerhtml;
     /* .map & .join etc solution found on the internet https://www.javascripttutorial.net/es6/javascript-template-literals/ */
