@@ -1,6 +1,7 @@
 /* TAG FILTER BUTTONS */
 .tags{
    border: 0.5px solid $tag-border;
+   cursor: pointer;
    border-radius: 1rem;
    font-weight: 500;
    font-size: 0.75rem;
@@ -9,7 +10,7 @@
    padding: 0.3rem;
    position: relative;
    z-index: 1;  
-   &:hover {     
+   &:hover, &:focus {     
        color: white;      
        &::after {
            opacity: 1;    /*set opacity to 1 so the layer is visible on hover*/
@@ -30,4 +31,32 @@
        z-index: -1;                                    /*Z-index changes stacking order so background is behind*/
        transition: opacity $transition-timing;    /*text but infront of original button background*/     
    } 
+}
+
+/*Pass-to-content button */
+.pass-to-maincontent{
+    background: $pass-to-content;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    width : 182px;
+    Top: 3px;
+    left: 50%;
+    margin-left: -91px; /* Negative half of width. */
+    z-index: 10;
+    transform: translateY(-110%);
+    transition: transform 0.25s;
+}
+
+/*move button so visible*/
+.pass-to-maincontent.is-visible {
+    transform: translateY(0%);
+}
+/*move button so NOT visible*/
+.pass-to-maincontent.is-hidden {
+    transform: translateY(-110%);
 }

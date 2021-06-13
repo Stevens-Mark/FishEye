@@ -2,6 +2,7 @@
 /*For primary background & secondary text*/
 /*For secondary background & primary text*/
 /*For tertiary text*/
+/*background for pass-to-content button*/
 /*For tertiary background*/
 /*Border for tags*/
 /*Mai page price style*/
@@ -54,9 +55,21 @@ ul {
   font-weight: 400;
   font-style: normal;
 }
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 /* TAG FILTER BUTTONS */
 .tags {
   border: 0.5px solid #C4C4C4;
+  cursor: pointer;
   border-radius: 1rem;
   font-weight: 500;
   font-size: 0.75rem;
@@ -66,10 +79,10 @@ ul {
   position: relative;
   z-index: 1;
 }
-.tags:hover {
+.tags:hover, .tags:focus {
   color: white;
 }
-.tags:hover::after {
+.tags:hover::after, .tags:focus::after {
   opacity: 1;
   /*set opacity to 1 so the layer is visible on hover*/
 }
@@ -91,6 +104,36 @@ ul {
   /*Z-index changes stacking order so background is behind*/
   transition: opacity 500ms;
   /*text but infront of original button background*/
+}
+
+/*Pass-to-content button */
+.pass-to-maincontent {
+  background: #DB8876;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  position: fixed;
+  width: 182px;
+  Top: 3px;
+  left: 50%;
+  margin-left: -91px;
+  /* Negative half of width. */
+  z-index: 10;
+  transform: translateY(-110%);
+  transition: transform 0.25s;
+}
+
+/*move button so visible*/
+.pass-to-maincontent.is-visible {
+  transform: translateY(0%);
+}
+
+/*move button so NOT visible*/
+.pass-to-maincontent.is-hidden {
+  transform: translateY(-110%);
 }
 
 .header {
@@ -197,7 +240,6 @@ ul {
 }
 .profile__tags {
   display: flex;
-  cursor: pointer;
   padding: 0;
   margin: 4px;
   gap: 5px;
