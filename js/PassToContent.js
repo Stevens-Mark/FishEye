@@ -7,11 +7,11 @@ const contentButton = document.querySelector('.pass-to-maincontent');
 function checkPosition() {
   const windowY = window.scrollY;
   if (windowY < scrollPos) {
-    // Scrolling UP
+    /* Scrolling UP */
     contentButton.classList.add('is-hidden');
     contentButton.classList.remove('is-visible');
   } else {
-    // Scrolling DOWN
+    /* Scrolling DOWN */
     contentButton.classList.add('is-visible');
     contentButton.classList.remove('is-hidden');
   }

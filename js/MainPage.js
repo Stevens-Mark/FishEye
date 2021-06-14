@@ -34,27 +34,22 @@ const CreatePage = (photographers) => {
     photographerElement.innerHTML = photographerhtml;
     /* .map & .join etc solution found on the internet https://www.javascripttutorial.net/es6/javascript-template-literals/ */
   });
-  // EVENTLISTENER  PAGE FOR TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
-      the one we care about? The element that was clicked on is made available at "event.target" */
-    const selector = '.tags';
-    const el = event.target;
-    if (!el.matches(selector)) {
+    the one we care about? */
+    if (!event.target.matches('.tags')) {
       console.log('fail');
       return;
     }
-    // Make sure tag name is lowercase & remove the "#"*/
+    // Make sure tag name is lowercase & remove the "#" ready for search*/
     const tagSelected = event.target.textContent.toLowerCase().slice(1);
     DisplayByTagSelected(tagSelected, photographers);
   });
-  // EVENTLISTENER  PAGE FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
+  // EVENT LISTENER FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      const selector = '.tags';
-      const el = event.target;
-      if (!el.matches(selector)) {
-        console.log('fail');
+      if (!event.targe.matches('.tags')) {
         return;
       }
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
@@ -62,27 +57,3 @@ const CreatePage = (photographers) => {
     }
   });
 };
-
-/*
-const DisplayByTagSelected = (selectedTag, photographers) => {
-  const allPhotographers = document.getElementsByTagName('article');
-  /* check/loop through each photographer in array JSON
-  for (let i = 0; i < photographers.length; i++) {
-    let showPhotographer = false;
-    /* check/loop through each tag in array of tags for each photographer
-    for (let j = 0; j < photographers[i].tags.length; j++) {
-      /* if selected tag is present set to show photographer otherwise do nothing
-      (ie, don't set back to false)
-      if (photographers[i].tags[j] === selectedTag) {
-        showPhotographer = true;
-      }
-      /* Either show or "remove" corresponding photographer "article" in DOM */
-/* position [i] in the JSON is the same as position [i] of the article in the DOM
-      if (showPhotographer) {
-        allPhotographers[i].style.display = 'flex';
-      } else {
-        allPhotographers[i].style.display = 'none';
-      }
-    }
-  }
-}; */
