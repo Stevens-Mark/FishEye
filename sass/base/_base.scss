@@ -7,6 +7,7 @@ body {
   color: $primary;
   font-family: "DMSans";
   font-size: 1rem;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -16,7 +17,7 @@ body {
   }
 
 /*set max width*/
-.header, #main {
+header, main {
   max-width: 1440px;
   margin: auto;
 }

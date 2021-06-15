@@ -1,21 +1,21 @@
 .header {
     display: block;
     padding: 0.5rem;
-       /* float: left;
-        width: 73%;*/
         @media only screen and (min-width: $desktop) {    
             display: flex;
             align-items: center;
             justify-content: space-around;
         }
-    
     img {
         height: 1.875rem;
         position: relative;
-        top: 0.5rem;
+        top: 0.563rem;
         left: 0.625rem;
             @media only screen and (min-width: $tablette) {
                 height: 3.125rem;
+            }
+            @media only screen and (min-width: $desktop) {
+                top: 0.25rem;
             }
     }
     &__nav {
@@ -34,11 +34,11 @@
         font-size: 1.25rem;     
         @media only screen and (min-width: $tablette) {
             font-size: 2.25rem;
-            top: -7px;
+            top: -0.563rem;
             white-space: nowrap;
-            /*line-height: 47px;*/
             }   
-            @media only screen and (min-width:  $desktop) {
+            @media only screen and (min-width: $desktop) {
+                top: 0rem;
                 position: relative;
             }
     }

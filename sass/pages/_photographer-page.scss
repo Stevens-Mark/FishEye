@@ -1,0 +1,76 @@
+/*container that holds all the photographer cards*/
+
+.photographer-header {
+   margin: 24px;
+}
+
+.single-photographer-container{
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+/*styling for the individual photographer profile*/
+.person-profile{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 1240px;
+   height: 313px;
+   border-radius: 5px;
+   background: $tertiary;
+   /*min-width: 19.063rem;*/
+   padding: 30px;
+   &__container{
+      align-self: flex-start;
+      margin-right: 2%;
+   }
+   &__portrait {
+      height: 15.625rem;
+      width: 15.625rem;
+      min-width: 15.625rem;
+      border-radius: 50%;
+      object-fit: cover;
+   }
+   &__name{
+      font-size: 64px;
+      font-weight: 400;
+      line-height: 68px;
+      color: $secondary;
+      margin: 0;
+   }
+   &__address{
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: $primary;
+      /*margin: 0.25rem;*/
+      margin-top: 5px;
+   }
+   &__tagline{
+      font-size:18px;
+      line-height: 24px;
+      letter-spacing: 1px;
+      color:  $tertiary-text;
+      /*margin: 0;*/
+      margin-top: -10px;
+   }
+   &__tags{
+      display: flex;
+      padding: 0;
+      /*margin: 0.25rem;*/
+      gap: 0.313rem;
+   }
+   &__contactBtn{
+      background: $primary;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 700;
+      width: 170px;
+      height: 69px;
+      border-radius: 5px;
+      border: unset;
+      align-self: flex-start;
+      margin-right: 30%;
+   }
+}
+

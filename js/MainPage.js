@@ -20,19 +20,21 @@ const CreatePage = (photographers) => {
 
   photographers.forEach((person) => {
     /* Using DESTRUCTERING get just the tag array from photographers array */
+    console.log(`they are called ${person.name}`);
     const { tags } = person;
+    console.log(tags);
     photographerhtml += `
     <article class="profile">
-      <a href="#"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
+      <a href="photographer-page.html?id=${person.id}" arial-label="link to photographers page"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
       alt="${person.name}">
       <h2 class="profile__name">${person.name}</h2></a>
-        <h3 class="profile__address">${person.city}, ${person.country}</h3>
+        <h3 class="profiles__address">${person.city}, ${person.country}</h3>
         <h4 class="profile__tagline">${person.tagline}</h4>
         <h5 class="profile__price">${person.price}€/jour</h5>
         <ul class="profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul> 
     </article>`;
     photographerElement.innerHTML = photographerhtml;
-    /* .map & .join etc solution found on the internet https://www.javascripttutorial.net/es6/javascript-template-literals/ */
+    /* map & join etc solution found in sources folder */
   });
   // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
@@ -49,7 +51,7 @@ const CreatePage = (photographers) => {
   // EVENT LISTENER FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      if (!event.targe.matches('.tags')) {
+      if (!event.target.matches('.tags')) {
         return;
       }
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
