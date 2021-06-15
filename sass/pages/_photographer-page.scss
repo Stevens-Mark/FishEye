@@ -1,57 +1,103 @@
 /*container that holds all the photographer cards*/
 
 .photographer-header {
-   margin: 24px;
+   margin: 16px 18px 0px;
+  /* margin: 24px;*/
+  img{
+     height: 30px;
+     @media only screen and (min-width: $tablette) {
+      margin: 16px 25px 0px;
+      height: 50px;
+     }
+  }
 }
 
 .single-photographer-container{
    justify-content: space-around;
-   flex-wrap: wrap;
+   margin: 10px;
 }
 /*styling for the individual photographer profile*/
 .person-profile{
    display: flex;
-   align-items: center;
-   justify-content: space-between;
-   width: 1240px;
-   height: 313px;
-   border-radius: 5px;
-   background: $tertiary;
-   /*min-width: 19.063rem;*/
-   padding: 30px;
-   &__container{
+   width: 100%;
+   padding: 8px;
+   @media only screen and (min-width: $mobilePlus) {
+      background: $tertiary;
+   }
+   @media only screen and (min-width: $tablette) {
+      align-items: center;
+      justify-content: space-between;
+      /*width: 1240px;
+      height: 313px;*/
+      border-radius: 5px;
+      padding: 30px;
+  }
+    &__details{
       align-self: flex-start;
       margin-right: 2%;
    }
    &__portrait {
-      height: 15.625rem;
-      width: 15.625rem;
-      min-width: 15.625rem;
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      top: 65px;
+      right: 8px;
       border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0px 4px 12px 3px #d9d9d9;
+      @media only screen and (min-width: $mobilePlus) { 
+         top: 75px;
+         right: 25px;
+         height: 135px;
+         width: 135px;
+      }
+      @media only screen and (min-width: $tablette) { 
+         position: inherit;    
+         height: 200px;
+         width: 200px;
+         }
    }
    &__name{
-      font-size: 64px;
+      font-size: 23px;
       font-weight: 400;
-      line-height: 68px;
+      line-height: 46px;
       color: $secondary;
       margin: 0;
+      @media only screen and (min-width: $mobileM) {
+         font-size: 30px;
+      }
+      @media only screen and (min-width: $tablette) {
+         font-size: 45px; /*60px;*/
+         line-height: 68px;
+      }
    }
    &__address{
-      font-size: 24px;
+      font-size: 13px;
+      line-height: 16px;
       font-weight: 400;
       letter-spacing: 1px;
       color: $primary;
       /*margin: 0.25rem;*/
       margin-top: 5px;
+
+      @media only screen and (min-width: $tablette) { 
+         font-size: 24px;
+      }
    }
    &__tagline{
-      font-size:18px;
-      line-height: 24px;
+      font-size: 9px;
+      line-height: 17px;
       letter-spacing: 1px;
       color:  $tertiary-text;
       /*margin: 0;*/
       margin-top: -10px;
+      @media only screen and (min-width: $mobileM) {
+         font-size: 12px;
+      }
+      @media only screen and (min-width: $tablette) {
+          font-size:18px;
+          line-height: 24px;
+      }
    }
    &__tags{
       display: flex;
@@ -60,6 +106,10 @@
       gap: 0.313rem;
    }
    &__contactBtn{
+      position: fixed;
+      left: 50%;
+      margin-left: -85px;
+      bottom: 30px;
       background: $primary;
       color: #fff;
       cursor: pointer;
@@ -70,7 +120,11 @@
       border-radius: 5px;
       border: unset;
       align-self: flex-start;
-      margin-right: 30%;
+      @media only screen and (min-width: $desktop) {
+         position: inherit;
+         margin: unset;
+         margin-right: 30%;
+      }
    }
 }
 
