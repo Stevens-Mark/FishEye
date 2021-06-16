@@ -171,36 +171,42 @@ ul {
 }
 
 /*DROPDOWN MENU BUTTON*/
-.custom-select-wrapper {
+.dropdown {
   position: relative;
   user-select: none;
   width: 170px;
 }
-
-.custom-select__trigger {
+.dropdown__button {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  border: none;
+  width: 170px;
+  height: 69px;
+  padding: 0px 12px;
+  font-family: "DMSans";
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
-  height: 69px;
   line-height: 60px;
   background: #901C1C;
   cursor: pointer;
   border-radius: 5px;
 }
-
-.custom-options {
+.dropdown__button:hover, .dropdown__button:focus {
+  background-color: #DB8876;
+  color: #000;
+  border-radius: 5px;
+}
+.dropdown__orderlist {
   position: absolute;
   display: block;
   left: 0;
   right: 0;
   top: 0;
-  padding: 0;
+  padding: 0px 7px;
   border-radius: 5px;
   background: #901C1C;
   transition: all 0.5s;
@@ -210,32 +216,34 @@ ul {
   z-index: 2;
   margin: unset;
 }
-
-.custom-select.open .custom-options {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
-.custom-option {
+.dropdown__orderlist__option {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px 0 15px;
+  padding: 0 5px;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
-  border-top: 1px solid #fff;
   height: 69px;
   line-height: 60px;
   cursor: pointer;
   transition: all 0.5s;
 }
-.custom-option:hover {
+.dropdown__orderlist__option:hover, .dropdown__orderlist__option:focus {
   background-color: #DB8876;
   color: #000;
   border-radius: 5px;
+}
+.dropdown__orderlist__option--border {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.dropdown__selection.open .dropdown__orderlist {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .header {
@@ -368,12 +376,12 @@ ul {
   }
 }
 
+/*styling for the individual photographer profile*/
 .single-photographer-container {
   justify-content: space-around;
   margin: 10px;
 }
 
-/*styling for the individual photographer profile*/
 .person-profile {
   display: flex;
   width: 100%;

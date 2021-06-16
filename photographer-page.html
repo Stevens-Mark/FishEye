@@ -18,21 +18,21 @@
     <main id="main" class="single-photographer-container">
             <article class="person-profile">
                 <div class="person-profile__details"></div>
-                <!--Place to put Photographer profile details-->
+                <!-- JS Place to put Photographer profile details-->
                 <input tabindex="0" type="button" value="Contactez-moi" class="contactBtn">
                 <div class="person-profile__portraitPlaceholder"></div>
-                <!--Place to put Photographer profile photo-->
+                <!--JS Place to put Photographer profile photo-->
             </article> 
-
-            <div class="custom-select-wrapper">
-                <div class="custom-select">
-                    <div class="custom-select__trigger">
-                      <span>Popularité</span><span class="fas fa-chevron-up"></span>
-                    </div>
-                    <ul class="custom-options">
-                        <li role="option" class="custom-option selected" data-value="Popularity">Popularité<span class="fas fa-chevron-down"></span></li>
-                        <li role="option" class="custom-option" data-value="Date">Date</li>
-                        <li role="option" class="custom-option" data-value="Title">Titre</li>
+                
+            <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
+                <div class="dropdown__selection">
+                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button">
+                      <span>Popularité</span><span aria-hidden="true" class="fas fa-chevron-up"></span>
+                    </button>
+                    <ul class="dropdown__orderlist">
+                        <li tabIndex='0' role="option" class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-down" ></span></li>
+                        <li tabIndex='0' role="option" class="dropdown__orderlist__option dropdown__orderlist__option--border" data-value="Date">Date</li>
+                        <li tabIndex='0' role="option" class="dropdown__orderlist__option" data-value="Title">Titre</li>
                       </ul>
                 </div>
             </div>

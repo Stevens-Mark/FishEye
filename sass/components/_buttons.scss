@@ -64,7 +64,7 @@
 
 /*GENERIC BUTTON FOR CONTACT PHOTOGRAPHER*/
 .contactBtn{
-  font-family: "DMSans";
+    font-family: "DMSans";
     width: 170px;
     height: 69px;
     border-radius: 5px;
@@ -93,69 +93,77 @@
  }
 
  /*DROPDOWN MENU BUTTON*/
- .custom-select-wrapper {
+.dropdown {
   position: relative;
- user-select: none;
+  user-select: none;
   width: 170px;
+    &__button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: none;
+      width: 170px;
+      height: 69px;
+      padding: 0px 12px;
+      font-family: "DMSans";
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      line-height: 60px;
+      background: $primary;
+      cursor: pointer;
+      border-radius: 5px;
+      &:hover, &:focus {
+        background-color: $buttonSecondaryColor;
+        color: #000;
+        border-radius: 5px;}
+    }
+    &__orderlist {
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: 0px 7px;
+      border-radius: 5px;
+      background: $primary;
+      transition: all 0.5s;
+      opacity: 0;
+      visibility: hidden;
+      /*pointer-events: none;*/
+      z-index: 2;
+      margin: unset;
+    }
+  &__orderlist__option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #fff;
+      height: 69px;
+      line-height: 60px;
+      cursor: pointer;
+      transition: all 0.5s;
+      &:hover, &:focus {
+        background-color: $buttonSecondaryColor;
+        color: #000;
+        border-radius: 5px;
+      }
+      &--border{
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+      }
+  }
 }
 
-.custom-select__trigger {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  height: 69px;
-  line-height: 60px;
-  background: $primary;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.custom-options {
-  position: absolute;
-  display: block;
-  left: 0;
-  right: 0;
-  top: 0;
-  padding: 0;
-  border-radius: 5px;
-  background: $primary;
-  transition: all 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  /*pointer-events: none;*/
-  z-index: 2;
-  margin: unset;
-}
-.custom-select.open .custom-options {
+.dropdown__selection.open .dropdown__orderlist {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-}
-
-.custom-option {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px 0 15px;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #fff;
-  border-top: 1px solid #fff;
-  height: 69px;
-  line-height: 60px;
-  cursor: pointer;
-  transition: all 0.5s;
-  &:hover {
-    background-color: $buttonSecondaryColor;
-    color: #000;
-    border-radius: 5px;
-  }
 }
 
