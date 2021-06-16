@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable linebreak-style */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-use-before-define */
@@ -39,3 +40,25 @@ const CreatePhotograperPage = (individual) => {
   const photographerPhotohtml = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
   photographerPhoto.innerHTML = photographerPhotohtml;
 };
+
+// DROPDOWN MENU
+document.querySelector('.custom-select-wrapper').addEventListener('click', function OpenCloseDropDown() {
+  this.querySelector('.custom-select').classList.toggle('open');
+});
+
+for (const option of document.querySelectorAll('.custom-option')) {
+  option.addEventListener('click', function SetSelectedOption() {
+    if (!this.classList.contains('selected')) {
+      this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+      this.classList.add('selected');
+      this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
+    }
+  });
+}
+/* If clicked outside of the dropdown then close dropdown */
+window.addEventListener('click', (e) => {
+  const select = document.querySelector('.custom-select');
+  if (!select.contains(e.target)) {
+    select.classList.remove('open');
+  }
+});
