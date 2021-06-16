@@ -65,22 +65,23 @@
 /*GENERIC BUTTON FOR CONTACT PHOTOGRAPHER*/
 .contactBtn{
     font-family: "DMSans";
-    width: 170px;
-    height: 69px;
-    border-radius: 5px;
+    width: 10.625rem;
+    height: 2.188rem;
+    border-radius: 0.313rem;
     border: unset;
     position: fixed;
     left: 50%;
-    margin-left: -85px;
-    bottom: 30px;
+    margin-left: -5.313rem;
+    bottom: 1.875rem;
     background: $primary;
     color: #fff;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     align-self: flex-start;
     z-index: 1;  
     transition: all 0.5s;
+    box-shadow: 0px 4px 12px 3px #d9d9d9;
     &:hover, &:focus {     
         color: #000;      
         background: $buttonSecondaryColor;
@@ -89,81 +90,100 @@
        position: inherit;
        margin: unset;
        margin-right: 30%;
+       width: 10.625rem;
+       height: 4.313rem;
     }
  }
 
  /*DROPDOWN MENU BUTTON*/
 .dropdown {
-  position: relative;
-  user-select: none;
-  width: 170px;
-    &__button {
-      position: relative;
-      display: flex;
+display: none;
+    @media only screen and (min-width: $mobilePlus) {
+    display: block;
+    position: relative;
+    user-select: none;
+    width: 10.625rem;
+    margin-top: 0.625rem;
+    &__selection {
       align-items: center;
-      justify-content: space-between;
-      border: none;
-      width: 170px;
-      height: 69px;
-      padding: 0px 12px;
-      font-family: "DMSans";
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #fff;
-      line-height: 60px;
-      background: $primary;
-      cursor: pointer;
-      border-radius: 5px;
-      &:hover, &:focus {
-        background-color: $buttonSecondaryColor;
-        color: #000;
-        border-radius: 5px;}
     }
-    &__orderlist {
-      position: absolute;
-      display: block;
-      left: 0;
-      right: 0;
-      top: 0;
-      padding: 0px 7px;
-      border-radius: 5px;
-      background: $primary;
-      transition: all 0.5s;
-      opacity: 0;
-      visibility: hidden;
-      /*pointer-events: none;*/
-      z-index: 2;
-      margin: unset;
-    }
-  &__orderlist__option {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5px;
-      font-size: 18px;
+    &__title {
+      min-width: 6.25rem;
+      font-size: 1.125rem;
       font-weight: 700;
-      letter-spacing: 1px;
-      color: #fff;
-      height: 69px;
-      line-height: 60px;
-      cursor: pointer;
-      transition: all 0.5s;
-      &:hover, &:focus {
-        background-color: $buttonSecondaryColor;
-        color: #000;
-        border-radius: 5px;
+    }
+      &__button {
+       /* position: relative;*/
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: none;
+        height: 4.313rem;
+        padding: 0rem 0.75rem;
+        font-family: "DMSans";
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+        line-height: 3.75rem;
+        background: $primary;
+        cursor: pointer;
+        border-radius: 0.313rem;
+        box-shadow: 0px 4px 12px 3px #d9d9d9;
+        &:hover, &:focus {
+          background-color: $buttonSecondaryColor;
+          color: #000;
+          border-radius: 0.313rem;
+        }
       }
-      &--border{
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+      &__icons{
+        margin-left: 0.625rem;
       }
+     
+      &__orderlist {
+        position: absolute;
+       display: block;
+        left: 6.25rem;
+        top: 0;
+        padding: 0rem 0.438rem;
+        border-radius: 0.313rem;
+        background: $primary;
+        transition: all 0.5s;
+        opacity: 0;
+        visibility: hidden;
+        /*pointer-events: none;*/
+        z-index: 2;
+        margin: unset;
+        box-shadow: 0px 4px 12px 3px #d9d9d9;
+      }
+    &__orderlist__option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 0.313rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+        height: 4.313rem;
+        line-height: 3.75rem;
+        cursor: pointer;
+        transition: all 0.5s;
+                &:hover, &:focus {
+          background-color: $buttonSecondaryColor;
+          color: #000;
+          border-radius: 0.313rem;
+        }
+        &--border{
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+        }
+    }
   }
-}
-
-.dropdown__selection.open .dropdown__orderlist {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  .dropdown__selection.open .dropdown__orderlist {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
 }
 

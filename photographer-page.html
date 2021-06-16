@@ -23,14 +23,14 @@
                 <div class="person-profile__portraitPlaceholder"></div>
                 <!--JS Place to put Photographer profile photo-->
             </article> 
-                
+            
             <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
-                <div class="dropdown__selection">
-                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button">
-                      <span>Popularité</span><span aria-hidden="true" class="fas fa-chevron-up"></span>
+                <div class="dropdown__selection d-flex">
+                    <div class="dropdown__title">Triez-par</div>
+                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span>
                     </button>
-                    <ul class="dropdown__orderlist">
-                        <li tabIndex='0' role="option" class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-down" ></span></li>
+                    <ul role="listbox" class="dropdown__orderlist">
+                        <li tabIndex='0' role="option" class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-down dropdown__icons" ></span></li>
                         <li tabIndex='0' role="option" class="dropdown__orderlist__option dropdown__orderlist__option--border" data-value="Date">Date</li>
                         <li tabIndex='0' role="option" class="dropdown__orderlist__option" data-value="Title">Titre</li>
                       </ul>
