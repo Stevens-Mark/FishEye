@@ -27,7 +27,7 @@
             <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
                 <div class="dropdown__selection d-flex">
                     <div id="dropdown__title" class="dropdown__title">Triez-par</div>
-                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span>Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
+                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
                     </button>
                     <ul aria-labelledby="dropdown__title" class="dropdown__orderlist">
                         <li tabIndex='0' class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
@@ -42,32 +42,32 @@
                 <div class="modal__content"> <!--before content-->
                  <!-- <span class="close"><i class="fas fa-times"></i></span> -->
                     <div class="modal__heading d-flex">
-                        <h1 class="modal__title">Contactez-moi</h1><span class="modal__close"><i class="fas fa-times"></i></span>
+                        <h1 class="modal__title">Contactez-moi</h1><a class="modal__close" href="#"><i class="fas fa-times"></i></a>
                     </div> <!--before just close-->
                     <h2 class="modal__photographerName"></h2>
                   <div class="modal__body">
                     <form id="form"
                       name="contactMe" action="photographer-page.html"  method="post" onsubmit="return Validate(event);">
 
-                      <div class="formData">
+                      <div>
                         <label for="first">Prénom</label><br>
                         <input class="modal__input" type="text" id="first"  name="first" minlength="2" maxlength="30"/><br> 
                         <div id='fnameError' class="modal__error"></div> 
                       </div>
         
-                      <div class="formData">
+                      <div>
                         <label for="last">Nom</label><br>
                         <input class="modal__input" type="text" id="last" name="last" minlength="2" maxlength="30"/><br>
                         <div id='lastnameError' class="modal__error"></div>
                       </div>
         
-                      <div class="formData">
+                      <div>
                         <label for="email">E-mail</label><br>
                         <input class="modal__input" type="email" id="email" name="email" maxlength="60"/><br>
                         <div id='emailError' class="modal__error"></div>
                       </div>
 
-                      <div class="formData">
+                      <div>
                         <label for="message">Votre message</label><br>
                         <textarea class="modal__input modal__input--message" id="message" name="message" maxlength="400" required></textarea>
                         <div id="messageError" class="modal__error"></div>

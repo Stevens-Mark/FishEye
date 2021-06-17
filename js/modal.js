@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-useless-escape */
+/* eslint-disable linebreak-style */
+
 /* eslint-disable no-lonely-if */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
@@ -30,7 +34,7 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 function closeModal() {
   modalbg.style.display = 'none';
   document.querySelector("a").focus();
-  /* return to phtographer header link when modalclosed with "ESC" key */
+  /* return to photographer header link when modal closed with "ESC" key */
 }
 
 // reset error messages & launch modal form
@@ -121,11 +125,12 @@ function Validate(event) {
   modalbg.style.display = 'none';
   /* message.style.display = "flex"; */
   document.getElementById('form').reset();
+  document.querySelector("a").focus();
 }
 
 // FIX FOCUS IN MODAL FOR KEYBOARD USERS
 // add all the elements inside modal which we want to make focusable
-const focusableElements = 'button, input, textarea, [tabindex]:not([tabindex="-1"])';
+const focusableElements = 'button, input, [href], textarea, [tabindex]:not([tabindex="-1"])';
 const modal = document.querySelector('.modal'); // select the modal by it's class id
 
 const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal

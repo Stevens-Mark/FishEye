@@ -1,10 +1,8 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable linebreak-style */
 /* eslint-disable eqeqeq */
-/* eslint-disable no-use-before-define */
-/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
 /* eslint-disable no-console */
-/* eslint-disable linebreak-style */
+/* eslint-disable no-use-before-define */
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographerId = urlParams.get('id');
@@ -54,6 +52,11 @@ const OpenCloseDropDown = () => {
     document.getElementById('dropdownBtn').setAttribute('aria-expanded', false);
   }
 };
+/* Click Event Listener when on dropdown menu */
+document.querySelector('.dropdown').addEventListener('click', () => {
+  OpenCloseDropDown();
+});
+
 /* If clicked outside of the dropdown then close dropdown */
 const CloseDropDown = (event) => {
   const select = document.querySelector('.dropdown__selection');
@@ -62,7 +65,33 @@ const CloseDropDown = (event) => {
     document.getElementById('dropdownBtn').setAttribute('aria-expanded', false);
   }
 };
-/* when user selects an option in dropdown menu change title text */
+/* click & key event listeners for outside of the dropdown menu: therefore close dropdown */
+window.addEventListener('click', (event) => {
+  CloseDropDown(event);
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === 13) {
+    CloseDropDown(event);
+  }
+});
+
+/* when user "click" selects an option in dropdown menu change title text */
+document.querySelector('.dropdown__orderlist').addEventListener('click', (event) => {
+  document.querySelector('.choice').textContent = event.target.textContent;
+});
+/* when user "keyboard" selects an option in dropdown menu change title text */
+const sortBy = document.querySelector('.dropdown__orderlist');
+sortBy.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === 13) {
+    event.preventDefault();
+    document.querySelector('.choice').textContent = event.target.textContent;
+    OpenCloseDropDown();
+    document.querySelector('#dropdownBtn').focus();
+  }
+});
+
+/*
 for (const option of document.querySelectorAll('.dropdown__orderlist__option')) {
   option.addEventListener('click', function SetSelectedOption() {
     if (!this.classList.contains('selected')) {
@@ -71,38 +100,4 @@ for (const option of document.querySelectorAll('.dropdown__orderlist__option')) 
       this.closest('.dropdown__selection').querySelector('.dropdown__button span').textContent = this.textContent;
     }
   });
-}
-
-/* If clicks or presses enter outside of the dropdown menu then close dropdown */
-window.addEventListener('click', (event) => {
-  CloseDropDown(event);
-});
-
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    CloseDropDown(event);
-  }
-});
-
-/* Event Listeners when on dropdown menu */
-document.querySelector('.dropdown').addEventListener('click', () => {
-  OpenCloseDropDown();
-});
-
-/*
-document.querySelectorAll('.dropdown__orderlist__option')
-    .addEventListener("keydown", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("dropdownBtn").click();
-    }
-});
-
-/* If clicked outside of the dropdown then close dropdown
-window.addEventListener('click', (e) => {
-  const select = document.querySelector('.dropdown__selection');
-  if (!select.contains(e.target)) {
-    select.classList.remove('open');
-    document.getElementById('dropdownBtn').setAttribute('aria-expanded', false);
-  }
-}); */
+} */
