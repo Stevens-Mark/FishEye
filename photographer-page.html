@@ -12,11 +12,11 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>    
 <body>
-    <header class="photographer-header" role=”banner”>
+    <header class="photographer-header">
         <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye Logo" role="link" aria-label="link to homepage"></a>
      </header>		 
-    <main id="main" class="single-photographer-container">
-            <article class="person-profile">
+    <main id="main"  class="single-photographer-container">
+            <article aria-label="photographer profile details" class="person-profile">
                 <div class="person-profile__details"></div>
                 <!-- JS Place to put Photographer profile details-->
                 <input tabindex="0" type="button" value="Contactez-moi" class="contactBtn">
@@ -26,14 +26,14 @@
             
             <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
                 <div class="dropdown__selection d-flex">
-                    <div class="dropdown__title">Triez-par</div>
-                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span>
+                    <div id="dropdown__title" class="dropdown__title">Triez-par</div>
+                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span>Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
                     </button>
-                    <ul role="listbox" class="dropdown__orderlist">
-                        <li tabIndex='0' role="option" class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-down dropdown__icons" ></span></li>
-                        <li tabIndex='0' role="option" class="dropdown__orderlist__option dropdown__orderlist__option--border" data-value="Date">Date</li>
-                        <li tabIndex='0' role="option" class="dropdown__orderlist__option" data-value="Title">Titre</li>
-                      </ul>
+                    <ul aria-labelledby="dropdown__title" class="dropdown__orderlist">
+                        <li tabIndex='0' class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
+                        <li tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" data-value="Date">Date</li>
+                        <li tabIndex='0' class="dropdown__orderlist__option" data-value="Title">Titre</li>
+                    </ul>
                 </div>
             </div>
 
