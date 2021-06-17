@@ -27,6 +27,7 @@ const CreatePhotograperPage = (individual) => {
 /* declare a place to put the photographer profile & photo in the dom */
   const photographerProfile = document.querySelector('.person-profile__details');
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
+  const contactName = document.querySelector('.modal__photographerName');
   /* Using DESTRUCTERING get the photographer's tag array data */
   const { tags } = individual[0];
 
@@ -39,6 +40,8 @@ const CreatePhotograperPage = (individual) => {
 
   const photographerPhotohtml = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
   photographerPhoto.innerHTML = photographerPhotohtml;
+  /* put photographer name in the modal */
+  contactName.textContent = individual[0].name;
 };
 
 // DROPDOWN MENU
@@ -75,7 +78,7 @@ window.addEventListener('click', (event) => {
   CloseDropDown(event);
 });
 
-window.addEventListener('keyup', (event) => {
+window.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     CloseDropDown(event);
   }
@@ -88,7 +91,7 @@ document.querySelector('.dropdown').addEventListener('click', () => {
 
 /*
 document.querySelectorAll('.dropdown__orderlist__option')
-    .addEventListener("keyup", function(event) {
+    .addEventListener("keydown", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
         document.getElementById("dropdownBtn").click();

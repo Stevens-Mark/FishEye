@@ -62,7 +62,7 @@
 }
 
 
-/*GENERIC BUTTON FOR CONTACT PHOTOGRAPHER*/
+/*BUTTON FOR CONTACT PHOTOGRAPHER*/
 .contactBtn{
     font-family: "DMSans";
     width: 10.625rem;
@@ -169,7 +169,7 @@ display: none;
         line-height: 3.75rem;
         cursor: pointer;
         transition: all 0.5s;
-                &:hover, &:focus {
+        &:hover, &:focus {
           background-color: $buttonSecondaryColor;
           color: #000;
           border-radius: 0.313rem;
@@ -187,3 +187,25 @@ display: none;
   }
 }
 
+/*BUTTON FOR SUBMITTING AS MESSAGE TO PHOTOGRAPHER*/
+.sendBtn{
+  font-family: "DMSans";
+  letter-spacing: 1px;
+  width: 10.625rem;
+  height: 2.188rem;
+  border-radius: 0.313rem;
+  border: unset;
+  background: $primary;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: auto;
+  margin-top: 1.875rem;
+  /*z-index: 1;  */
+    @media only screen and (min-width: $mobilePlus) {
+      height: 4.313rem;
+      margin: unset;
+      margin-top: 0.313rem;
+    }
+  }

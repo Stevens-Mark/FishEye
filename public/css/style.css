@@ -2,11 +2,11 @@
 /*For primary background & secondary text*/
 /*For secondary background & primary text*/
 /*For tertiary text*/
+/*for modal*/
 /*background for pass-to-content button*/
 /*For tertiary background*/
 /*Border for tags*/
 /*Mai page price style*/
-/*General variables*/
 /*transition time for tag animation hover*/
 /*Breakpoints*/
 /* Main elements of the page */
@@ -138,7 +138,7 @@ ul {
   transform: translateY(-110%);
 }
 
-/*GENERIC BUTTON FOR CONTACT PHOTOGRAPHER*/
+/*BUTTON FOR CONTACT PHOTOGRAPHER*/
 .contactBtn {
   font-family: "DMSans";
   width: 10.625rem;
@@ -264,6 +264,153 @@ ul {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+}
+
+/*BUTTON FOR SUBMITTING AS MESSAGE TO PHOTOGRAPHER*/
+.sendBtn {
+  font-family: "DMSans";
+  letter-spacing: 1px;
+  width: 10.625rem;
+  height: 2.188rem;
+  border-radius: 0.313rem;
+  border: unset;
+  background: #901C1C;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: auto;
+  margin-top: 1.875rem;
+  /*z-index: 1;  */
+}
+@media only screen and (min-width: 600px) {
+  .sendBtn {
+    height: 4.313rem;
+    margin: unset;
+    margin-top: 0.313rem;
+  }
+}
+
+/*background to cover whole page when modal appears*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(192, 192, 192, 0.8);
+  /*background of modal form*/
+}
+.modal__content {
+  margin: 0 auto;
+  /*margin: 5% auto;*/
+  width: 100%;
+  height: 100%;
+  max-width: 41.813rem;
+  /* animation-name: modalopen;
+   animation-duration: var(--modal-duration);*/
+  background: #DB8876;
+  /*   overflow: hidden;
+     position: relative;*/
+  color: #000;
+  padding: 0rem 0.938rem;
+  /* padding-top: 10px;*/
+}
+@media only screen and (min-width: 768px) {
+  .modal__content {
+    height: 56.25rem;
+    margin: 1% auto;
+    position: fixed;
+    left: 50%;
+    margin-left: -20.875rem;
+  }
+}
+.modal__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*margin: 15px;*/
+}
+.modal__title {
+  font-size: 2.25rem;
+  font-weight: 400;
+  margin: unset;
+}
+@media only screen and (min-width: 600px) {
+  .modal__title {
+    font-size: 3.125rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .modal__title {
+    font-size: 4rem;
+  }
+}
+.modal__close {
+  color: #fff;
+  font-size: 1.188rem;
+}
+@media only screen and (min-width: 600px) {
+  .modal__close {
+    font-size: 2.188rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .modal__close {
+    font-size: 2.625rem;
+  }
+}
+.modal__photographerName {
+  font-weight: 400;
+  font-size: 2.25rem;
+  margin: unset;
+}
+@media only screen and (min-width: 600px) {
+  .modal__photographerName {
+    font-size: 3.125rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .modal__photographerName {
+    font-size: 4rem;
+  }
+}
+.modal__body {
+  font-size: 24px;
+  color: #312E2E;
+  /*padding: 15px 8%;*/
+  margin: auto;
+}
+@media only screen and (min-width: 768px) {
+  .modal__body {
+    font-size: 2.25rem;
+  }
+}
+.modal__input {
+  width: 100%;
+  height: 3.25rem;
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .modal__input {
+    height: 4.25rem;
+  }
+}
+.modal__input--message {
+  height: 11.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .modal__input--message {
+    height: 10.625rem;
+  }
+}
+.modal__error {
+  color: #000;
+  font-size: 15px;
+  text-align: left;
 }
 
 .header {

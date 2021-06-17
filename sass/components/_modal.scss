@@ -1,0 +1,102 @@
+/*background to cover whole page when modal appears*/
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   overflow: auto;
+   background-color: rgba(192, 192, 192, 0.8);
+    /*background of modal form*/
+   &__content {
+      margin: 0 auto; /*margin: 5% auto;*/
+      width: 100%;
+      height: 100%;
+      max-width: 41.813rem;
+     /* animation-name: modalopen;
+      animation-duration: var(--modal-duration);*/
+      background: $modalBackground;
+   /*   overflow: hidden;
+      position: relative;*/
+      color: #000;
+      padding: 0rem 0.938rem;
+     /* padding-top: 10px;*/
+     @media only screen and (min-width: $tablette) {
+      height: 56.25rem;
+      margin: 1% auto;
+      position: fixed;
+      left: 50%;
+      margin-left: -20.875rem;
+   }
+   }
+   &__heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*margin: 15px;*/
+   }
+   &__title {
+      font-size: 2.25rem;
+      font-weight: 400;
+      margin: unset;
+      @media only screen and (min-width: $mobilePlus) {
+         font-size: 3.125rem;
+      }
+      @media only screen and (min-width: $tablette) {
+         font-size: 4rem;
+      }
+   }
+   &__close {
+      color: #fff;
+      font-size: 1.188rem;
+      @media only screen and (min-width: $mobilePlus) {
+         font-size: 2.188rem;
+      }
+      @media only screen and (min-width: $tablette) {
+         font-size: 2.625rem;
+      }
+   }
+   &__photographerName {
+      font-weight: 400;
+      font-size: 2.25rem;
+      margin: unset;
+      @media only screen and (min-width: $mobilePlus) {
+         font-size: 3.125rem;
+      }
+      @media only screen and (min-width: $tablette) {
+         font-size: 4rem;
+      }
+   }
+   &__body {
+      font-size: 24px;
+      color: $modaltext;
+      /*padding: 15px 8%;*/
+      margin: auto;
+      @media only screen and (min-width: $tablette) {
+         font-size: 2.25rem;
+      }
+   }
+   &__input {
+      width: 100%;
+      height: 3.25rem;
+      font-size: 1.5rem;
+      @media only screen and (min-width: $tablette) {
+         height: 4.25rem;
+      }
+      &--message {
+         height: 11.5rem;
+         @media only screen and (min-width: $tablette) {
+            height: 10.625rem;
+         }
+      }
+   }
+   &__error {
+      color: #000;
+      font-size: 15px;
+      text-align: left;
+    }
+}
+
+

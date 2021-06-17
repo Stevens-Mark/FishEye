@@ -37,7 +37,49 @@
                 </div>
             </div>
 
+                                    <!--contact me modal-->
+            <div class="modal"> <!--before bground-->
+                <div class="modal__content"> <!--before content-->
+                 <!-- <span class="close"><i class="fas fa-times"></i></span> -->
+                    <div class="modal__heading d-flex">
+                        <h1 class="modal__title">Contactez-moi</h1><span class="modal__close"><i class="fas fa-times"></i></span>
+                    </div> <!--before just close-->
+                    <h2 class="modal__photographerName"></h2>
+                  <div class="modal__body">
+                    <form id="form"
+                      name="contactMe" action="photographer-page.html"  method="post" onsubmit="return Validate(event);">
+
+                      <div class="formData">
+                        <label for="first">Prénom</label><br>
+                        <input class="modal__input" type="text" id="first"  name="first" minlength="2" maxlength="30"/><br> 
+                        <div id='fnameError' class="modal__error"></div> 
+                      </div>
+        
+                      <div class="formData">
+                        <label for="last">Nom</label><br>
+                        <input class="modal__input" type="text" id="last" name="last" minlength="2" maxlength="30"/><br>
+                        <div id='lastnameError' class="modal__error"></div>
+                      </div>
+        
+                      <div class="formData">
+                        <label for="email">E-mail</label><br>
+                        <input class="modal__input" type="email" id="email" name="email" maxlength="60"/><br>
+                        <div id='emailError' class="modal__error"></div>
+                      </div>
+
+                      <div class="formData">
+                        <label for="message">Votre message</label><br>
+                        <textarea class="modal__input modal__input--message" id="message" name="message" maxlength="400" required></textarea>
+                        <div id="messageError" class="modal__error"></div>
+                      </div>
+                      <span class="d-flex">
+                      <input class="sendBtn" type="submit" value="Envoyer"/></span>
+                    </form>
+                  </div>
+                </div>
+              </div>
     </main>		
         <script src="/js/photographerpage.js"></script>
+        <script src="/js/modal.js"></script>
 </body>
 </html>
