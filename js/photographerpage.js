@@ -101,3 +101,20 @@ for (const option of document.querySelectorAll('.dropdown__orderlist__option')) 
     }
   });
 } */
+
+const listbox = document.querySelector('[role="listbox"]');
+const characters = [...listbox.children];
+
+listbox.addEventListener('click', (event) => {
+  const option = event.target.closest('li');
+  if (!option) return;
+
+  /* Sets aria-activedescendant value */
+  listbox.setAttribute('aria-activedescendant', option.id);
+
+  /* Set aria-selected value & Change visual appearances */
+  characters.forEach((element) => element.classList.remove('is-selected'));
+  characters.forEach((element) => element.setAttribute('aria-selected', false));
+  option.classList.add('is-selected');
+  option.setAttribute('aria-selected', true);
+});

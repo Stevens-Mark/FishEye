@@ -7,78 +7,78 @@
     <meta name="description" content="">
     <!--used to mobile-optimize the site: set webpage to size of device: scale 1 means no need to zoom in-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/29ee0bc57e.js" crossorigin="anonymous">
-    </script>
+    <script src="https://kit.fontawesome.com/29ee0bc57e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>    
 <body>
-    <header class="photographer-header">
-        <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye Logo" role="link" aria-label="link to homepage"></a>
-     </header>		 
-    <main id="main"  class="single-photographer-container">
-            <article aria-label="photographer profile details" class="person-profile">
-                <div class="person-profile__details"></div>
-                <!-- JS Place to put Photographer profile details-->
-                <input tabindex="0" type="button" value="Contactez-moi" class="contactBtn">
-                <div class="person-profile__portraitPlaceholder"></div>
-                <!--JS Place to put Photographer profile photo-->
-            </article> 
+  <header class="photographer-header">
+      <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye Logo" role="link" aria-label="link to homepage"></a>
+  </header>		
+   
+  <main id="main" aria-hidden="false" class="single-photographer-container">
+    <article aria-label="photographer profile details" class="person-profile">
+        <div class="person-profile__details"></div>
+             <!-- JS Place to put Photographer profile details-->
+        <input tabindex="0" type="button" value="Contactez-moi" class="contactBtn">
+        <div class="person-profile__portraitPlaceholder"></div>
+             <!--JS Place to put Photographer profile photo-->
+    </article> 
             
-            <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
-                <div class="dropdown__selection d-flex">
-                    <div id="dropdown__title" class="dropdown__title">Triez-par</div>
-                    <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
-                    </button>
-                    <ul aria-labelledby="dropdown__title" class="dropdown__orderlist">
-                        <li tabIndex='0' class="dropdown__orderlist__option selected" data-value="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
-                        <li tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" data-value="Date">Date</li>
-                        <li tabIndex='0' class="dropdown__orderlist__option" data-value="Title">Titre</li>
-                    </ul>
+      <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
+          <div class="dropdown__selection d-flex">
+              <div id="dropdown__title" class="dropdown__title">Triez-par</div>
+              <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
+              </button>
+              <ul role="listbox" aria-labelledby="dropdown__title" class="dropdown__orderlist">
+                  <li role="option" tabIndex='0' class="dropdown__orderlist__option is-selected" aria-selected="true" id="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li> <!--"selected" was in class before-->
+                  <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" aria-selected="false" id="Date">Date</li>
+                  <li role="option" tabIndex='0' class="dropdown__orderlist__option" aria-selected="false" id="Title">Titre</li>
+              </ul>
+          </div>
+      </div>
+  </main>     
+                              <!--contact me modal-->
+      <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modal__title"> 
+          <div class="modal__content"> 
+              <div class="modal__heading d-flex">
+                  <h1 class="modal__title">Contactez-moi</h1>
+                    <a class="modal__close" aria-label="link to close contact form" href="#"><i class="fas fa-times"></i></a>
+              </div> 
+              <h2 class="modal__photographerName"></h2>
+            <div class="modal__body">
+              <form id="form"
+                name="contactMe" action="photographer-page.html"  method="post" onsubmit="return Validate(event);">
+
+                <div>
+                  <label for="first">Prénom</label><br>
+                  <input class="modal__input" type="text" id="first"  name="first" minlength="2" maxlength="30" required aria-describedby="fnameError"/><br> 
+                  <div id='fnameError' class="modal__error"></div> 
                 </div>
+  
+                <div>
+                  <label for="last">Nom</label><br>
+                  <input class="modal__input" type="text" id="last" name="last" minlength="2" maxlength="30" required aria-describedby="lastnameError"/><br>
+                  <div id='lastnameError' class="modal__error"></div>
+                </div>
+  
+                <div>
+                  <label for="email">E-mail</label><br>
+                  <input class="modal__input" type="email" id="email" name="email" maxlength="60"  required aria-describedby="emailError"/><br>
+                  <div id='emailError' class="modal__error"></div>
+                </div>
+
+                <div>
+                  <label for="message">Votre message</label><br>
+                  <textarea class="modal__input modal__input--message" id="message" name="message" maxlength="400" required aria-describedby="messageError"></textarea>
+                  <div id="messageError" class="modal__error"></div>
+                </div>
+                <span class="d-flex">
+                <input class="sendBtn" type="submit" value="Envoyer"/></span>
+              </form>
             </div>
-
-                                    <!--contact me modal-->
-            <div class="modal"> <!--before bground-->
-                <div class="modal__content"> <!--before content-->
-                 <!-- <span class="close"><i class="fas fa-times"></i></span> -->
-                    <div class="modal__heading d-flex">
-                        <h1 class="modal__title">Contactez-moi</h1><a class="modal__close" href="#"><i class="fas fa-times"></i></a>
-                    </div> <!--before just close-->
-                    <h2 class="modal__photographerName"></h2>
-                  <div class="modal__body">
-                    <form id="form"
-                      name="contactMe" action="photographer-page.html"  method="post" onsubmit="return Validate(event);">
-
-                      <div>
-                        <label for="first">Prénom</label><br>
-                        <input class="modal__input" type="text" id="first"  name="first" minlength="2" maxlength="30"/><br> 
-                        <div id='fnameError' class="modal__error"></div> 
-                      </div>
-        
-                      <div>
-                        <label for="last">Nom</label><br>
-                        <input class="modal__input" type="text" id="last" name="last" minlength="2" maxlength="30"/><br>
-                        <div id='lastnameError' class="modal__error"></div>
-                      </div>
-        
-                      <div>
-                        <label for="email">E-mail</label><br>
-                        <input class="modal__input" type="email" id="email" name="email" maxlength="60"/><br>
-                        <div id='emailError' class="modal__error"></div>
-                      </div>
-
-                      <div>
-                        <label for="message">Votre message</label><br>
-                        <textarea class="modal__input modal__input--message" id="message" name="message" maxlength="400" required></textarea>
-                        <div id="messageError" class="modal__error"></div>
-                      </div>
-                      <span class="d-flex">
-                      <input class="sendBtn" type="submit" value="Envoyer"/></span>
-                    </form>
-                  </div>
-                </div>
-              </div>
-    </main>		
+          </div>
+    </div>
+  		
         <script src="/js/photographerpage.js"></script>
         <script src="/js/modal.js"></script>
 </body>
