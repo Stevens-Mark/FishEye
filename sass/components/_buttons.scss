@@ -28,7 +28,7 @@
        background: $primary;
        border: 1px solid $primary;
        opacity: 0;                   /*layer hidden until hover*/
-       z-index: -1;                                    /*Z-index changes stacking order so background is behind*/
+       z-index: -1;                  /*Z-index changes stacking order so background is behind*/
        transition: opacity $transition-timing;    /*text but infront of original button background*/     
    } 
 }
@@ -95,7 +95,7 @@
     }
  }
 
- /*DROPDOWN MENU BUTTON*/
+/*DROPDOWN MENU BUTTON*/
 .dropdown {
 display: none;
     @media only screen and (min-width: $mobilePlus) {
@@ -172,11 +172,14 @@ display: none;
         &:hover, &:focus {
           background-color: $buttonSecondaryColor;
           color: #000;
-          border-radius: 0.313rem;
+          /*border-radius: 0.313rem;*/
         }
         &--border{
           border-top: 1px solid #fff;
           border-bottom: 1px solid #fff;
+        }
+        &--Selected{
+          background: $buttonSecondaryColor;
         }
     }
   }
@@ -187,7 +190,7 @@ display: none;
   }
 }
 
-/*BUTTON FOR SUBMITTING AS MESSAGE TO PHOTOGRAPHER*/
+/*BUTTON FOR SUBMITTING A MESSAGE TO PHOTOGRAPHER*/
 .sendBtn{
   font-family: "DMSans";
   letter-spacing: 1px;

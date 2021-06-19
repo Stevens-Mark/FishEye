@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Fisheye - Photographer Page</title>
+    <title>Fisheye Photographer Page</title>
     <meta name="author" content="Mark Stevens">
     <meta name="description" content="">
     <!--used to mobile-optimize the site: set webpage to size of device: scale 1 means no need to zoom in-->
@@ -29,8 +29,8 @@
               <div id="dropdown__title" class="dropdown__title">Triez-par</div>
               <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
               </button>
-              <ul role="listbox" aria-labelledby="dropdown__title" class="dropdown__orderlist">
-                  <li role="option" tabIndex='0' class="dropdown__orderlist__option is-selected" aria-selected="true" id="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li> <!--"selected" was in class before-->
+              <ul role="listbox" aria-activedescendant="Popularity" aria-labelledby="dropdown__title" class="dropdown__orderlist">
+                  <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--Selected" aria-selected="true" id="Popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li> <!--"selected" was in class before-->
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" aria-selected="false" id="Date">Date</li>
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option" aria-selected="false" id="Title">Titre</li>
               </ul>
@@ -80,6 +80,7 @@
     </div>
   		
         <script src="/js/photographerpage.js"></script>
+        <script src="/js/trierDropdown.js"></script>
         <script src="/js/modal.js"></script>
 </body>
 </html>
