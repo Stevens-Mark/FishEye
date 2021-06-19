@@ -20,13 +20,11 @@ const CreatePage = (photographers) => {
 
   photographers.forEach((person) => {
     /* Using DESTRUCTERING get just the tag array from photographers array */
-    console.log(`they are called ${person.name}`);
     const { tags } = person;
-    console.log(tags);
     photographerhtml += `
     <article class="profile">
-      <a href="photographer-page.html?id=${person.id}" arial-label="link to photographers page"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
-      alt="${person.name}">
+      <a href="photographer-page.html?id=${person.id}"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
+      alt="link to photographers page ${person.name}">
       <h2 class="profile__name">${person.name}</h2></a>
         <h3 class="profiles__address">${person.city}, ${person.country}</h3>
         <h4 class="profile__tagline">${person.tagline}</h4>

@@ -224,7 +224,7 @@ ul {
     position: absolute;
     display: block;
     left: 6.25rem;
-    top: 0;
+    top: -1px;
     padding: 0rem 0.438rem;
     border-radius: 0.313rem;
     background: #901C1C;
@@ -249,6 +249,9 @@ ul {
     line-height: 3.75rem;
     cursor: pointer;
     transition: all 0.5s;
+    /* &--Selected{
+       background: $buttonSecondaryColor;
+     }*/
   }
   .dropdown__orderlist__option:hover, .dropdown__orderlist__option:focus {
     background-color: #DB8876;
@@ -258,9 +261,6 @@ ul {
   .dropdown__orderlist__option--border {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-  }
-  .dropdown__orderlist__option--Selected {
-    background: #DB8876;
   }
 }
 .dropdown .dropdown__selection.open .dropdown__orderlist {

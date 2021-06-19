@@ -1,6 +1,7 @@
-/* eslint-disable no-lonely-if *//* eslint-disable no-console *//* eslint-disable linebreak-style */
-/* eslint-disable max-len *//* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
-/* eslint-disable linebreak-style */
+/* eslint-disable no-lonely-if */
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-useless-escape */
 // DOM Elements
 const mainWrapper = document.getElementById('main');
 const modalbg = document.querySelector('.modal');
@@ -53,7 +54,7 @@ modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
 closeModalBtn.forEach((btn) => btn.addEventListener('click', closeModal));
 
 // close modal on pressing the escape key
-document.addEventListener('keydown', (event) => {
+document.querySelector('.modal').addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeModal();
   }
@@ -149,7 +150,6 @@ const lastFocusableElement = focusableContent[focusableContent.length - 1];
 
 document.addEventListener('keydown', (event) => {
   const { key } = event;
-  console.log(key);
   if (key !== 'Tab' || key === 9) {
     return;
   }

@@ -142,9 +142,9 @@ display: none;
      
       &__orderlist {
         position: absolute;
-       display: block;
-       left: 6.25rem;
-        top: 0;
+        display: block;
+        left: 6.25rem;
+        top: -1px;
         padding: 0rem 0.438rem;
         border-radius: 0.313rem;
         background: $primary;
@@ -178,9 +178,9 @@ display: none;
           border-top: 1px solid #fff;
           border-bottom: 1px solid #fff;
         }
-        &--Selected{
+       /* &--Selected{
           background: $buttonSecondaryColor;
-        }
+        }*/
     }
   }
   .dropdown__selection.open .dropdown__orderlist {

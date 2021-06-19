@@ -1,6 +1,6 @@
+/* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 /* eslint-disable max-len */
-/* eslint-disable no-console */
 /* eslint-disable no-use-before-define */
 
 const queryString = window.location.search;
@@ -12,11 +12,14 @@ fetch('./public/data.json')
   .then((data) => {
     /* Using DESTRUCTERING get the photographers data array data */
     const { photographers } = data;
-    /* Using DESTRUCTERING get  the MEDIA data array  data */
-    // const { media } = data;
     /* filter array by photographer ID to get the required person */
     const individual = photographers.filter((person) => person.id == photographerId);
     CreatePhotograperPage(individual);
+    /* Using DESTRUCTERING get  the MEDIA data array  data */
+    const { media } = data;
+    /* filter array by photographerID to get the individual photographer's photo collection */
+    const photographersMedia = media.filter((person) => person.photographerId == photographerId);
+    console.log(photographersMedia);
   })
   .catch((error) => console.error(error));
 
