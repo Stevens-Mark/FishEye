@@ -25,7 +25,7 @@
      /* padding-top: 10px;*/
      @media only screen and (min-width: $tablette) {
       height: 56.25rem;
-      margin: 1% auto;
+      margin: 2% auto;
       position: fixed;
       left: 50%;
       margin-left: -20.875rem;
@@ -50,12 +50,12 @@
    }
    &__close {
       color: #fff;
-      font-size: 1.188rem;
+      height: 1.875rem;
       @media only screen and (min-width: $mobilePlus) {
-         font-size: 2.188rem;
+         height: 2.5rem;
       }
       @media only screen and (min-width: $tablette) {
-         font-size: 2.625rem;
+         height: 3.125rem;
       }
    }
    &__photographerName {

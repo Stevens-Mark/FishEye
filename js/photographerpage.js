@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 /* eslint-disable max-len */
@@ -14,22 +15,25 @@ fetch('./public/data.json')
     const { photographers } = data;
     /* filter array by photographer ID to get the required person */
     const individual = photographers.filter((person) => person.id == photographerId);
-    CreatePhotograperPage(individual);
+    /* create photographers profile on page */
+    CreatePhotograperPageProfile(individual);
     /* Using DESTRUCTERING get  the MEDIA data array  data */
     const { media } = data;
     /* filter array by photographerID to get the individual photographer's photo collection */
     const photographersMedia = media.filter((person) => person.photographerId == photographerId);
     console.log(photographersMedia);
+    /* create photographers photos & video on page */
+    CreatePhotograperPageMediaCard(photographersMedia);
   })
   .catch((error) => console.error(error));
 
 /* Dynamically add the photographer to page */
-const CreatePhotograperPage = (individual) => {
+const CreatePhotograperPageProfile = (individual) => {
 /* declare a place to put the photographer profile & photo in the dom */
   const photographerProfile = document.querySelector('.person-profile__details');
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');
-  document.title = `Fisheye: ${individual[0].name}`;
+  document.title = `${individual[0].name}`;
   /* Using DESTRUCTERING get the photographer's tag array data */
   const { tags } = individual[0];
 
@@ -44,4 +48,26 @@ const CreatePhotograperPage = (individual) => {
   photographerPhoto.innerHTML = photographerPhotohtml;
   /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
+};
+
+const CreatePhotograperPageMediaCard = (photographersMedia) => {
+  const photoartworkElement = document.querySelector('#photographer-media');
+  let photographshtml = '';
+  console.log(photographersMedia);
+  photographersMedia.forEach((media) => {
+    if (media.video) {
+      console.log('hello video');
+      /* photographshtml += 'test'; */
+    } else {
+      photographshtml
+      += `<article class="artwork__card">
+          <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
+          <div class="artwork__details d-flex" >
+            <h2 class="artwork__title">${media.title}</h2>
+            <span class="artwork__title">${media.likes}<i class="fas fa-heart"></i></span>
+          </div>
+        </article>`;
+    }
+    photoartworkElement.innerHTML = photographshtml;
+  });
 };

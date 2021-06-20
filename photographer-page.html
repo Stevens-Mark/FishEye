@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Fisheye Photographer Page</title>
     <meta name="author" content="Mark Stevens">
     <meta name="description" content="">
     <!--used to mobile-optimize the site: set webpage to size of device: scale 1 means no need to zoom in-->
@@ -19,7 +18,7 @@
     <article aria-label="photographer profile details" class="person-profile">
         <div class="person-profile__details"></div>
              <!-- JS Place to put Photographer profile details-->
-        <input tabindex="0" type="button" value="Contactez-moi" class="contactBtn">
+        <button tabindex="0" class="contactBtn">Contactez-moi</button>
         <div class="person-profile__portraitPlaceholder"></div>
              <!--JS Place to put Photographer profile photo-->
     </article> 
@@ -27,7 +26,7 @@
       <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
           <div class="dropdown__selection d-flex">
               <div id="dropdown__title" class="dropdown__title">Triez-par</div>
-              <button tabIndex='0' id="dropdownBtn" aria-haspopup="true" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
+              <button tabIndex='0' id="dropdownBtn" aria-haspopup="listbox" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
               </button>
               <ul role="listbox" aria-activedescendant="Popularity" aria-labelledby="dropdown__title" class="dropdown__orderlist">
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--Selected" aria-selected="true" id="popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
@@ -36,13 +35,24 @@
               </ul>
           </div>
       </div>
+      <div id="photographer-media" class="artwork d-flex">
+          <!--JS Place to put Photographer's photos/videos-->
+
+    <!--   <article class="artwork__card">
+          <img class="artwork__image" src="/public/images/photography/Ellie/Architecture_Connected_Curves.jpg" alt="Fisheye Logo" role="link" aria-label="link to homepage">
+          <div class="artwork__details d-flex" >
+            <h2 class="artwork__title">Animal Majesty</h2>
+            <span class="artwork__title">52<i class="fas fa-heart"></i></span>
+          </div>
+        </article>--> 
+      </div>
   </main>     
                               <!--contact me modal-->
       <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modal__title"> 
           <div class="modal__content"> 
               <div class="modal__heading d-flex">
                   <h1 class="modal__title">Contactez-moi</h1>
-                    <a class="modal__close" aria-label="link to close contact form" href="#"><i class="fas fa-times"></i></a>
+                    <a class="modal__close" aria-label="link to close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="Close Icon" role="link" aria-label="link to close contact form"></a>
               </div> 
               <h2 class="modal__photographerName"></h2>
             <div class="modal__body">

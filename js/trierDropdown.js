@@ -53,6 +53,7 @@ const OptionSelected = (event) => {
   /* Set attributes for assistive technology for dropdown menu */
   const optionChosen = event.target.closest('li');
   console.log(optionChosen.textContent);
+
   if (!optionChosen) return;
 
   /* Sets aria-activedescendant value to option chosen by user */
@@ -80,7 +81,7 @@ listbox.addEventListener('keydown', (event) => {
   }
 });
 
-/* SET ATTRIBUTES FOR ASSISTIVE TECHNOLOGY FOR DROPDOWN MENU (KEYBOARD USERS)
+/* SET ATTRIBUTES FOR ASSISTIVE TECHNOLOGY FOR DROPDOWN MENU (KEYBOARD USERS) */
 listbox.addEventListener('keydown', (event) => {
   const { key } = event;
   if (key !== 'ArrowDown' && key !== 'ArrowUp') return;
@@ -102,4 +103,4 @@ listbox.addEventListener('keydown', (event) => {
     selectedOption.classList.add('dropdown__orderlist__option--Selected');
     selectedOption.setAttribute('aria-selected', true);
   }
-}); */
+});

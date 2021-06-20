@@ -325,7 +325,7 @@ ul {
 @media only screen and (min-width: 768px) {
   .modal__content {
     height: 56.25rem;
-    margin: 1% auto;
+    margin: 2% auto;
     position: fixed;
     left: 50%;
     margin-left: -20.875rem;
@@ -354,16 +354,16 @@ ul {
 }
 .modal__close {
   color: #fff;
-  font-size: 1.188rem;
+  height: 1.875rem;
 }
 @media only screen and (min-width: 600px) {
   .modal__close {
-    font-size: 2.188rem;
+    height: 2.5rem;
   }
 }
 @media only screen and (min-width: 768px) {
   .modal__close {
-    font-size: 2.625rem;
+    height: 3.125rem;
   }
 }
 .modal__photographerName {
@@ -510,14 +510,14 @@ ul {
   margin: 0.25rem;
 }
 .profile__tagline {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   line-height: 0.813rem;
   letter-spacing: 1px;
   color: #000000;
   margin: 0;
 }
 .profile__price {
-  font-size: 0.563rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
   line-height: 0.75rem;
   font-weight: 400;
@@ -634,7 +634,7 @@ ul {
   }
 }
 .person-profile__tagline {
-  font-size: 0.563rem;
+  font-size: 0.75rem;
   line-height: 1.063rem;
   letter-spacing: 1px;
   color: #525252;
@@ -657,6 +657,42 @@ ul {
   padding: 0;
   /*margin: 0.25rem;*/
   gap: 0.313rem;
+}
+
+.artwork {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+.artwork__card {
+  display: flex;
+  flex-direction: column;
+}
+.artwork__image {
+  width: 335px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .artwork__image {
+    width: 350px;
+    height: 300px;
+  }
+}
+.artwork__details {
+  align-items: center;
+  justify-content: space-between;
+}
+.artwork__title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #901C1C;
+}
+@media only screen and (min-width: 768px) {
+  .artwork__title {
+    font-size: 24px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

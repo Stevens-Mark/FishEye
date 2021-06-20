@@ -86,7 +86,7 @@
       }
    }
    &__tagline{
-      font-size: 0.563rem;
+      font-size: 0.75rem;
       line-height: 1.063rem;
       letter-spacing: 1px;
       color:  $tertiary-text;
@@ -108,3 +108,35 @@
    }
 }
 
+
+.artwork{
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-top: 2.5rem;
+   &__card{
+      display: flex;
+      flex-direction: column;
+   }
+   &__image{
+      width: 335px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 5px;
+      @media only screen and (min-width: $tablette) { 
+        width: 350px;
+        height: 300px;
+      }
+   }
+   &__details{
+      align-items: center;
+      justify-content: space-between;
+   }
+   &__title{
+      font-size: 14px;
+      font-weight: 400;
+      color: $primary;
+      @media only screen and (min-width: $tablette) { 
+         font-size: 24px;
+      }
+   }
+}
