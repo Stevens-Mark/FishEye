@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable linebreak-style */
 
-const DisplayByTagSelected = (selectedTag, photographers) => {
+const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   const allPhotographers = document.getElementsByTagName('article');
   /* check/loop through each photographer in array JSON */
   for (let i = 0; i < photographers.length; i++) {

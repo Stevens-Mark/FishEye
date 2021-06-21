@@ -44,7 +44,7 @@ const CreatePage = (photographers) => {
     }
     // Make sure tag name is lowercase & remove the "#" ready for search*/
     const tagSelected = event.target.textContent.toLowerCase().slice(1);
-    DisplayByTagSelected(tagSelected, photographers);
+    DisplayPhotographerByTagSelected(tagSelected, photographers);
   });
   // EVENT LISTENER FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
@@ -53,7 +53,7 @@ const CreatePage = (photographers) => {
         return;
       }
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
-      DisplayByTagSelected(tagSelected, photographers);
+      DisplayPhotographerByTagSelected(tagSelected, photographers);
     }
   });
 };
