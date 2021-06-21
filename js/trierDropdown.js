@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable max-len *//* eslint-disable linebreak-style */
-
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 // DROPDOWN MENU
 /* Toggle Dropdown menu open or closed (within dropdown menu) */
 const OpenCloseDropDown = () => {
@@ -24,7 +23,8 @@ const CloseDropDown = (event) => {
     document.getElementById('dropdownBtn').setAttribute('aria-expanded', false);
   }
 };
-/* for keyboard users: the function closes dropdown after user has made a choice */
+/* for keyboard users: the function closes dropdown after user has made a choice -
+see SetFilters function */
 const CloseDropDownKeyboard = () => {
   const select = document.querySelector('.dropdown__selection');
   select.classList.remove('open');
@@ -42,45 +42,7 @@ window.addEventListener('keydown', (event) => {
   }
 });
 
-// WHEN USER MAKES A CHOICE IN DROPDOWN MENU
-const listbox = document.querySelector('[role="listbox"]');
-const allOptionChoices = [...listbox.children]; /* sets array of all <li> elements */
-
-const OptionSelected = (event) => {
-/* when user selects an option in dropdown menu change title text */
-  document.querySelector('.choice').textContent = event.target.textContent;
-
-  /* Set attributes for assistive technology for dropdown menu */
-  const optionChosen = event.target.closest('li');
-  console.log(optionChosen.textContent);
-  if (!optionChosen) return;
-
-  /* Sets aria-activedescendant value to option chosen by user */
-  listbox.setAttribute('aria-activedescendant', optionChosen.id);
-
-  /* For ALL the option choices: remove aria-selected & selected class that
-  changes the visual appearance */
-  allOptionChoices.forEach((element) => element.classList.remove('dropdown__orderlist__option--Selected'));
-  allOptionChoices.forEach((element) => element.setAttribute('aria-selected', false));
-  /* Now for the chosen option: set aria selected & selected class to highlight chosen choice */
-  optionChosen.classList.add('dropdown__orderlist__option--Selected');
-  optionChosen.setAttribute('aria-selected', true);
-};
-
-/* Event listener on dropdown menu for mouse users */
-listbox.addEventListener('click', (event) => {
-  OptionSelected(event);
-});
-/* Event listener on dropdown menu for keyboard users */
-listbox.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' || event.key === 13) {
-    event.preventDefault();
-    OptionSelected(event);
-    CloseDropDownKeyboard();
-  }
-});
-
-/* SET ATTRIBUTES FOR ASSISTIVE TECHNOLOGY FOR DROPDOWN MENU (KEYBOARD USERS) */
+/* SET ATTRIBUTES FOR ASSISTIVE TECHNOLOGY FOR DROPDOWN MENU (KEYBOARD USERS)
 listbox.addEventListener('keydown', (event) => {
   const { key } = event;
   if (key !== 'ArrowDown' && key !== 'ArrowUp') return;
@@ -102,4 +64,4 @@ listbox.addEventListener('keydown', (event) => {
     selectedOption.classList.add('dropdown__orderlist__option--Selected');
     selectedOption.setAttribute('aria-selected', true);
   }
-});
+}); */

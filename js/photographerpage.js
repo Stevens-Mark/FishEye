@@ -81,27 +81,15 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
     }
     photoartworkElement.innerHTML = photographshtml;
   });
-
-  // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
-  document.addEventListener('click', (event) => {
-  /* check if function should be invoked: was the selected element (clicked on)
-    the one we care about? */
-    if (!event.target.matches('.tags')) {
-      return;
-    }
-    // Make sure tag name is lowercase & remove the "#" ready for search*/
-    const tagSelected = event.target.textContent.toLowerCase().slice(1);
-    console.log(tagSelected);
-    DisplayMediaByTagSelected(tagSelected, photographersMedia);
-  });
+  SetFilters(photographersMedia);
 
   // EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
   const hearts = document.querySelectorAll('.artwork__likes');
   hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
       console.log(event.target);
-    /* Make sure tag name is lowercase & remove the "#" ready for search
-    const tagSelected = event.target.textContent.toLowerCase().slice(1); */
+      /* Make sure tag name is lowercase & remove the "#" ready for search
+         const tagSelected = event.target.textContent.toLowerCase().slice(1); */
     });
   });
 };
