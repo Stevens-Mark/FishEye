@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
@@ -42,7 +43,7 @@ const SetFilters = (photographersMedia) => {
       }
     }
   };
-  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE FOR TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE TO DISPLAY PHOTOS BASE ON TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
       the one we care about? */
@@ -55,6 +56,16 @@ const SetFilters = (photographersMedia) => {
     DisplayMediaByTagSelected(tagSelected);
   });
 
+  // EVENT LISTENER TO DISPLAY PHOTOS BASE ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
+  document.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      if (!event.target.matches('.tags')) {
+        return;
+      }
+      const tagSelected = event.target.textContent.toLowerCase().slice(1);
+      DisplayMediaByTagSelected(tagSelected);
+    }
+  });
   // WHEN USER MAKES A CHOICE IN DROPDOWN MENU
   const listbox = document.querySelector('[role="listbox"]');
   const allOptionChoices = [...listbox.children]; /* sets array of all <li> elements */

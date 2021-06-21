@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
@@ -37,7 +38,7 @@ const CreatePage = (photographers) => {
     /* map & join etc solution found in sources folder */
   });
 
-  // EVENT LISTENER ON FULL MAIN PAGE FOR TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL MAIN PAGE TO DISPLAY THE PHOTOGRAPHERS BASED ON TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
     the one we care about? */
@@ -49,7 +50,7 @@ const CreatePage = (photographers) => {
     DisplayPhotographerByTagSelected(tagSelected, photographers);
   });
 
-  // EVENT LISTENER FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
+  // EVENT LISTENER TO DISPLAY THE PHOTOGRAPHERS BASED ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
       if (!event.target.matches('.tags')) {

@@ -61,7 +61,7 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   photographersMedia.forEach((media) => {
     if (media.video) { /* if a video object return a video template */
       photographshtml
-      += `<article class="artwork__card">
+      += `<article tabindex="0" class="artwork__card">
       <video controls width="250" class="artwork__image"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
       </video>
             <div class="artwork__details d-flex" >
@@ -71,11 +71,11 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
         </article>`;
     } else { /* if an image object return an image template */
       photographshtml
-      += `<article class="artwork__card">
+      += `<article tabindex="0" class="artwork__card">
           <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
           <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<i class="artwork__heart fas fa-heart"></i></span>
+            <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart fas fa-heart"></i></span>
           </div>
         </article>`;
     }
