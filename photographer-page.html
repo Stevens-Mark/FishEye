@@ -15,20 +15,20 @@
   </header>		
    
   <main id="main" aria-hidden="false" class="single-photographer-container">
-    <article aria-label="photographer profile details" class="person-profile">
+    <aside aria-label="photographer profile details" class="person-profile">
         <div class="person-profile__details"></div>
              <!-- JS Place to put Photographer profile details-->
         <button tabindex="0" class="contactBtn">Contactez-moi</button>
         <div class="person-profile__portraitPlaceholder"></div>
              <!--JS Place to put Photographer profile photo-->
-    </article> 
+    </aside> 
             
       <div class="dropdown">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
           <div class="dropdown__selection d-flex">
-              <div id="dropdown__title" class="dropdown__title">Triez-par</div>
+              <div id="dropdowntitle" class="dropdown__title">Triez-par</div>
               <button tabIndex='0' id="dropdownBtn" aria-haspopup="listbox" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
               </button>
-              <ul role="listbox" aria-activedescendant="Popularity" aria-labelledby="dropdown__title" class="dropdown__orderlist">
+              <ul role="listbox" aria-activedescendant="Popularity"  arialabelledby="dropdowntitle" class="dropdown__orderlist">
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--Selected" aria-selected="true" id="popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" aria-selected="false" id="date">Date</li>
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option" aria-selected="false" id="title">Titre</li>
@@ -90,6 +90,7 @@
     </div>
   		
         <script src="/js/photographerpage.js"></script>
+        <script src="/js/filterElementsByTag.js"></script>
         <script src="/js/trierDropdown.js"></script>
         <script src="/js/modal.js"></script>
 </body>

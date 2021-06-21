@@ -2,7 +2,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
 /* eslint-disable linebreak-style */
-
+// FILTER PHOTOGRAPHER'S PROFILE BY TAG
 const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   const allPhotographers = document.getElementsByTagName('article');
   /* check/loop through each photographer in array JSON */
@@ -22,6 +22,18 @@ const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
       } else {
         allPhotographers[i].style.display = 'none';
       }
+    }
+  }
+};
+
+// FILTER PHOTOGRAPHER'S PICTURES BY TAG
+const DisplayMediaByTagSelected = (selectedTag, photographersMedia) => {
+  const allPhotographs = document.getElementsByTagName('article');
+  for (let i = 0; i < photographersMedia.length; i++) {
+    if (photographersMedia[i].tags[0] === selectedTag) {
+      allPhotographs[i].style.display = 'flex';
+    } else {
+      allPhotographs[i].style.display = 'none';
     }
   }
 };

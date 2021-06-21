@@ -115,6 +115,9 @@
    gap: 0.313rem;
    @media only screen and (min-width: $desktop) { 
       flex-flow: row wrap;
+      justify-content: space-around;
+   }
+   @media only screen and (min-width: $deskPlus) { 
       justify-content: space-between;
    }
    &__card{
@@ -153,5 +156,8 @@
       @media only screen and (min-width: $tablette) { 
          font-size: 1.5rem;      
       }
+   }
+   &__heart{
+      margin-left: 0.5rem;
    }
 }

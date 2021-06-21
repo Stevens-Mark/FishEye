@@ -2,7 +2,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
 
-/* Fetch the photographer data from the Json file */
+// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
+
 fetch('./public/data.json')
   .then((response) => response.json())
   .then((data) => {
@@ -12,7 +13,8 @@ fetch('./public/data.json')
   })
   .catch((error) => console.error(error));
 
-/* Dynamically add all the photographers to the main page */
+// DYNAMICALLY ADD ALL THE PHOTOGRAPHERS TO THE MAIN PAGE
+
 const CreatePage = (photographers) => {
   /* declare a place to put the photographers in the dom */
   const photographerElement = document.querySelector('#main');
@@ -34,18 +36,19 @@ const CreatePage = (photographers) => {
     photographerElement.innerHTML = photographerhtml;
     /* map & join etc solution found in sources folder */
   });
+
   // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
     the one we care about? */
     if (!event.target.matches('.tags')) {
-      console.log('fail');
       return;
     }
     // Make sure tag name is lowercase & remove the "#" ready for search*/
     const tagSelected = event.target.textContent.toLowerCase().slice(1);
     DisplayPhotographerByTagSelected(tagSelected, photographers);
   });
+
   // EVENT LISTENER FOR TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {

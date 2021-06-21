@@ -53,7 +53,6 @@ const OptionSelected = (event) => {
   /* Set attributes for assistive technology for dropdown menu */
   const optionChosen = event.target.closest('li');
   console.log(optionChosen.textContent);
-
   if (!optionChosen) return;
 
   /* Sets aria-activedescendant value to option chosen by user */
