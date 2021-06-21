@@ -29,6 +29,7 @@ const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   }
 };
 
+// SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE ETC)
 const SetFilters = (photographersMedia) => {
   // FILTER PHOTOGRAPHER'S PICTURES BY TAG
   const DisplayMediaByTagSelected = (selectedTag) => {
@@ -41,7 +42,7 @@ const SetFilters = (photographersMedia) => {
       }
     }
   };
-  // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE FOR TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
       the one we care about? */
@@ -75,6 +76,7 @@ const SetFilters = (photographersMedia) => {
     /* Now for the chosen option: set aria selected & selected class to highlight chosen choice */
     optionChosen.classList.add('dropdown__orderlist__option--Selected');
     optionChosen.setAttribute('aria-selected', true);
+    /* Call function to sort photos based on users choice in dropdown menu */
     OrderBy(optionChosen.id, photographersMedia);
   };
 
@@ -92,6 +94,21 @@ const SetFilters = (photographersMedia) => {
   });
 };
 
+// ORDER PHOTOS BY USER CHOICE
+const OrderBy = (optionChosen, photographersMedia) => {
+  const items = photographersMedia;
+  // sort by Date
+  if (optionChosen === 'date') {
+    const newDateOrder = items.sort((a, b) => (a.date > b.date ? -1 : 1));
+    CreatePhotograperPageMediaCard(newDateOrder);
+    // sort by Title
+  } else if (optionChosen === 'title') {
+    const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
+    CreatePhotograperPageMediaCard(newTitleOrder);
+  }
+  console.log('popular');
+};
+/*
 const OrderBy = (optionChosen, photographersMedia) => {
   function compareValues(key, order = 'asc') {
     return function innerSort(a, b) {
@@ -117,4 +134,4 @@ const OrderBy = (optionChosen, photographersMedia) => {
     };
   }
   console.log(photographersMedia.sort(compareValues('title', 'asc')));
-};
+}; */

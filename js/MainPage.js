@@ -37,7 +37,7 @@ const CreatePage = (photographers) => {
     /* map & join etc solution found in sources folder */
   });
 
-  // EVENT LISTENER ON FULL PAGE FOR TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL MAIN PAGE FOR TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
     the one we care about? */
