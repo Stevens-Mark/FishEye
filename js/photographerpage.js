@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
@@ -87,9 +88,14 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   const hearts = document.querySelectorAll('.artwork__likes');
   hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
-      console.log(event.target);
-      /* Make sure tag name is lowercase & remove the "#" ready for search
-         const tagSelected = event.target.textContent.toLowerCase().slice(1); */
+      console.log(event.target.textContent);
+      const optionChosen = event.target.closest('span').textContent;
+      console.log(optionChosen);
+      const integer = parseInt(optionChosen, 10);
+      console.log(typeof integer);
+      const newNos = integer + 1;
+      event.target.closest('span').textContent = newNos;
+      console.log(typeof newNos);
     });
   });
 };

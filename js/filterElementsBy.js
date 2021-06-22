@@ -116,6 +116,9 @@ const OrderBy = (optionChosen, photographersMedia) => {
   } else if (optionChosen === 'title') {
     const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
     CreatePhotograperPageMediaCard(newTitleOrder);
+  } else if (optionChosen === 'popularity') {
+    const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
+    CreatePhotograperPageMediaCard(newPopularityOrder);
   }
   console.log('popular');
 };
