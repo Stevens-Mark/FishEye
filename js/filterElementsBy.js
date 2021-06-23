@@ -30,7 +30,8 @@ const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   }
 };
 
-// SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE ETC)
+// SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE, LIKES ETC)
+
 const SetFilters = (photographersMedia) => {
   // FILTER PHOTOGRAPHER'S PICTURES BY TAG
   const DisplayMediaByTagSelected = (selectedTag) => {
@@ -43,7 +44,7 @@ const SetFilters = (photographersMedia) => {
       }
     }
   };
-  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE TO DISPLAY PHOTOS BASE ON TAG FILTER CHOICE (ON CLICK)
+  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE TO DISPLAY PHOTOS BASED ON TAG FILTER CHOICE (ON CLICK)
   document.addEventListener('click', (event) => {
     /* check if function should be invoked: was the selected element (clicked on)
       the one we care about? */
@@ -56,7 +57,7 @@ const SetFilters = (photographersMedia) => {
     DisplayMediaByTagSelected(tagSelected);
   });
 
-  // EVENT LISTENER TO DISPLAY PHOTOS BASE ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
+  // EVENT LISTENER TO DISPLAY PHOTOS BASED ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
   document.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
       if (!event.target.matches('.tags')) {
@@ -105,7 +106,7 @@ const SetFilters = (photographersMedia) => {
   });
 };
 
-// ORDER PHOTOS BY USER CHOICE
+// ORDER PHOTOS BY THE OPTION CHOSEN BY USER
 const OrderBy = (optionChosen, photographersMedia) => {
   const items = photographersMedia;
   // sort by Date
@@ -116,11 +117,11 @@ const OrderBy = (optionChosen, photographersMedia) => {
   } else if (optionChosen === 'title') {
     const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
     CreatePhotograperPageMediaCard(newTitleOrder);
+    // sort by likes
   } else if (optionChosen === 'popularity') {
     const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
     CreatePhotograperPageMediaCard(newPopularityOrder);
   }
-  console.log('popular');
 };
 /*
 const OrderBy = (optionChosen, photographersMedia) => {

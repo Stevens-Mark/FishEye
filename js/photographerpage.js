@@ -31,7 +31,7 @@ fetch('./public/data.json')
   })
   .catch((error) => console.error(error));
 
-// DYNAMICALLY ADD THE PHOTOGRAPHER'S PROFILE TO THIER PAGE
+// DYNAMICALLY ADD THE PHOTOGRAPHER'S PROFILE TO THEIR PAGE
 
 const CreatePhotograperPageProfile = (individual) => {
 /* declare a place to put the photographer profile & photo in the DOM */
@@ -56,6 +56,7 @@ const CreatePhotograperPageProfile = (individual) => {
 };
 
 // DYNAMICALLY ADD THE PHOTOGRAPHER'S PHOTOGRAPHS TO THEIR PAGE (FACTORY FUNCTION)
+
 const CreatePhotograperPageMediaCard = (photographersMedia) => {
   const photoartworkElement = document.querySelector('#photographer-media');
   let photographshtml = '';
@@ -85,16 +86,24 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
     }
     photoartworkElement.innerHTML = photographshtml;
   });
+  // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
   SetFilters(photographersMedia);
 
   // EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
   const hearts = document.querySelectorAll('.artwork__heart');
+  let likeClickedAlready = false;
   hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
       const likeValue = event.target.previousSibling.textContent;
-      const newLikeValue = parseInt(likeValue, 10) + 1;
-      console.log(newLikeValue);
-      event.target.previousSibling.textContent = newLikeValue;
+      if (!likeClickedAlready) {
+        const newLikeValue = parseInt(likeValue, 10) + 1;
+        event.target.previousSibling.textContent = newLikeValue;
+        likeClickedAlready = true;
+      } else {
+        const newLikeValue = parseInt(likeValue, 10) - 1;
+        event.target.previousSibling.textContent = newLikeValue;
+        likeClickedAlready = false;
+      }
     });
   });
 };
