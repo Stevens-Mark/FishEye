@@ -77,10 +77,7 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
           <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
           <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
-            <div class="artwork__pop>
-            <span class="artwork__likes">${media.likes}</span>
-            <i tabindex="0" class="artwork__heart fas fa-heart"></i>
-            <div>
+            <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart fas fa-heart"></i></span>
           </div>
         </article>`;
     }
@@ -94,15 +91,18 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   let likeClickedAlready = false;
   hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
+      console.log(event.target);
       const likeValue = event.target.previousSibling.textContent;
       if (!likeClickedAlready) {
         const newLikeValue = parseInt(likeValue, 10) + 1;
         event.target.previousSibling.textContent = newLikeValue;
         likeClickedAlready = true;
+        event.target.setAttribute('aria-selected', true);
       } else {
         const newLikeValue = parseInt(likeValue, 10) - 1;
         event.target.previousSibling.textContent = newLikeValue;
         likeClickedAlready = false;
+        event.target.setAttribute('aria-selected', false);
       }
     });
   });
