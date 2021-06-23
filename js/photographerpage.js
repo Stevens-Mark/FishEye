@@ -76,7 +76,10 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
           <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
           <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart fas fa-heart"></i></span>
+            <div class="artwork__pop>
+            <span class="artwork__likes">${media.likes}</span>
+            <i tabindex="0" class="artwork__heart fas fa-heart"></i>
+            <div>
           </div>
         </article>`;
     }
@@ -85,17 +88,13 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   SetFilters(photographersMedia);
 
   // EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
-  const hearts = document.querySelectorAll('.artwork__likes');
+  const hearts = document.querySelectorAll('.artwork__heart');
   hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
-      console.log(event.target.textContent);
-      const optionChosen = event.target.closest('span').textContent;
-      console.log(optionChosen);
-      const integer = parseInt(optionChosen, 10);
-      console.log(typeof integer);
-      const newNos = integer + 1;
-      event.target.closest('span').textContent = newNos;
-      console.log(typeof newNos);
+      const likeValue = event.target.previousSibling.textContent;
+      const newLikeValue = parseInt(likeValue, 10) + 1;
+      console.log(newLikeValue);
+      event.target.previousSibling.textContent = newLikeValue;
     });
   });
 };
