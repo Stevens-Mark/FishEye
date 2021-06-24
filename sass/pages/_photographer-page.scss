@@ -169,8 +169,9 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      position: absolute;
-      right: 36px;
+      position: fixed;
+      bottom: 0px;
+      left: 73%;
       height: 76px;
       width: 376px;
       border-radius: 5px 5px 0px;

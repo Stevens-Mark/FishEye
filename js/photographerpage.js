@@ -34,6 +34,7 @@ const CreatePhotograperPageProfile = (individual) => {
   const photographerProfile = document.querySelector('.person-profile__details');
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');
+  const pricePerDay = document.getElementById('pricePerDay');
   document.title = `${individual[0].name}`;
   console.log(individual[0].price);
   /* Using DESTRUCTERING get the photographer's tag array data */
@@ -47,6 +48,8 @@ const CreatePhotograperPageProfile = (individual) => {
 
   photographerPhoto.innerHTML = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
   /* put photographer name in the modal */
+  pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
+
   contactName.textContent = individual[0].name;
 };
 
