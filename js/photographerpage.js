@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-const-assign */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -85,25 +87,33 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   });
   // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
   SetFilters(photographersMedia);
+  // ADD LIKE ADJUSTMENT FEATURE
+  Likes(photographersMedia);
 
-  // EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
+  /* EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
+  let totalLikes = photographersMedia.map((item) => item.likes).reduce((accumulator, currentValue) => accumulator + currentValue);
+  console.log(totalLikes);
   const hearts = document.querySelectorAll('.artwork__heart');
-  let likeClickedAlready = false;
+
   hearts.forEach((heart) => {
+    let likeClickedAlready = false;
     heart.addEventListener('click', (event) => {
-      console.log(event.target);
       const likeValue = event.target.previousSibling.textContent;
       if (!likeClickedAlready) {
         const newLikeValue = parseInt(likeValue, 10) + 1;
         event.target.previousSibling.textContent = newLikeValue;
         likeClickedAlready = true;
+        totalLikes++;
+        console.log(totalLikes);
         event.target.setAttribute('aria-selected', true);
       } else {
         const newLikeValue = parseInt(likeValue, 10) - 1;
         event.target.previousSibling.textContent = newLikeValue;
         likeClickedAlready = false;
+        totalLikes--;
+        console.log(totalLikes);
         event.target.setAttribute('aria-selected', false);
       }
     });
-  });
+  }); */
 };
