@@ -161,3 +161,22 @@
       margin-left: 0.5rem;
    }
 }
+
+/* styling for price & total likes at bottom right of page */
+#TotalLikesAndPrice {
+   display: none;
+       @media only screen and (min-width: $desktop) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      right: 36px;
+      height: 76px;
+      width: 376px;
+      border-radius: 5px 5px 0px;
+      background: $secondaryBackground;
+      color: black;
+      font-size: 24px;
+      font-weight: 500;
+      }
+}

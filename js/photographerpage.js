@@ -1,13 +1,7 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-const-assign */
-/* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-/* eslint-disable eqeqeq */
-/* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
-
+/* eslint-disable eqeqeq */
 /* retreive the photographer id from the query string in the url sent */
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -41,18 +35,17 @@ const CreatePhotograperPageProfile = (individual) => {
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');
   document.title = `${individual[0].name}`;
+  console.log(individual[0].price);
   /* Using DESTRUCTERING get the photographer's tag array data */
   const { tags } = individual[0];
 
-  const photographerhtml = `
+  photographerProfile.innerHTML = `
       <h1 class="person-profile__name">${individual[0].name}</h1>
       <h2 class="person-profile__address">${individual[0].city}, ${individual[0].country}</h2>
       <h3 class="person-profile__tagline">${individual[0].tagline}</h3>
       <ul class="person-profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul>`;
-  photographerProfile.innerHTML = photographerhtml;
 
-  const photographerPhotohtml = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
-  photographerPhoto.innerHTML = photographerPhotohtml;
+  photographerPhoto.innerHTML = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
   /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
 };
@@ -89,31 +82,4 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   SetFilters(photographersMedia);
   // ADD LIKE ADJUSTMENT FEATURE
   Likes(photographersMedia);
-
-  /* EVENT LISTENER ON HEARTS FOR LIKE CHOICE (ON CLICK)
-  let totalLikes = photographersMedia.map((item) => item.likes).reduce((accumulator, currentValue) => accumulator + currentValue);
-  console.log(totalLikes);
-  const hearts = document.querySelectorAll('.artwork__heart');
-
-  hearts.forEach((heart) => {
-    let likeClickedAlready = false;
-    heart.addEventListener('click', (event) => {
-      const likeValue = event.target.previousSibling.textContent;
-      if (!likeClickedAlready) {
-        const newLikeValue = parseInt(likeValue, 10) + 1;
-        event.target.previousSibling.textContent = newLikeValue;
-        likeClickedAlready = true;
-        totalLikes++;
-        console.log(totalLikes);
-        event.target.setAttribute('aria-selected', true);
-      } else {
-        const newLikeValue = parseInt(likeValue, 10) - 1;
-        event.target.previousSibling.textContent = newLikeValue;
-        likeClickedAlready = false;
-        totalLikes--;
-        console.log(totalLikes);
-        event.target.setAttribute('aria-selected', false);
-      }
-    });
-  }); */
 };
