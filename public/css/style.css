@@ -663,7 +663,11 @@ ul {
 .artwork {
   flex-flow: row wrap;
   margin-top: 2.5rem;
-  gap: 0.313rem;
+  gap: 10px;
+  /*0.313rem*/
+  /* @media only screen and (min-width: $mobileL) { 
+      margin: 25px;
+   }*/
 }
 @media only screen and (min-width: 1024px) {
   .artwork {
@@ -724,6 +728,8 @@ ul {
 }
 .artwork__heart {
   margin-left: 0.5rem;
+  cursor: pointer;
+  height: 1.25rem;
 }
 
 /* styling for price & total likes at bottom right of page */
@@ -737,13 +743,13 @@ ul {
     align-items: center;
     position: fixed;
     bottom: 0px;
-    left: 73%;
-    height: 76px;
-    width: 376px;
-    border-radius: 5px 5px 0px;
+    left: 63%;
+    height: 4.75rem;
+    width: 23.5rem;
+    border-radius: 0.313rem 0.313rem 0rem;
     background: #DB8876;
     color: black;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
   }
 }
