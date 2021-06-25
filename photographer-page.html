@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <title>Fish Eye</title>
     <meta name="author" content="Mark Stevens">
     <meta name="description" content="">
     <!--used to mobile-optimize the site: set webpage to size of device: scale 1 means no need to zoom in-->
@@ -28,7 +29,7 @@
               <div id="dropdowntitle" class="dropdown__title">Triez-par</div>
               <button tabIndex='0' id="dropdownBtn" aria-haspopup="listbox" aria-expanded="false" class="dropdown__button"><span class="choice">Popularité</span><span aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></span>
               </button>
-              <ul role="listbox" aria-activedescendant="Popularity"  arialabelledby="dropdowntitle" class="dropdown__orderlist">
+              <ul role="listbox" aria-activedescendant="Popularity"  aria-label="Order photographs by" class="dropdown__orderlist">
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--Selected" aria-selected="true" id="popularity">Popularité<span aria-hidden="true" class="fas fa-chevron-up dropdown__icons"></span></li>
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option dropdown__orderlist__option--border" aria-selected="false" id="date">Date</li>
                   <li role="option" tabIndex='0' class="dropdown__orderlist__option" aria-selected="false" id="title">Titre</li>
@@ -45,13 +46,13 @@
 
   </main>     
                               <!--contact me modal-->
-      <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modal__title"> 
+      <div class="modal" aria-hidden="true" role="dialog"> 
           <div class="modal__content"> 
               <div class="modal__heading d-flex">
                   <h1 class="modal__title">Contactez-moi</h1>
                     <a class="modal__close" aria-label="link to close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="Close Icon" role="link" aria-label="link to close contact form"></a>
               </div> 
-              <h2 class="modal__photographerName"></h2>
+              <h2 class="modal__photographerName">Photographer Name</h2>
             <div class="modal__body">
               <form id="form"
                 name="contactMe" action="photographer-page.html"  method="post" onsubmit="return Validate(event);">
