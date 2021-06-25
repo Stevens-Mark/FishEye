@@ -1,7 +1,5 @@
-/* eslint-disable max-len */
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
-/* eslint-disable no-use-before-define */
+/* eslint-disable no-console *//* eslint-disable no-undef */
+/* eslint-disable max-len *//* eslint-disable no-use-before-define */
 
 // FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
 

@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 /* check to see if user scrolls: if so make button either visible or not */
 let scrollPos = 0;
 const contentButton = document.querySelector('.pass-to-maincontent');

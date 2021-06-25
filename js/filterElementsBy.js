@@ -1,10 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable no-prototype-builtins */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-console */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef *//* eslint-disable no-use-before-define */
+/* eslint-disable max-len *//* eslint-disable no-plusplus */
+/* eslint-disable no-unused-vars *//* eslint-disable no-multiple-empty-lines */
 
 // FILTER PHOTOGRAPHER'S PROFILE BY TAG
 const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
@@ -53,7 +49,6 @@ const SetFilters = (photographersMedia) => {
     }
     // Make sure tag name is lowercase & remove the "#" ready for search*/
     const tagSelected = event.target.textContent.toLowerCase().slice(1);
-    console.log(tagSelected);
     DisplayMediaByTagSelected(tagSelected);
   });
 
@@ -117,36 +112,9 @@ const OrderBy = (optionChosen, photographersMedia) => {
   } else if (optionChosen === 'title') {
     const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
     CreatePhotograperPageMediaCard(newTitleOrder);
-    // sort by likes
+    // sort by Likes
   } else if (optionChosen === 'popularity') {
     const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
     CreatePhotograperPageMediaCard(newPopularityOrder);
   }
 };
-/*
-const OrderBy = (optionChosen, photographersMedia) => {
-  function compareValues(key, order = 'asc') {
-    return function innerSort(a, b) {
-      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-      // property doesn't exist on either object
-        return 0;
-      }
-
-      const varA = (typeof a[key] === 'string')
-        ? a[key].toUpperCase() : a[key];
-      const varB = (typeof b[key] === 'string')
-        ? b[key].toUpperCase() : b[key];
-
-      let comparison = 0;
-      if (varA > varB) {
-        comparison = 1;
-      } else if (varA < varB) {
-        comparison = -1;
-      }
-      return (
-        (order === 'desc') ? (comparison * -1) : comparison
-      );
-    };
-  }
-  console.log(photographersMedia.sort(compareValues('title', 'asc')));
-}; */

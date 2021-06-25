@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable no-use-before-define */
-/* eslint-disable eqeqeq */
-/* retreive the photographer id from the query string in the url sent */
+/* eslint-disable no-console *//* eslint-disable no-undef */
+/* eslint-disable no-use-before-define *//* eslint-disable eqeqeq */
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographerId = urlParams.get('id');
@@ -36,7 +34,6 @@ const CreatePhotograperPageProfile = (individual) => {
   const contactName = document.querySelector('.modal__photographerName');
   const pricePerDay = document.getElementById('pricePerDay');
   document.title = `${individual[0].name}`;
-  console.log(individual[0].price);
   /* Using DESTRUCTERING get the photographer's tag array data */
   const { tags } = individual[0];
 
@@ -47,9 +44,9 @@ const CreatePhotograperPageProfile = (individual) => {
       <ul class="person-profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul>`;
 
   photographerPhoto.innerHTML = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
-  /* put photographer name in the modal */
+  /* add price per day to bottom right of page */
   pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
-
+  /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
 };
 
@@ -66,7 +63,7 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
       </video>
             <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<img class="artwork__heart" tabindex="0" src="/public/images/icons/heartsolid.svg" alt=""></span>
+            <span class="artwork__likes">${media.likes}<img class="artwork__heart" tabindex="0" src="/public/images/icons/heartsolid.svg" alt="Like Button"></span>
           </div>
         </article>`;
     } else { /* if an image object return an image template */
@@ -75,7 +72,7 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
           <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
           <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<img class="artwork__heart" tabindex="0" src="/public/images/icons/heartsolid.svg" alt=""></span>
+            <span class="artwork__likes">${media.likes}<img class="artwork__heart" tabindex="0" src="/public/images/icons/heartsolid.svg" alt="Like Button"></span>
           </div>
         </article>`;
     }

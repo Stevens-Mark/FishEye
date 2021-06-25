@@ -1,7 +1,6 @@
-/* eslint-disable no-lonely-if */
-/* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-useless-escape */
+/* eslint-disable no-lonely-if *//* eslint-disable max-len */
+/* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
+
 // DOM Elements
 const mainWrapper = document.getElementById('main');
 const modalbg = document.querySelector('.modal');
