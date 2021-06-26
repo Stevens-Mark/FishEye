@@ -418,23 +418,26 @@ ul {
 
 /*background to cover whole page when modal appears*/
 .lightbox-modal {
-  /*display: none;*/
-  flex-direction: column;
+  display: none;
   justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(192, 192, 192, 0.8);
-  /*overflow: hidden;*/
+  background-color: #fff;
+  overflow: hidden;
+}
+.lightbox-modal__column {
+  flex-direction: column;
+  display: flex;
 }
 .lightbox-modal__content {
-  align-items: flex-start;
   /*  margin: 1% auto;*/
-  margin: unset;
-  margin-left: 15px;
+  margin: 5% auto;
+  margin-left: 0.938rem;
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__content {
@@ -444,12 +447,12 @@ ul {
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__content {
-    margin-left: 50px;
+    margin-left: 3.125rem;
   }
 }
 .lightbox-modal__controls {
   color: transparent;
-  height: 16px;
+  height: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__controls {
@@ -458,56 +461,45 @@ ul {
 }
 @media only screen and (min-width: 1024px) {
   .lightbox-modal__controls {
-    height: 50px;
+    height: 2.5rem;
   }
 }
 .lightbox-modal__controls--close {
   position: relative;
-  right: 19px;
-  top: 0px;
+  right: 0.563rem;
+  top: 0rem;
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__controls--close {
-    right: 30px;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .lightbox-modal__controls--close {
-    right: 46px;
+    right: 1.188rem;
   }
 }
 .lightbox-modal__media {
-  width: 100%;
-  max-height: 500px;
+  max-width: 100%;
+  max-height: 400px;
   object-fit: contain;
+  border-radius: 0.313rem;
+}
+@media only screen and (min-width: 375px) {
+  .lightbox-modal__media {
+    max-height: 550px;
+    max-width: 100%;
+  }
 }
 @media only screen and (min-width: 1100px) {
   .lightbox-modal__media {
-    max-height: 900px;
+    max-height: 825px;
   }
 }
 .lightbox-modal__title {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   text-align: left;
   margin: unset;
-  margin-left: 10%;
 }
 @media only screen and (min-width: 600px) {
   .lightbox-modal__title {
-    font-size: 24px;
-    margin-left: 6%;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .lightbox-modal__title {
-    margin-left: 13%;
-  }
-}
-@media only screen and (min-width: 1100px) {
-  .lightbox-modal__title {
-    font-size: 24px;
-    margin-left: 90px;
+    font-size: 1.5rem;
   }
 }
 
