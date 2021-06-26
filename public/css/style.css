@@ -416,6 +416,107 @@ ul {
   text-align: left;
 }
 
+/*background to cover whole page when modal appears*/
+.lightbox-modal {
+  /*display: none;*/
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(192, 192, 192, 0.8);
+  /*overflow: hidden;*/
+}
+.lightbox-modal__content {
+  align-items: flex-start;
+  /*  margin: 1% auto;*/
+  margin: unset;
+  margin-left: 15px;
+}
+@media only screen and (min-width: 768px) {
+  .lightbox-modal__content {
+    /* max-width: 85%; */
+    margin-left: 1.875rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .lightbox-modal__content {
+    margin-left: 50px;
+  }
+}
+.lightbox-modal__controls {
+  color: transparent;
+  height: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .lightbox-modal__controls {
+    height: 1.875rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .lightbox-modal__controls {
+    height: 50px;
+  }
+}
+.lightbox-modal__controls--close {
+  position: relative;
+  right: 19px;
+  top: 0px;
+}
+@media only screen and (min-width: 768px) {
+  .lightbox-modal__controls--close {
+    right: 30px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .lightbox-modal__controls--close {
+    right: 46px;
+  }
+}
+.lightbox-modal__media {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+@media only screen and (min-width: 1100px) {
+  .lightbox-modal__media {
+    max-height: 900px;
+  }
+}
+.lightbox-modal__title {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  margin: unset;
+  margin-left: 10%;
+}
+@media only screen and (min-width: 600px) {
+  .lightbox-modal__title {
+    font-size: 24px;
+    margin-left: 6%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .lightbox-modal__title {
+    margin-left: 13%;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .lightbox-modal__title {
+    font-size: 24px;
+    margin-left: 90px;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .header {
   display: block;
   padding: 0.5rem;

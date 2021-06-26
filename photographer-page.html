@@ -50,7 +50,7 @@
           <div class="modal__content"> 
               <div class="modal__heading d-flex">
                   <h1 class="modal__title">Contactez-moi</h1>
-                    <a class="modal__close" aria-label="link to close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="Close Icon" role="link" aria-label="link to close contact form"></a>
+                    <a class="modal__close" role="link" aria-label="link to close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="Close Icon link to close contact form"></a>
               </div> 
               <h2 class="modal__photographerName">Photographer Name</h2>
             <div class="modal__body">
@@ -87,13 +87,20 @@
           </div>
     </div>
 
-    <div class="modal" aria-hidden="false" role="dialog"> 
-      <div class="modal__content"> 
+    <div class="lightbox-modal d-flex" aria-hidden="true" role="dialog">  
+      <div class="lightbox-modal__content d-flex"> 
+          <div class="d-flex">
+            <button type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-left-solid.svg" alt="Left arrow" aria-label="Go to previous picture"></button>
 
-        
-      </div>
+              <span><img class="lightbox-modal__media" src="/public/images/photography/82/82origsize/Event_Sparklers.jpg" alt="test"></span>
+              
+            <button type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-right-solid.svg" alt="Right arrow" aria-label="Go to next picture"></button>
+          </div>
+            <a aria-label="link to close contact form" href="#"><img class="lightbox-modal__controls lightbox-modal__controls--close" src="/public/images/icons/primarycolor_x.svg" alt="link to close photograph" role="link" aria-label="link to close enlarged photograph">
+              
+        </div>
+        <h2 class="lightbox-modal__title">Test Title</h2>
     </div>
-  		
         <script src="/js/photographerpage.js"></script>
         <script src="/js/filterElementsBy.js"></script>
         <script src="/js/trierDropdown.js"></script>
