@@ -11,18 +11,18 @@ const lightboxModalbg = document.querySelector('.lightbox-modal');
 const closeLightboxModalBtn = document.querySelectorAll('.lightbox-modal__controls--close');
 
 // launch modal
-function launchLightboxModal() {
+const launchLightboxModal = () => {
   mainWrapper.setAttribute('aria-hidden', 'true');
   lightboxModalbg.setAttribute('aria-hidden', 'false');
   lightboxModalbg.style.display = 'flex';
-}
+};
 
 // close modal Lightbox modal
-function closeLightboxModal() {
+const closeLightboxModal = () => {
   mainWrapper.setAttribute('aria-hidden', 'false');
   lightboxModalbg.setAttribute('aria-hidden', 'true');
   lightboxModalbg.style.display = 'none';
-}
+};
 //  close Lightbox modal event listener
 closeLightboxModalBtn.forEach((btn) => btn.addEventListener('click', closeLightboxModal));
 

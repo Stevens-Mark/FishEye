@@ -786,6 +786,7 @@ button {
   height: 11.875rem;
   object-fit: cover;
   border-radius: 0.313rem;
+  cursor: pointer;
 }
 @media only screen and (min-width: 600px) {
   .artwork__image {
