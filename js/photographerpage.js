@@ -58,8 +58,8 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   photographersMedia.forEach((media) => {
     if (media.video) { /* if a video object return a video template */
       photographshtml
-      += `<article tabindex="0" class="artwork__card">
-      <video controls width="250" class="artwork__image"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
+      += `<article class="artwork__card">
+      <video  id="${media.id}" class="artwork__image" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
       </video>
             <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
@@ -68,8 +68,8 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
         </article>`;
     } else { /* if an image object return an image template */
       photographshtml
-      += `<article tabindex="0" class="artwork__card">
-          <img class="artwork__image" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
+      += `<article  class="artwork__card">
+          <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.title}">
           <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
             <span class="artwork__likes">${media.likes}<img class="artwork__heart" tabindex="0" src="/public/images/icons/heartsolid.svg" alt="Like Button"></span>
@@ -82,4 +82,6 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   SetFilters(photographersMedia);
   // ADD LIKE ADJUSTMENT FEATURE
   Likes(photographersMedia);
+  // ADD LIGHBOX FEATURE
+  lightbox(photographersMedia);
 };

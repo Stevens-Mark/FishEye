@@ -1,8 +1,7 @@
-/* eslint-disable no-undef *//* eslint-disable no-use-before-define */
-/* eslint-disable max-len *//* eslint-disable no-plusplus */
-/* eslint-disable no-unused-vars *//* eslint-disable no-multiple-empty-lines */
-
+/* eslint-disable max-len *//* eslint-disable no-undef */
+/* eslint-disable no-plusplus *//* eslint-disable no-unused-vars */
 // FILTER PHOTOGRAPHER'S PROFILE BY TAG
+
 const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   const allPhotographers = document.getElementsByTagName('article');
   /* check/loop through each photographer in array JSON */
@@ -23,6 +22,24 @@ const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
         allPhotographers[i].style.display = 'none';
       }
     }
+  }
+};
+
+// ORDER PHOTOS BY THE OPTION CHOSEN BY USER
+const OrderBy = (optionChosen, photographersMedia) => {
+  const items = photographersMedia;
+  // sort by Date
+  if (optionChosen === 'date') {
+    const newDateOrder = items.sort((a, b) => (a.date > b.date ? -1 : 1));
+    CreatePhotograperPageMediaCard(newDateOrder);
+    // sort by Title
+  } else if (optionChosen === 'title') {
+    const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
+    CreatePhotograperPageMediaCard(newTitleOrder);
+    // sort by Likes
+  } else if (optionChosen === 'popularity') {
+    const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
+    CreatePhotograperPageMediaCard(newPopularityOrder);
   }
 };
 
@@ -99,22 +116,4 @@ const SetFilters = (photographersMedia) => {
       CloseDropDownKeyboard();
     }
   });
-};
-
-// ORDER PHOTOS BY THE OPTION CHOSEN BY USER
-const OrderBy = (optionChosen, photographersMedia) => {
-  const items = photographersMedia;
-  // sort by Date
-  if (optionChosen === 'date') {
-    const newDateOrder = items.sort((a, b) => (a.date > b.date ? -1 : 1));
-    CreatePhotograperPageMediaCard(newDateOrder);
-    // sort by Title
-  } else if (optionChosen === 'title') {
-    const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
-    CreatePhotograperPageMediaCard(newTitleOrder);
-    // sort by Likes
-  } else if (optionChosen === 'popularity') {
-    const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
-    CreatePhotograperPageMediaCard(newPopularityOrder);
-  }
 };
