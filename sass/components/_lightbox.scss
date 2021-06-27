@@ -1,5 +1,6 @@
 /*background to cover whole page when modal appears*/
 .lightbox-modal {
+   display: flex;
    display: none;
    justify-content: center;
    align-items: center;

@@ -46,14 +46,14 @@ function launchModal() {
   document.getElementById('form').style.display = 'block';
 }
 
-// launch modal event
+// launch modal event listener
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
 
-//  close modal event
+//  close modal event listener
 closeModalBtn.forEach((btn) => btn.addEventListener('click', closeModal));
 
-// close modal on pressing the escape key
-document.querySelector('.modal').addEventListener('keydown', (event) => {
+// close modal on pressing the escape key event listener
+modalbg.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeModal();
   }

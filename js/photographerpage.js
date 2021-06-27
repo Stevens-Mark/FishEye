@@ -82,6 +82,6 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   SetFilters(photographersMedia);
   // ADD LIKE ADJUSTMENT FEATURE
   Likes(photographersMedia);
-  // ADD LIGHBOX FEATURE
+  // ADD LIGHTBOX FEATURE
   lightbox(photographersMedia);
 };
