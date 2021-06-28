@@ -6,11 +6,46 @@
 const lightboxModalbg = document.querySelector('.lightbox-modal');
 const closeLightboxModalBtn = document.querySelectorAll('.lightbox-modal__controls--close');
 
+// FIX FOCUS IN LIGHTBOX MODAL FOR KEYBOARD USERS
+const LightBoxModalTrap = () => {
+  /* add all the elements inside modal which we want to make focusable */
+  const lightboxFocusableElements = 'button, [href], [tabindex]:not([tabindex="-1"])';
+  /* select the modal by it's class id */
+  const lightboxModal = document.querySelector('.lightbox-modal');
+  /* get first element to be focused inside modal */
+  const firstLightboxFocusableElement = lightboxModal.querySelectorAll(lightboxFocusableElements)[0];
+  const lightboxFocusableContent = lightboxModal.querySelectorAll(lightboxFocusableElements);
+  /* get last element to be focused inside modal */
+  const lastLightboxFocusableElement = lightboxFocusableContent[lightboxFocusableContent.length - 1];
+
+  document.addEventListener('keydown', (event) => {
+    const { key } = event;
+    if (key !== 'Tab' || key === 9) {
+      return;
+    }
+    if (event.shiftKey) { // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstLightboxFocusableElement) {
+        lastLightboxFocusableElement.focus(); // add focus for the last focusable element
+        event.preventDefault();
+      }
+    } else { // if tab key is pressed
+      /* if focused has reached to last focusable element then focus first focusable element
+    after pressing tab */
+      if (document.activeElement === lastLightboxFocusableElement) {
+        /* add focus for the first focusable element */
+        firstLightboxFocusableElement.focus();
+        event.preventDefault();
+      }
+    }
+  });
+};
+
 // close modal Lightbox modal
 const closeLightboxModal = () => {
   mainWrapper.setAttribute('aria-hidden', 'false');
   lightboxModalbg.setAttribute('aria-hidden', 'true');
   lightboxModalbg.style.display = 'none';
+  document.querySelector('#dropdownBtn').focus();
 };
 //  close Lightbox modal event listener
 closeLightboxModalBtn.forEach((btn) => btn.addEventListener('click', closeLightboxModal));
@@ -27,16 +62,17 @@ const launchLightboxModal = (photographersMedia, i) => {
   mainWrapper.setAttribute('aria-hidden', 'true');
   lightboxModalbg.setAttribute('aria-hidden', 'false');
   lightboxModalbg.style.display = 'flex';
-  document.getElementById('next').focus();
+  document.getElementById('close').focus();
+  LightBoxModalTrap();
 
   const lightboxElement = document.querySelector('#placeHolder');
   let lightboxhtml = '';
   if (photographersMedia[i].video) { /* if a video object return a video template */
-    lightboxhtml = `<video width="100%" controls class="lightbox-modal__media"><source type="video/mp4" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].video}">Sorry, your browser doesn't support embedded videos.</video>
-            <h2 class="lightbox-modal__title">${photographersMedia[i].title}</h2>`;
+    lightboxhtml = `<video width="100%" controls class="lightbox-modal__media"  tabindex="0" aria-label="${photographersMedia[i].title}"><source type="video/mp4" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].video}">Sorry, your browser doesn't support embedded videos.</video>
+    <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
   } else if (photographersMedia[i].image) { /* if an image object return an image template */
-    lightboxhtml = `<img class="lightbox-modal__media" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].image}" alt="${photographersMedia[i].title}">
-      <h2 class="lightbox-modal__title">${photographersMedia[i].title}</h2>`;
+    lightboxhtml = `<img class="lightbox-modal__media" tabindex="0" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].image}" alt="${photographersMedia[i].title}">
+    <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
   }
   lightboxElement.innerHTML = lightboxhtml;
 };
@@ -64,35 +100,3 @@ const lightbox = (photographersMedia) => {
     }
   });
 };
-
-// FIX FOCUS IN LIGHTBOX MODAL FOR KEYBOARD USERS
-/* add all the elements inside modal which we want to make focusable */
-const lightboxfocusableElements = 'button, [href], [tabindex]:not([tabindex="-1"])';
-/* select the modal by it's class id */
-const lightboxmodal = document.querySelector('.lightbox-modal');
-/* get first element to be focused inside modal */
-const firstlightboxFocusableElement = lightboxmodal.querySelectorAll(lightboxfocusableElements)[0];
-const lightboxfocusableContent = lightboxmodal.querySelectorAll(lightboxfocusableElements);
-/* get last element to be focused inside modal */
-const lastlightboxFocusableElement = lightboxfocusableContent[lightboxfocusableContent.length - 1];
-
-document.addEventListener('keydown', (event) => {
-  const { key } = event;
-  if (key !== 'Tab' || key === 9) {
-    return;
-  }
-  if (event.shiftKey) { // if shift key pressed for shift + tab combination
-    if (document.activeElement === firstlightboxFocusableElement) {
-      lastlightboxFocusableElement.focus(); // add focus for the last focusable element
-      event.preventDefault();
-    }
-  } else { // if tab key is pressed
-  /* if focused has reached to last focusable element then focus first focusable element
-  after pressing tab */
-    if (document.activeElement === lastlightboxFocusableElement) {
-      /* add focus for the first focusable element */
-      firstlightboxFocusableElement.focus();
-      event.preventDefault();
-    }
-  }
-});

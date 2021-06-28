@@ -1,5 +1,5 @@
-/* eslint-disable no-lonely-if *//* eslint-disable max-len */
-/* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
+/* eslint-disable max-len *//* eslint-disable no-unused-vars */
+/* eslint-disable no-lonely-if *//* eslint-disable no-useless-escape */
 
 // DOM Elements
 const mainWrapper = document.getElementById('main');
@@ -23,18 +23,42 @@ const messageError = document.getElementById('messageError');
 const nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z'-]+)*\s?$/; /* /^[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ](?:[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ]|['| |-](?=[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ]))*$/; */
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-// close modal form
-function closeModal() {
-  mainWrapper.setAttribute('aria-hidden', 'false');
-  modalbg.setAttribute('aria-hidden', 'true');
+// FIX FOCUS IN MODAL FOR KEYBOARD USERS
+const ModalTrap = () => {
+  /* add all the elements inside modal which we want to make focusable */
+  const focusableElements = 'button, input, [href], textarea, [tabindex]:not([tabindex="-1"])';
+  /* select the modal by it's class id */
+  const modal = document.querySelector('.modal');
+  /* get first element to be focused inside modal */
+  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+  const focusableContent = modal.querySelectorAll(focusableElements);
+  /* get last element to be focused inside modal */
+  const lastFocusableElement = focusableContent[focusableContent.length - 1];
 
-  modalbg.style.display = 'none';
-  document.querySelector('.contactBtn').focus();
-  /* return to contactez-moi button when modal closed with "ESC" key */
-}
+  document.addEventListener('keydown', (event) => {
+    const { key } = event;
+    if (key !== 'Tab' || key === 9) {
+      return;
+    }
+    if (event.shiftKey) { // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+        event.preventDefault();
+      }
+    } else { // if tab key is pressed
+      /* if focused has reached to last focusable element then focus first focusable element
+    after pressing tab */
+      if (document.activeElement === lastFocusableElement) {
+        /* add focus for the first focusable element */
+        firstFocusableElement.focus();
+        event.preventDefault();
+      }
+    }
+  });
+};
 
 // reset error messages & launch modal form
-function launchModal() {
+const launchModal = () => {
   mainWrapper.setAttribute('aria-hidden', 'true');
   modalbg.setAttribute('aria-hidden', 'false');
   firstNameError.textContent = '';
@@ -44,10 +68,20 @@ function launchModal() {
   modalbg.style.display = 'block';
   firstName.focus();
   document.getElementById('form').style.display = 'block';
-}
+  ModalTrap();
+};
 
 // launch modal event listener
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
+
+// close modal form
+const closeModal = () => {
+  mainWrapper.setAttribute('aria-hidden', 'false');
+  modalbg.setAttribute('aria-hidden', 'true');
+  modalbg.style.display = 'none';
+  document.querySelector('.contactBtn').focus();
+  /* return to contactez-moi button when modal closed with "ESC" key */
+};
 
 //  close modal event listener
 closeModalBtn.forEach((btn) => btn.addEventListener('click', closeModal));
@@ -60,7 +94,7 @@ modalbg.addEventListener('keydown', (event) => {
 });
 
 // CHECK FIRST & LAST NAMES ARE VALID FUNCTION
-function checkString(string, value) {
+const checkString = (string, value) => {
   const name = value;
   if (!nameRegex.test(string.trim()) || string.trim().length < 2) {
     name.textContent = 'Veuillez entrer un minimum de 2 caractères (pas de caractères spéciaux).'; /* Veuillez entrer 2 caractères ou plus pour ce champ. */
@@ -69,7 +103,7 @@ function checkString(string, value) {
     name.textContent = '';
     name.setAttribute('aria-invalid', 'false');
   }
-}
+};
 
 // FIRSTNAME & LASTNAME EVENT LISTENERS
 firstName.addEventListener('blur', ($event) => {
@@ -135,35 +169,3 @@ function Validate(event) {
   document.getElementById('form').reset();
   document.querySelector('.contactBtn').focus();
 }
-
-// FIX FOCUS IN MODAL FOR KEYBOARD USERS
-/* add all the elements inside modal which we want to make focusable */
-const focusableElements = 'button, input, [href], textarea, [tabindex]:not([tabindex="-1"])';
-/* select the modal by it's class id */
-const modal = document.querySelector('.modal');
-/* get first element to be focused inside modal */
-const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
-const focusableContent = modal.querySelectorAll(focusableElements);
-/* get last element to be focused inside modal */
-const lastFocusableElement = focusableContent[focusableContent.length - 1];
-
-document.addEventListener('keydown', (event) => {
-  const { key } = event;
-  if (key !== 'Tab' || key === 9) {
-    return;
-  }
-  if (event.shiftKey) { // if shift key pressed for shift + tab combination
-    if (document.activeElement === firstFocusableElement) {
-      lastFocusableElement.focus(); // add focus for the last focusable element
-      event.preventDefault();
-    }
-  } else { // if tab key is pressed
-  /* if focused has reached to last focusable element then focus first focusable element
-  after pressing tab */
-    if (document.activeElement === lastFocusableElement) {
-      /* add focus for the first focusable element */
-      firstFocusableElement.focus();
-      event.preventDefault();
-    }
-  }
-});

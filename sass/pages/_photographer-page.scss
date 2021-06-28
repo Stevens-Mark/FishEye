@@ -1,10 +1,10 @@
 /*container that holds all the photographer cards*/
 .photographer-header {
-   margin: 1rem 1.125rem 0rem;
+   margin: 1.375rem 0.938rem;
   img{
      height: 1.875rem;
      @media only screen and (min-width: $tablette) {
-      margin: 1rem 1.563rem 0rem;
+     /* margin: 1rem 1.563rem 0rem;*/
       height: 3.125rem;
      }
   }

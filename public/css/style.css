@@ -467,7 +467,7 @@ ul {
 .lightbox-modal__controls--close {
   position: relative;
   right: 0.563rem;
-  top: 0rem;
+  top: 3px;
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__controls--close {
@@ -505,6 +505,8 @@ ul {
 
 button {
   background: none;
+  /*  margin-top: 45%;*/
+  margin-bottom: 20px;
   border: none;
   cursor: pointer;
 }
@@ -625,14 +627,14 @@ button {
 
 /*container that holds all the photographer cards*/
 .photographer-header {
-  margin: 1rem 1.125rem 0rem;
+  margin: 1.375rem 0.938rem;
 }
 .photographer-header img {
   height: 1.875rem;
 }
 @media only screen and (min-width: 768px) {
   .photographer-header img {
-    margin: 1rem 1.563rem 0rem;
+    /* margin: 1rem 1.563rem 0rem;*/
     height: 3.125rem;
   }
 }

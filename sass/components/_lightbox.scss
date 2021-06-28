@@ -41,8 +41,8 @@
      &--close {
          position: relative;
          right: 0.563rem;
-         top: 0rem;
-            @media only screen and (min-width: $tablette) {
+         top: 3px;
+         @media only screen and (min-width: $tablette) {
                right: 1.188rem;
             }
       }
@@ -74,6 +74,8 @@
 
 button {
    background: none;
+    /*  margin-top: 45%;*/
+      margin-bottom: 20px;
    border: none;
    cursor: pointer;
 }
