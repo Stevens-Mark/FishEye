@@ -87,25 +87,26 @@
           </div>
     </div>
                                                       <!--lightBox modal-->
-      <div class="lightbox-modal" aria-hidden="true" role="dialog">  
-          <div class="lightbox-modal__column">
-                <div class="lightbox-modal__content d-flex">
+    <div class="lightbox-modal" aria-hidden="true" role="dialog">  
+        <div class="lightbox-modal__column">
 
-                    <button type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-left-solid.svg" alt="Go to previous picture"></button>
+          <button type="button" id="close" class="lightbox-modal__controls lightbox-modal__controls--close"><img class="lightbox-modal__controls" src="/public/images/icons/primarycolor_x.svg" alt="link to close photograph"></button>
 
-                  <div id="placeHolder" class="lightbox-modal__column">
-                  <!--  <video class="lightbox-modal__media"><source src="/public/images/photography/82/Art_Wooden_Horse_Sculpture.mp4">Sorry, your browser doesn't support embedded videos.
-                    </video>
-                    <img class="lightbox-modal__media" src="/public/images/photography/82/82origsize/Fashion_Urban_Jungle.jpg" alt="">
-                    <h2 class="lightbox-modal__title">Test Title</h2> -->
-                  </div>
-                
-                    <button id="next" type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-right-solid.svg" alt="Go to next picture"></button>
-                    
-                    <a id="close" class="lightbox-modal__controls lightbox-modal__controls--close" href="#"><img class="lightbox-modal__controls lightbox-modal__controls--close" src="/public/images/icons/primarycolor_x.svg" alt="link to close photograph"></a>
-                </div> 
-          </div>          
-      </div>
+          <div class="lightbox-modal__content d-flex">
+              <button id="previous" type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-left-solid.svg" alt="Go to previous picture"></button>
+
+            <div id="placeHolder" class="lightbox-modal__column">
+            <!--  <video class="lightbox-modal__media"><source src="/public/images/photography/82/Art_Wooden_Horse_Sculpture.mp4">Sorry, your browser doesn't support embedded videos.
+              </video>
+              <img class="lightbox-modal__media" src="/public/images/photography/82/82origsize/Fashion_Urban_Jungle.jpg" alt="">
+              <h2 class="lightbox-modal__title">Test Title</h2> -->
+            </div>
+          
+              <button id="next" type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-right-solid.svg" alt="Go to next picture"></button>       
+
+          </div> 
+        </div>          
+    </div>
         <script src="/js/photographerpage.js"></script>
         <script src="/js/filterElementsBy.js"></script>
         <script src="/js/trierDropdown.js"></script>

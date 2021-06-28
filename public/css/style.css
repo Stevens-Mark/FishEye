@@ -435,20 +435,8 @@ ul {
   display: flex;
 }
 .lightbox-modal__content {
-  /*  margin: 1% auto;*/
-  margin: 5% auto;
-  margin-left: 0.938rem;
-}
-@media only screen and (min-width: 768px) {
-  .lightbox-modal__content {
-    /* max-width: 85%; */
-    margin-left: 1.875rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .lightbox-modal__content {
-    margin-left: 3.125rem;
-  }
+  align-items: center;
+  margin-bottom: 2.5rem;
 }
 .lightbox-modal__controls {
   color: transparent;
@@ -465,13 +453,22 @@ ul {
   }
 }
 .lightbox-modal__controls--close {
+  padding: unset;
+  align-self: flex-end;
   position: relative;
-  right: 0.563rem;
-  top: 3px;
+  top: 2.5rem;
+  right: 0.313rem;
 }
 @media only screen and (min-width: 768px) {
   .lightbox-modal__controls--close {
-    right: 1.188rem;
+    top: 3.125rem;
+    left: 0rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .lightbox-modal__controls--close {
+    top: 3.75rem;
+    left: 0.313rem;
   }
 }
 .lightbox-modal__media {
@@ -480,15 +477,14 @@ ul {
   object-fit: contain;
   border-radius: 0.313rem;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 1024px) {
   .lightbox-modal__media {
-    max-height: 550px;
-    max-width: 100%;
+    max-height: 500px;
   }
 }
 @media only screen and (min-width: 1100px) {
   .lightbox-modal__media {
-    max-height: 825px;
+    max-height: 850px;
   }
 }
 .lightbox-modal__title {
@@ -505,7 +501,6 @@ ul {
 
 button {
   background: none;
-  /*  margin-top: 45%;*/
   margin-bottom: 20px;
   border: none;
   cursor: pointer;

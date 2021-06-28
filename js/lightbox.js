@@ -4,7 +4,7 @@
 
 // DOM Elements
 const lightboxModalbg = document.querySelector('.lightbox-modal');
-const closeLightboxModalBtn = document.querySelectorAll('.lightbox-modal__controls--close');
+const closeLightboxModalBtn = document.querySelectorAll('#close');
 
 // FIX FOCUS IN LIGHTBOX MODAL FOR KEYBOARD USERS
 const LightBoxModalTrap = () => {
