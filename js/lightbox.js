@@ -68,10 +68,10 @@ const launchLightboxModal = (photographersMedia, i) => {
   const lightboxElement = document.querySelector('#placeHolder');
   let lightboxhtml = '';
   if (photographersMedia[i].video) { /* if a video object return a video template */
-    lightboxhtml = `<video width="100%" controls class="lightbox-modal__media"  tabindex="0" aria-label="${photographersMedia[i].title}"><source type="video/mp4" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].video}">Sorry, your browser doesn't support embedded videos.</video>
+    lightboxhtml = `<video width="100%" controls class="lightbox-modal__media"  tabindex="0" aria-label="${photographersMedia[i].alt}"><source type="video/mp4" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].video}">Sorry, your browser doesn't support embedded videos.</video>
     <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
   } else if (photographersMedia[i].image) { /* if an image object return an image template */
-    lightboxhtml = `<img class="lightbox-modal__media" tabindex="0" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].image}" alt="${photographersMedia[i].title}">
+    lightboxhtml = `<img class="lightbox-modal__media" tabindex="0" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].image}" alt="${photographersMedia[i].alt}">
     <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
   }
   lightboxElement.innerHTML = lightboxhtml;
