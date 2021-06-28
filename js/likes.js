@@ -1,10 +1,13 @@
-/* eslint-disable no-param-reassign *//* eslint-disable max-len */
+/* eslint-disable no-param-reassign */
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 
 // ADJUST NUMBER OF LIKES FOR A PHOTO WHEN USER CHOOSES IT & UPDATE TOTAL NUMBER OF LIKES ON THE PAGE
 
 const Likes = (photographersMedia) => {
   const LikeElement = document.getElementById('photosTotalLikes');
+
   let totalLikes = photographersMedia.map((item) => item.likes).reduce((accumulator, currentValue) => accumulator + currentValue);
   LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
   const hearts = document.querySelectorAll('.artwork__heart');
@@ -16,6 +19,7 @@ const Likes = (photographersMedia) => {
       if (!likeClickedAlready) {
         const newLikeValue = parseInt(likeValue, 10) + 1;
         event.target.previousSibling.textContent = newLikeValue;
+        heart.style.fontWeight = 'bold';
         likeClickedAlready = true;
         totalLikes += 1;
         LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
@@ -23,6 +27,7 @@ const Likes = (photographersMedia) => {
       } else {
         const newLikeValue = parseInt(likeValue, 10) - 1;
         event.target.previousSibling.textContent = newLikeValue;
+        heart.style.fontWeight = 'normal';
         likeClickedAlready = false;
         totalLikes -= 1;
         event.target.setAttribute('aria-selected', false);
@@ -31,11 +36,14 @@ const Likes = (photographersMedia) => {
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
+      console.log(event.target);
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
     heart.addEventListener('keyup', (event) => {
+      console.log(event.target);
       if (event.key === 'Enter') {
+        console.log(event.target);
         AdjustLikes(event);
       }
     });

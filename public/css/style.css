@@ -55,7 +55,7 @@ ul {
   font-weight: 400;
   font-style: normal;
 }
-.visuallyhidden {
+.sr-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
