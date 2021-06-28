@@ -36,14 +36,17 @@ const Likes = (photographersMedia) => {
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
-      console.log(event.target);
+      if (!event.target.matches('.artwork__heart')) {
+        return;
+      }
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
     heart.addEventListener('keyup', (event) => {
-      console.log(event.target);
+      if (!event.target.matches('.artwork__heart')) {
+        return;
+      }
       if (event.key === 'Enter') {
-        console.log(event.target);
         AdjustLikes(event);
       }
     });
