@@ -97,11 +97,13 @@ const initialiseLightboxModal = (Media, chosenMedia) => {
   lightboxModalbg.addEventListener('keyup', (event) => {
     if (event.key === 'ArrowRight' || event.key === 39) {
       nextImage();
+      document.querySelector('#next').focus();
     }
   });
   lightboxModalbg.addEventListener('keyup', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 37) {
       previousImage();
+      document.querySelector('#previous').focus();
     }
   });
 };

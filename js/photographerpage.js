@@ -20,8 +20,8 @@ fetch('./public/data.json')
     const { media } = data;
     /* filter array by photographerID to get the individual photographer's photo collection */
     const photographersMedia = media.filter((person) => person.photographerId == photographerId);
-    // CREATE PHOTOGRAPHERS PHOTOS & VIDEO ON PAGE
-    MediaFactory('gallery', photographersMedia, 0);
+    // CREATE PHOTOGRAPHER'S PHOTOS & VIDEOS ON PAGE
+    MediaFactory('gallery', photographersMedia);
     // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
     SetFilters(photographersMedia);
     // ADD LIKE ADJUSTMENT FEATURE
