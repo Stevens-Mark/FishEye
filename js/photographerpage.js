@@ -20,8 +20,14 @@ fetch('./public/data.json')
     const { media } = data;
     /* filter array by photographerID to get the individual photographer's photo collection */
     const photographersMedia = media.filter((person) => person.photographerId == photographerId);
-    /* create photographers photos & video on page */
-    CreatePhotograperPageMediaCard(photographersMedia);
+    // CREATE PHOTOGRAPHERS PHOTOS & VIDEO ON PAGE
+    MediaFactory('gallery', photographersMedia, 0);
+    // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
+    SetFilters(photographersMedia);
+    // ADD LIKE ADJUSTMENT FEATURE
+    Likes(photographersMedia);
+    // ADD LIGHTBOX FEATURE
+    lightboxActivation(photographersMedia);
   })
   .catch((error) => console.error(error));
 
@@ -49,40 +55,4 @@ const CreatePhotograperPageProfile = (individual) => {
   pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
   /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
-};
-
-// DYNAMICALLY ADD THE PHOTOGRAPHER'S PHOTOGRAPHS TO THEIR PAGE (FACTORY FUNCTION)
-
-const CreatePhotograperPageMediaCard = (photographersMedia) => {
-  const photoartworkElement = document.querySelector('#photographer-media');
-  let photographshtml = '';
-  photographersMedia.forEach((media) => {
-    if (media.video) { /* if a video object return a video template */
-      photographshtml
-      += `<article class="artwork__card">
-      <video id="${media.id}" class="artwork__image" aria-label="${media.alt}" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
-      </video>
-            <div class="artwork__details d-flex" >
-            <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart"></i></span>
-          </div>
-        </article>`;
-    } else { /* if an image object return an image template */
-      photographshtml
-      += `<article  class="artwork__card">
-          <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.alt}">
-          <div class="artwork__details d-flex" >
-            <h2 class="artwork__title">${media.title}</h2>
-            <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart"></i></span>
-          </div>
-        </article>`;
-    }
-    photoartworkElement.innerHTML = photographshtml;
-  });
-  // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
-  SetFilters(photographersMedia);
-  // ADD LIKE ADJUSTMENT FEATURE
-  Likes(photographersMedia);
-  // ADD LIGHTBOX FEATURE
-  lightboxActivation(photographersMedia);
 };

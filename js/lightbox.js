@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign *//* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars *//* eslint-disable no-param-reassign */
 /* eslint-disable no-undef *//* eslint-disable no-lonely-if */
 /* eslint-disable max-len */
 
@@ -59,20 +59,6 @@ lightboxModalbg.addEventListener('keydown', (event) => {
   }
 });
 
-// LOADS RELEVANT MEDIA TYPE INTO LIGHTBOX (FACTORY FUNCTION)
-const showMedia = (photographersMedia, i) => {
-  const lightboxElement = document.querySelector('#placeHolder');
-  let lightboxhtml = '';
-  if (photographersMedia[i].video) { /* if a video object return a video template */
-    lightboxhtml = `<video width="100%" controls class="lightbox-modal__media"  tabindex="0" aria-label="${photographersMedia[i].alt}"><source type="video/mp4" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].video}">Sorry, your browser doesn't support embedded videos.</video>
-  <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
-  } else if (photographersMedia[i].image) { /* if an image object return an image template */
-    lightboxhtml = `<img class="lightbox-modal__media" tabindex="0" src="/public/images/photography/${photographersMedia[i].photographerId}/${photographersMedia[i].image}" alt="${photographersMedia[i].alt}">
-  <h1 class="lightbox-modal__title">${photographersMedia[i].title}</h1>`;
-  }
-  lightboxElement.innerHTML = lightboxhtml;
-};
-
 // LAUNCH LIGHTBOX MODAL & NAVIGATION CONTROLS
 const initialiseLightboxModal = (Media, chosenMedia) => {
   mainWrapper.setAttribute('aria-hidden', 'true');
@@ -81,7 +67,7 @@ const initialiseLightboxModal = (Media, chosenMedia) => {
   document.getElementById('close').focus();
   /* "trap" user cursur inside modal */
   LightBoxModalTrap();
-  showMedia(Media, chosenMedia);
+  MediaFactory('lightbox', Media, chosenMedia);
 
   /* move to next picture */
   const nextImage = () => {
@@ -89,8 +75,7 @@ const initialiseLightboxModal = (Media, chosenMedia) => {
     if (newValue === Media.length) {
       newValue = 0;
     }
-    showMedia(Media, newValue);
-    document.getElementById('next').focus();
+    MediaFactory('lightbox', Media, chosenMedia);
     chosenMedia = newValue;
   };
 
@@ -100,8 +85,7 @@ const initialiseLightboxModal = (Media, chosenMedia) => {
     if (newValue === -1) {
       newValue = Media.length - 1;
     }
-    showMedia(Media, newValue);
-    document.getElementById('previous').focus();
+    MediaFactory('lightbox', Media, chosenMedia);
     chosenMedia = newValue;
   };
 

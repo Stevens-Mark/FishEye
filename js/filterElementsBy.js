@@ -31,15 +31,15 @@ const OrderBy = (optionChosen, photographersMedia) => {
   // sort by Date
   if (optionChosen === 'date') {
     const newDateOrder = items.sort((a, b) => (a.date > b.date ? -1 : 1));
-    CreatePhotograperPageMediaCard(newDateOrder);
+    MediaFactory('gallery', newDateOrder, 0);
     // sort by Title
   } else if (optionChosen === 'title') {
     const newTitleOrder = items.sort((a, b) => (a.title > b.title ? 1 : -1));
-    CreatePhotograperPageMediaCard(newTitleOrder);
+    MediaFactory('gallery', newTitleOrder, 0);
     // sort by Likes
   } else if (optionChosen === 'popularity') {
     const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
-    CreatePhotograperPageMediaCard(newPopularityOrder);
+    MediaFactory('gallery', newPopularityOrder, 0);
   }
 };
 
