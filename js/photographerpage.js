@@ -28,7 +28,8 @@ fetch('./public/data.json')
 // DYNAMICALLY ADD THE PHOTOGRAPHER'S PROFILE TO THEIR PAGE
 
 const CreatePhotograperPageProfile = (individual) => {
-/* declare a place to put the photographer profile & photo in the DOM */
+  document.querySelector('.header__logo').focus();
+  /* declare a place to put the photographer profile & photo in the DOM */
   const photographerProfile = document.querySelector('.person-profile__details');
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');

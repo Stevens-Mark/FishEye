@@ -41,27 +41,3 @@ window.addEventListener('keydown', (event) => {
     CloseDropDown(event);
   }
 });
-
-/* SET ATTRIBUTES FOR ASSISTIVE TECHNOLOGY FOR DROPDOWN MENU (KEYBOARD USERS)
-listbox.addEventListener('keydown', (event) => {
-  const { key } = event;
-  if (key !== 'ArrowDown' && key !== 'ArrowUp') return;
-  const activeElementID = listbox.getAttribute('aria-activedescendant');
-  const activeElement = listbox.querySelector(`#${activeElementID}`);
-
-  let selectedOption;
-  if (key === 'ArrowDown') { selectedOption = activeElement.nextElementSibling; }
-  console.log(`the selected option on arrowdown is ${selectedOption}`);
-  if (key === 'ArrowUp') { selectedOption = activeElement.previousElementSibling; }
-  console.log(`the selected option on arrowUp is ${selectedOption}`);
-  if (selectedOption) {
-    // Sets aria-activedescendant value
-    listbox.setAttribute('aria-activedescendant', selectedOption.id);
-
-    // Change visual appearance
-    allOptionChoices.forEach((element) => element.classList.remove('dropdown__orderlist__option--Selected'));
-    allOptionChoices.forEach((element) => element.setAttribute('aria-selected', false));
-    selectedOption.classList.add('dropdown__orderlist__option--Selected');
-    selectedOption.setAttribute('aria-selected', true);
-  }
-}); */

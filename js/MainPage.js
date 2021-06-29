@@ -15,6 +15,7 @@ fetch('./public/data.json')
 // DYNAMICALLY ADD ALL THE PHOTOGRAPHERS TO THE MAIN PAGE
 
 const CreatePage = (photographers) => {
+  document.querySelector('.pass-to-maincontent').focus();
   /* declare a place to put the photographers in the dom */
   const photographerElement = document.querySelector('#main');
   let photographerhtml = '';
