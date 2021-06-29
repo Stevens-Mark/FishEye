@@ -59,7 +59,7 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
     if (media.video) { /* if a video object return a video template */
       photographshtml
       += `<article class="artwork__card">
-      <video autoplay controls id="${media.id}" class="artwork__image" aria-label="${media.alt}" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
+      <video id="${media.id}" class="artwork__image" aria-label="${media.alt}" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
       </video>
             <div class="artwork__details d-flex" >
             <h2 class="artwork__title">${media.title}</h2>
@@ -83,5 +83,5 @@ const CreatePhotograperPageMediaCard = (photographersMedia) => {
   // ADD LIKE ADJUSTMENT FEATURE
   Likes(photographersMedia);
   // ADD LIGHTBOX FEATURE
-  lightbox(photographersMedia);
+  lightboxActivation(photographersMedia);
 };
