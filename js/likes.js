@@ -14,20 +14,18 @@ const Likes = (photographersMedia) => {
 
     const AdjustLikes = (event) => {
       event.preventDefault();
-      event.stopPropagation();
+      console.log(event);
       const selectedHeart = event.target.parentNode.querySelector('.artwork__heart');
-      const likeValue = event.target.previousSibling.textContent;
+      const selectedLikeValue = event.target.parentNode.querySelector('.artwork__likes');
       if (!likeClickedAlready) {
-        const newLikeValue = parseInt(likeValue, 10) + 1;
-        event.target.previousSibling.textContent = newLikeValue;
+        selectedLikeValue.innerHTML = parseInt(selectedLikeValue.innerHTML, 10) + 1;
         selectedHeart.style.fontWeight = 'bold';
         totalLikes += 1;
         LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
         event.target.setAttribute('aria-selected', true);
         likeClickedAlready = true;
       } else if (likeClickedAlready) {
-        const newLikeValue = parseInt(likeValue, 10) - 1;
-        event.target.previousSibling.textContent = newLikeValue;
+        selectedLikeValue.innerHTML = parseInt(selectedLikeValue.innerHTML, 10) - 1;
         selectedHeart.style.fontWeight = 'normal';
         totalLikes -= 1;
         event.target.setAttribute('aria-selected', false);
@@ -48,8 +46,7 @@ const Likes = (photographersMedia) => {
         return;
       }
       if (event.key === 'Enter') {
-        event.preventDefault();
-        AdjustLikes(event);
+        heart.click();
       }
     });
   });
