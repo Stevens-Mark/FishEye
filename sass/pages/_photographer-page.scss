@@ -159,10 +159,11 @@
    &__heart{
       padding: unset;
       margin: unset;
+      margin-left: 0.313rem;
       cursor: pointer;
       color: $primary;
       @media only screen and (min-width: $tablette) {  
-         font-size: 24px;
+         font-size: 1.5rem;
   
       }
    }
