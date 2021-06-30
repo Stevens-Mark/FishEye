@@ -16,12 +16,6 @@ body {
     box-sizing: border-box;
   }
 
-/*set max width
-header, main {
-  max-width: 2560px;
-  margin: auto;
-}*/
-
 /*Help to avoid repeatedly adding display:flex often*/
 .d-flex{
   display: flex;

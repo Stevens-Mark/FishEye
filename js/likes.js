@@ -8,43 +8,47 @@ const Likes = (photographersMedia) => {
 
   let totalLikes = photographersMedia.map((item) => item.likes).reduce((accumulator, currentValue) => accumulator + currentValue);
   LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
-  const hearts = document.querySelectorAll('.artwork__heart');
+  const hearts = document.querySelectorAll('.artwork__button');
   hearts.forEach((heart) => {
     let likeClickedAlready = false;
 
     const AdjustLikes = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const selectedHeart = event.target.parentNode.querySelector('.artwork__heart');
       const likeValue = event.target.previousSibling.textContent;
       if (!likeClickedAlready) {
         const newLikeValue = parseInt(likeValue, 10) + 1;
         event.target.previousSibling.textContent = newLikeValue;
-        heart.style.fontWeight = 'bold';
-        likeClickedAlready = true;
+        selectedHeart.style.fontWeight = 'bold';
         totalLikes += 1;
         LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
         event.target.setAttribute('aria-selected', true);
-      } else {
+        likeClickedAlready = true;
+      } else if (likeClickedAlready) {
         const newLikeValue = parseInt(likeValue, 10) - 1;
         event.target.previousSibling.textContent = newLikeValue;
-        heart.style.fontWeight = 'normal';
-        likeClickedAlready = false;
+        selectedHeart.style.fontWeight = 'normal';
         totalLikes -= 1;
         event.target.setAttribute('aria-selected', false);
+        likeClickedAlready = false;
         LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
       }
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
-      if (!event.target.matches('.artwork__heart')) {
+      if (!event.target.matches('.artwork__button')) {
         return;
       }
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
     heart.addEventListener('keyup', (event) => {
-      if (!event.target.matches('.artwork__heart')) {
+      if (!event.target.matches('.artwork__button')) {
         return;
       }
       if (event.key === 'Enter') {
+        event.preventDefault();
         AdjustLikes(event);
       }
     });

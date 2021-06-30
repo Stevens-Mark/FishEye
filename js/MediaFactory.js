@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 /* eslint-disable linebreak-style *//* eslint-disable no-unused-vars */
 
-// LOADS RELEVANT MEDIA TYPE INTO EITHER THE GALLARY OR THE LIGHTBOX (FACTORY FUNCTION)
+// LOADS RELEVANT MEDIA TYPE INTO EITHER THE PHOTOGRAPHER MEDIA GALLERY OR THE LIGHTBOX (FACTORY FUNCTION)
 const MediaFactory = (type, photographersMedia, i) => {
   const photoartworkElement = document.querySelector('#photographer-media');
   const lightboxElement = document.querySelector('#placeHolder');
-  // LOADS RELEVANT MEDIA TYPE INTO THE GALLERY
+  // LOADS RELEVANT MEDIA TYPE INTO THE PHOTOGRAPHER MEDIA GALLERY
   if (type === 'gallery') {
     let photographshtml = '';
     photographersMedia.forEach((media) => {
@@ -15,8 +16,7 @@ const MediaFactory = (type, photographersMedia, i) => {
        </video>
              <div class="artwork__details d-flex" >
              <h2 class="artwork__title">${media.title}</h2>
-             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart" title="Press to like"></i></span><span class="sr-only">Press to like</span>
-           </div>
+             <span class="artwork__likes">${media.likes}<button type="button" class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button></span>
          </article>`;
       } else { /* if an image object return an image template */
         photographshtml
@@ -24,7 +24,7 @@ const MediaFactory = (type, photographersMedia, i) => {
            <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.alt}">
            <div class="artwork__details d-flex" >
              <h2 class="artwork__title">${media.title}</h2>
-             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart" title="Press to like"></i></span><span class="sr-only">Press to like</span>
+             <span class="artwork__likes">${media.likes}<button type="button" class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button></span>
            </div>
          </article>`;
       }

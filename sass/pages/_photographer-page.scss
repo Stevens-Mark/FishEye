@@ -138,7 +138,7 @@
       }
    }
    &__details{
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
    }
    &__title{
@@ -157,11 +157,13 @@
       }
    }
    &__heart{
-      margin-left: 0.5rem;
+      padding: unset;
+      margin: unset;
       cursor: pointer;
-      height: 0.75rem;
-      @media only screen and (min-width: $tablette) { 
-         height: 1.25rem;    
+      color: $primary;
+      @media only screen and (min-width: $tablette) {  
+         font-size: 24px;
+  
       }
    }
 }
