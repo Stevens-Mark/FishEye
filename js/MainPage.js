@@ -1,16 +1,5 @@
 /* eslint-disable no-console *//* eslint-disable no-undef */
-/* eslint-disable max-len *//* eslint-disable no-use-before-define */
-
-// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
-
-fetch('./public/data.json')
-  .then((response) => response.json())
-  .then((data) => {
-    /* Using DESTRUCTERING get just the photographers data array (not the MEDIA data) */
-    const { photographers } = data;
-    CreatePage(photographers);
-  })
-  .catch((error) => console.error(error));
+/* eslint-disable max-len */
 
 // DYNAMICALLY ADD ALL THE PHOTOGRAPHERS TO THE MAIN PAGE
 
@@ -60,3 +49,14 @@ const CreatePage = (photographers) => {
     }
   });
 };
+
+// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
+
+fetch('./public/data.json')
+  .then((response) => response.json())
+  .then((data) => {
+    /* Using DESTRUCTERING get just the photographers data array (not the MEDIA data) */
+    const { photographers } = data;
+    CreatePage(photographers);
+  })
+  .catch((error) => console.error(error));
