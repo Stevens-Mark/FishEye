@@ -15,7 +15,7 @@ const MediaFactory = (type, photographersMedia, i) => {
        </video>
              <div class="artwork__details d-flex" >
              <h2 class="artwork__title">${media.title}</h2>
-             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart"></i></span>
+             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart" title="Press to like"></i></span><span class="sr-only">Press to like</span>
            </div>
          </article>`;
       } else { /* if an image object return an image template */
@@ -24,7 +24,7 @@ const MediaFactory = (type, photographersMedia, i) => {
            <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.alt}">
            <div class="artwork__details d-flex" >
              <h2 class="artwork__title">${media.title}</h2>
-             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart"></i></span>
+             <span class="artwork__likes">${media.likes}<i tabindex="0" class="artwork__heart far fa-heart" title="Press to like"></i></span><span class="sr-only">Press to like</span>
            </div>
          </article>`;
       }

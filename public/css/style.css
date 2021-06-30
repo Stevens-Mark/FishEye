@@ -260,6 +260,7 @@ ul {
   }
   .dropdown__orderlist__option--Selected {
     background: #DB8876;
+    color: #000;
   }
 }
 .dropdown .dropdown__selection.open .dropdown__orderlist {

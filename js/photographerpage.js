@@ -1,35 +1,10 @@
 /* eslint-disable no-console *//* eslint-disable no-undef */
-/* eslint-disable no-use-before-define *//* eslint-disable eqeqeq */
+/* eslint-disable eqeqeq */
 
+// GET PHOTOGRAPHER ID FROM URL QUERY STRING TO BUILD PAGE
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographerId = urlParams.get('id');
-
-// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
-
-fetch('./public/data.json')
-  .then((response) => response.json())
-  .then((data) => {
-    /* Using DESTRUCTERING get the photographers data array data */
-    const { photographers } = data;
-    /* filter array by photographer ID to get the required person */
-    const individual = photographers.filter((person) => person.id == photographerId);
-    /* create photographers profile on page */
-    CreatePhotograperPageProfile(individual);
-    /* Using DESTRUCTERING get  the MEDIA data array  data */
-    const { media } = data;
-    /* filter array by photographerID to get the individual photographer's photo collection */
-    const photographersMedia = media.filter((person) => person.photographerId == photographerId);
-    // CREATE PHOTOGRAPHER'S PHOTOS & VIDEOS ON PAGE
-    MediaFactory('gallery', photographersMedia);
-    // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
-    SetFilters(photographersMedia);
-    // ADD LIKE ADJUSTMENT FEATURE
-    Likes(photographersMedia);
-    // ADD LIGHTBOX FEATURE
-    lightboxActivation(photographersMedia);
-  })
-  .catch((error) => console.error(error));
 
 // DYNAMICALLY ADD THE PHOTOGRAPHER'S PROFILE TO THEIR PAGE
 
@@ -56,3 +31,29 @@ const CreatePhotograperPageProfile = (individual) => {
   /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
 };
+
+// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
+
+fetch('./public/data.json')
+  .then((response) => response.json())
+  .then((data) => {
+    /* Using DESTRUCTERING get the photographers data array data */
+    const { photographers } = data;
+    /* filter array by photographer ID to get the required person */
+    const individual = photographers.filter((person) => person.id == photographerId);
+    /* create photographers profile on page */
+    CreatePhotograperPageProfile(individual);
+    /* Using DESTRUCTERING get  the MEDIA data array  data */
+    const { media } = data;
+    /* filter array by photographerID to get the individual photographer's photo collection */
+    const photographersMedia = media.filter((person) => person.photographerId == photographerId);
+    // CREATE PHOTOGRAPHER'S PHOTOS & VIDEOS ON PAGE
+    MediaFactory('gallery', photographersMedia);
+    // ADD FILTERS TO ORDER THE PHOTOS (BY TAG, DATE, LIKES ETC....)
+    SetFilters(photographersMedia);
+    // ADD LIKE ADJUSTMENT FEATURE
+    Likes(photographersMedia);
+    // ADD LIGHTBOX FEATURE
+    lightboxActivation(photographersMedia);
+  })
+  .catch((error) => console.error(error));
