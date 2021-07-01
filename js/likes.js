@@ -34,11 +34,14 @@ const Likes = (photographersMedia) => {
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
+      console.log(event);
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
     heart.addEventListener('keypress', (event) => {
+      console.log(event);
       if (event.key === 'Enter') {
+        event.preventDefault();
         AdjustLikes(event);
       }
     });

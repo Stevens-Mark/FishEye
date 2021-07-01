@@ -42,6 +42,7 @@ const OrderBy = (optionChosen, photographersMedia) => {
     const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
     MediaFactory('gallery', newPopularityOrder);
   }
+  Likes(photographersMedia);
 };
 
 // SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE, LIKES ETC)
