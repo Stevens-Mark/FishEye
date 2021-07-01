@@ -148,6 +148,9 @@
             font-size: 1.375rem;
          }
    }
+   &__likeInfo {
+      white-space: nowrap;
+   }
    &__likes{
       font-size: 0.875rem;
       margin-left: 0.5rem;
@@ -159,6 +162,7 @@
    &__heart{
       padding: unset;
       margin: unset;
+      margin-left: 0.313rem;
       cursor: pointer;
       color: $primary;
          @media only screen and (min-width: $tablette) {  

@@ -64,6 +64,7 @@
          }
    }
    &__body {
+      /*height: 100%;*/
       font-size: 1.5rem;
       color: $modaltext;
       margin: auto;
@@ -75,6 +76,7 @@
       width: 100%;
       height: 3.25rem;
       font-size: 1.5rem;
+      border-radius: 5px;
          @media only screen and (min-width: $tablette) {
             height: 4.25rem;
          }

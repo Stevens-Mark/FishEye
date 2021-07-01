@@ -26,7 +26,7 @@ body {
   box-sizing: border-box;
 }
 
-/*Help to avoid repeatedly adding display:flex often*/
+/*Help to avoid repeatedly adding display:flex evrywhere */
 .d-flex {
   display: flex;
 }
@@ -369,7 +369,8 @@ ul {
   }
 }
 .modal__body {
-  font-size: 24px;
+  /*height: 100%;*/
+  font-size: 1.5rem;
   color: #312E2E;
   margin: auto;
 }
@@ -382,6 +383,7 @@ ul {
   width: 100%;
   height: 3.25rem;
   font-size: 1.5rem;
+  border-radius: 5px;
 }
 @media only screen and (min-width: 768px) {
   .modal__input {
@@ -398,15 +400,13 @@ ul {
 }
 .modal__error {
   color: #000;
-  font-size: 15px;
+  font-size: 0.938rem;
   text-align: left;
 }
 
 /*background to cover whole page when modal appears*/
 .lightbox-modal {
   display: none;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -415,6 +415,16 @@ ul {
   width: 100%;
   background-color: rgba(192, 192, 192, 0.9);
   overflow: hidden;
+}
+.lightbox-modal__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 .lightbox-modal__column {
   flex-direction: column;
@@ -458,20 +468,10 @@ ul {
   }
 }
 .lightbox-modal__media {
-  max-width: 100%;
-  max-height: 400px;
+  max-width: 90vw;
+  max-height: 90vh;
   object-fit: contain;
   border-radius: 0.313rem;
-}
-@media only screen and (min-width: 1024px) {
-  .lightbox-modal__media {
-    max-height: 500px;
-  }
-}
-@media only screen and (min-width: 1100px) {
-  .lightbox-modal__media {
-    max-height: 850px;
-  }
 }
 .lightbox-modal__title {
   font-size: 0.875rem;
@@ -489,7 +489,7 @@ ul {
 button {
   background: none;
   border: none;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   cursor: pointer;
 }
 
@@ -789,6 +789,9 @@ button {
     font-size: 1.375rem;
   }
 }
+.artwork__likeInfo {
+  white-space: nowrap;
+}
 .artwork__likes {
   font-size: 0.875rem;
   margin-left: 0.5rem;
@@ -802,12 +805,13 @@ button {
 .artwork__heart {
   padding: unset;
   margin: unset;
+  margin-left: 0.313rem;
   cursor: pointer;
   color: #901C1C;
 }
 @media only screen and (min-width: 768px) {
   .artwork__heart {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 

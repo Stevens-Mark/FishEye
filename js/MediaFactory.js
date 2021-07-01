@@ -12,25 +12,26 @@ const MediaFactory = (type, photographersMedia, i) => {
       if (media.video) { /* if a video object return a video template */
         photographshtml
        += `<article class="artwork__card">
-       <video id="${media.id}" class="artwork__image" aria-label="${media.alt}" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
-       </video>
-             <div class="artwork__details d-flex" >
-             <h2 class="artwork__title">${media.title}</h2>
-             <div>
-              <span class="artwork__likes">${media.likes}</span><button type="button" class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button></span>
-             </div>
-         </article>`;
+            <video id="${media.id}" class="artwork__image" aria-label="${media.alt}" tabindex="0"><source src="/public/images/photography/${media.photographerId}/${media.video}">Sorry, your browser doesn't support embedded videos.
+            </video>
+            <div class="artwork__details d-flex">
+              <h2 class="artwork__title">${media.title}</h2>
+                <div class="artwork__likeInfo">
+                  <span class="artwork__likes">${media.likes}</span><button type="button"  class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button>
+                </div>
+            </div>
+          </article>`;
       } else { /* if an image object return an image template */
         photographshtml
        += `<article  class="artwork__card">
-           <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.alt}">
-           <div class="artwork__details d-flex" >
-             <h2 class="artwork__title">${media.title}</h2>
-             <div>
-              <span class="artwork__likes">${media.likes}</span><button type="button"  class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button>
-              </div>
-           </div>
-         </article>`;
+            <img id="${media.id}" class="artwork__image" tabindex="0" src="/public/images/photography/${media.photographerId}/${media.image}" alt="${media.alt}">
+            <div class="artwork__details d-flex">
+              <h2 class="artwork__title">${media.title}</h2>
+                <div class="artwork__likeInfo">
+                  <span class="artwork__likes">${media.likes}</span><button type="button"  class="artwork__button"><i class="artwork__heart far fa-heart" style="pointer-events:none" title="Press to like"></i></button>
+                </div>
+            </div>
+          </article>`;
       }
       photoartworkElement.innerHTML = photographshtml;
     });

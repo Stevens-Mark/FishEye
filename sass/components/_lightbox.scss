@@ -1,8 +1,6 @@
 /*background to cover whole page when modal appears*/
 .lightbox-modal {
    display: none;
-   justify-content: center;
-   align-items: center;
    position: fixed;
    z-index: 1;
    left: 0;
@@ -11,7 +9,16 @@
    width: 100%;
    background-color: rgba(192, 192, 192, 0.9);
    overflow: hidden;
-
+   &__container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+   }
    &__column {
       flex-direction: column;
       display: flex;
@@ -46,16 +53,10 @@
       }
    }
    &__media {
-      max-width: 100%;
-      max-height: 400px;
+      max-width: 90vw;
+      max-height: 90vh;
       object-fit: contain;
       border-radius: 0.313rem;
-      @media only screen and (min-width: $desktop) {
-         max-height: 500px;
-      }
-      @media only screen and (min-width: $deskPlus) {
-         max-height: 850px;
-      }
    }
    &__title{
       font-size: 0.875rem;
