@@ -50,7 +50,7 @@ const CreatePage = (photographers) => {
   });
 };
 
-// FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE
+// FETCH THE PHOTOGRAPHER DATA FROM THE JSON FILE
 
 fetch('./public/data.json')
   .then((response) => response.json())

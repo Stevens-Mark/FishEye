@@ -18,13 +18,13 @@
       background: $secondaryBackground;
       color: #000;
       padding: 0rem 0.938rem;
-     @media only screen and (min-width: $tablette) {
-      height: 56.25rem;
-      margin: 2% auto;
-      position: fixed;
-      left: 50%;
-      margin-left: -20.875rem;
-   }
+         @media only screen and (min-width: $tablette) {
+            height: 56.25rem;
+            margin: 2% auto;
+            position: fixed;
+            left: 50%;
+            margin-left: -20.875rem;
+         }
    }
    &__heading {
       display: flex;
@@ -35,49 +35,49 @@
       font-size: 2.25rem;
       font-weight: 400;
       margin: unset;
-      @media only screen and (min-width: $mobilePlus) {
-         font-size: 3.125rem;
-      }
-      @media only screen and (min-width: $tablette) {
-         font-size: 4rem;
-      }
+         @media only screen and (min-width: $mobilePlus) {
+            font-size: 3.125rem;
+         }
+         @media only screen and (min-width: $tablette) {
+            font-size: 4rem;
+         }
    }
    &__close {
       color: #fff;
       height: 1.875rem;
-      @media only screen and (min-width: $mobilePlus) {
-         height: 2.5rem;
-      }
-      @media only screen and (min-width: $tablette) {
-         height: 3.125rem;
-      }
+         @media only screen and (min-width: $mobilePlus) {
+            height: 2.5rem;
+         }
+         @media only screen and (min-width: $tablette) {
+            height: 3.125rem;
+         }
    }
    &__photographerName {
       font-weight: 400;
       font-size: 2.25rem;
       margin: unset;
-      @media only screen and (min-width: $mobilePlus) {
-         font-size: 3.125rem;
-      }
-      @media only screen and (min-width: $tablette) {
-         font-size: 4rem;
-      }
+         @media only screen and (min-width: $mobilePlus) {
+            font-size: 3.125rem;
+         }
+         @media only screen and (min-width: $tablette) {
+            font-size: 4rem;
+         }
    }
    &__body {
-      font-size: 24px;
+      font-size: 1.5rem;
       color: $modaltext;
       margin: auto;
-      @media only screen and (min-width: $tablette) {
-         font-size: 2.25rem;
-      }
+         @media only screen and (min-width: $tablette) {
+            font-size: 2.25rem;
+         }
    }
    &__input {
       width: 100%;
       height: 3.25rem;
       font-size: 1.5rem;
-      @media only screen and (min-width: $tablette) {
-         height: 4.25rem;
-      }
+         @media only screen and (min-width: $tablette) {
+            height: 4.25rem;
+         }
       &--message {
          height: 11.5rem;
          @media only screen and (min-width: $tablette) {
@@ -87,7 +87,7 @@
    }
    &__error {
       color: #000;
-      font-size: 15px;
+      font-size: 0.938rem;
       text-align: left;
     }
 }

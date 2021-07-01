@@ -14,7 +14,6 @@ const Likes = (photographersMedia) => {
 
     const AdjustLikes = (event) => {
       event.preventDefault();
-      console.log(event);
       const selectedHeart = event.target.parentNode.querySelector('.artwork__heart');
       const selectedLikeValue = event.target.parentNode.querySelector('.artwork__likes');
       if (!likeClickedAlready) {
@@ -35,18 +34,12 @@ const Likes = (photographersMedia) => {
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
-      if (!event.target.matches('.artwork__button')) {
-        return;
-      }
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
-    heart.addEventListener('keyup', (event) => {
-      if (!event.target.matches('.artwork__button')) {
-        return;
-      }
+    heart.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        heart.click();
+        AdjustLikes(event);
       }
     });
   });

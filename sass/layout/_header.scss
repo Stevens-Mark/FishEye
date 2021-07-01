@@ -31,10 +31,10 @@
         top: 0.313rem;
         right: 0.625rem;
         font-size: 1.25rem;     
-        @media only screen and (min-width: $tablette) {
-            font-size: 2.25rem;
-            top: -0.563rem;
-            white-space: nowrap;
+            @media only screen and (min-width: $tablette) {
+                font-size: 2.25rem;
+                top: -0.563rem;
+                white-space: nowrap;
             }   
             @media only screen and (min-width: $desktop) {
                 top: 0rem;
