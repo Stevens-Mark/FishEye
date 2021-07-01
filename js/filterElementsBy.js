@@ -71,8 +71,8 @@ const SetFilters = (photographersMedia) => {
   });
 
   // EVENT LISTENER TO DISPLAY PHOTOS BASED ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
-  document.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter' || event.key === 13) {
       if (!event.target.matches('.tags')) {
         return;
       }

@@ -60,3 +60,5 @@ fetch('./public/data.json')
     CreatePage(photographers);
   })
   .catch((error) => console.error(error));
+
+document.activeElement.focus();
