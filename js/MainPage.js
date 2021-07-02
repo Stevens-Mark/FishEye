@@ -26,27 +26,22 @@ const CreatePage = (photographers) => {
     /* map & join etc solution found in sources folder */
   });
 
-  // EVENT LISTENER ON FULL MAIN PAGE TO DISPLAY THE PHOTOGRAPHERS BASED ON TAG FILTER CHOICE (ON CLICK)
-  document.addEventListener('click', (event) => {
-    /* check if function should be invoked: was the selected element (clicked on)
-    the one we care about? */
-    if (!event.target.matches('.tags')) {
-      return;
-    }
-    // Make sure tag name is lowercase & remove the "#" ready for search*/
-    const tagSelected = event.target.textContent.toLowerCase().slice(1);
-    DisplayPhotographerByTagSelected(tagSelected, photographers);
-  });
-
-  // EVENT LISTENER TO DISPLAY THE PHOTOGRAPHERS BASED ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
-  document.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-      if (!event.target.matches('.tags')) {
-        return;
-      }
+  // EVENT LISTENERS ON TAGS FOR FILTERING
+  const tagList = document.querySelectorAll('.tags');
+  tagList.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      // Make sure tag name is lowercase & remove the "#" ready for search*/
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
       DisplayPhotographerByTagSelected(tagSelected, photographers);
-    }
+    });
+    /* Event Listener (for keyboard) for the like feature */
+    item.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        // Make sure tag name is lowercase & remove the "#" ready for search*/
+        const tagSelected = event.target.textContent.toLowerCase().slice(1);
+        DisplayPhotographerByTagSelected(tagSelected, photographers);
+      }
+    });
   });
 };
 
