@@ -132,6 +132,7 @@
       height: 11.875rem;
       object-fit: cover;
       border-radius: 0.313rem;
+      z-index: 10;
       cursor: pointer;
          @media only screen and (min-width: $mobilePlus) {  
             height: 18.75rem;

@@ -1,5 +1,5 @@
-/* eslint-disable max-len *//* eslint-disable no-undef */
-/* eslint-disable no-plusplus *//* eslint-disable no-unused-vars */
+/* eslint-disable no-undef *//* eslint-disable no-plusplus */
+/* eslint-disable no-unused-vars */
 
 // FILTER PHOTOGRAPHER'S PROFILE BY TAG
 

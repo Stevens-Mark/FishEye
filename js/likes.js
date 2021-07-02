@@ -1,7 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable no-param-reassign *//* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
+/* eslint-disable no-unused-vars *//* eslint-disable max-len */
 
 // ADJUST NUMBER OF LIKES FOR A PHOTO WHEN USER CHOOSES IT & UPDATE TOTAL NUMBER OF LIKES ON THE PAGE
 
@@ -36,12 +33,10 @@ const Likes = (photographersMedia) => {
     };
     /* Event Listener (on click) for the like feature */
     heart.addEventListener('click', (event) => {
-      console.log(event);
       AdjustLikes(event);
     });
     /* Event Listener (for keyboard) for the like feature */
     heart.addEventListener('keypress', (event) => {
-      console.log(event);
       if (event.key === 'Enter') {
         event.preventDefault();
         AdjustLikes(event);

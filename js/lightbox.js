@@ -60,33 +60,34 @@ lightboxModalbg.addEventListener('keydown', (event) => {
 });
 
 // LAUNCH LIGHTBOX MODAL & NAVIGATION CONTROLS
-const initialiseLightboxModal = (Media, chosenMedia) => {
+const initialiseLightboxModal = (Media, chosenMediaIndex) => {
   mainWrapper.setAttribute('aria-hidden', 'true');
   lightboxModalbg.setAttribute('aria-hidden', 'false');
   lightboxModalbg.style.display = 'flex';
   document.getElementById('close').focus();
   /* "trap" user cursur inside modal */
   LightBoxModalTrap();
-  MediaFactory('lightbox', Media, chosenMedia);
+  /* Get correct image template to display in Lightbox */
+  MediaFactory('lightbox', Media, chosenMediaIndex);
 
-  /* move to next picture */
+  // FUNCTION: MOVE TO NEXT PICTURE
   const nextImage = () => {
-    let newValue = chosenMedia + 1;
+    let newValue = chosenMediaIndex + 1;
     if (newValue === Media.length) {
       newValue = 0;
     }
-    MediaFactory('lightbox', Media, chosenMedia);
-    chosenMedia = newValue;
+    MediaFactory('lightbox', Media, chosenMediaIndex);
+    chosenMediaIndex = newValue;
   };
 
-  /* move to previous picture */
+  // FUNCTION: MOVE TO PREVIOUS PICTURE
   const previousImage = () => {
-    let newValue = chosenMedia - 1;
+    let newValue = chosenMediaIndex - 1;
     if (newValue === -1) {
       newValue = Media.length - 1;
     }
-    MediaFactory('lightbox', Media, chosenMedia);
-    chosenMedia = newValue;
+    MediaFactory('lightbox', Media, chosenMediaIndex);
+    chosenMediaIndex = newValue;
   };
 
   // EVENT LISTENERS ON ARROW / NAVIGATION KEYS (ON CLICK)
@@ -110,24 +111,23 @@ const initialiseLightboxModal = (Media, chosenMedia) => {
 
 // LISTEN FOR WHEN USER CHOSES A PHOTO TO ENLARGE & LAUNCH THE LIGHTBOX MODAL & NAV CONTROLS
 const lightboxActivation = (photographersMedia) => {
-  const photoartworkElement = document.querySelector('#photographer-media');
-  const findmapindexOf = (chosenPhoto) => photographersMedia.map((event) => event.id).indexOf(chosenPhoto);
-  let chosenMedia = 0;
-  photoartworkElement.addEventListener('click', (event) => {
-    if (!event.target.matches('.artwork__image')) {
-      return;
-    }
-    chosenMedia = findmapindexOf(parseInt(event.target.id, 10));
-    initialiseLightboxModal(photographersMedia, chosenMedia);
-  });
+  const photoartworkElements = document.querySelectorAll('.artwork__image');
+  /* From picture ID find the position (index) in the media array */
+  const findmapindexOf = (chosenPhotoId) => photographersMedia.map((event) => event.id).indexOf(chosenPhotoId);
 
-  photoartworkElement.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-      if (!event.target.matches('.artwork__image')) {
-        return;
+  // EVENT LISTENER ON MEDIA IMAGES (ON CLICK)
+  photoartworkElements.forEach((item) => {
+    let chosenMediaIndex = 0;
+    item.addEventListener('click', (event) => {
+      chosenMediaIndex = findmapindexOf(parseInt(event.target.id, 10));
+      initialiseLightboxModal(photographersMedia, chosenMediaIndex);
+    });
+    // EVENT LISTENER ON MEDIA IMAGES (KEYBOARD USERS)
+    item.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        chosenMediaIndex = findmapindexOf(parseInt(event.target.id, 10));
+        initialiseLightboxModal(photographersMedia, chosenMediaIndex);
       }
-      chosenMedia = findmapindexOf(parseInt(event.target.id, 10));
-      initialiseLightboxModal(photographersMedia, chosenMedia);
-    }
+    });
   });
 };

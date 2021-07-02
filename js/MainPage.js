@@ -1,5 +1,4 @@
 /* eslint-disable no-console *//* eslint-disable no-undef */
-/* eslint-disable max-len */
 
 // DYNAMICALLY ADD ALL THE PHOTOGRAPHERS TO THE MAIN PAGE
 
