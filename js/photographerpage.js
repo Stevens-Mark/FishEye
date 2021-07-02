@@ -30,22 +30,6 @@ const CreatePhotograperPageProfile = (individual) => {
   pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
   /* put photographer name in the modal */
   contactName.textContent = individual[0].name;
-
-  // EVENT LISTENERS ON TAGS FOR FILTERING
-  const tagList = document.querySelectorAll('.tags');
-  tagList.forEach((item) => {
-    item.addEventListener('click', (event) => {
-      const tagSelected = event.target.textContent.toLowerCase().slice(1);
-      DisplayPhotographerByTagSelected(tagSelected, photographers);
-    });
-    /* Event Listener (for keyboard) for the like feature */
-    item.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-        const tagSelected = event.target.textContent.toLowerCase().slice(1);
-        DisplayPhotographerByTagSelected(tagSelected, photographers);
-      }
-    });
-  });
 };
 
 // FETCH THE PHOTGRAPHER DATA FROM THE JSON FILE

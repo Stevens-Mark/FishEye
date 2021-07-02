@@ -12,12 +12,11 @@ const OpenCloseDropDown = () => {
 };
 /* Click Event Listener when ON dropdown menu to toggle open/close */
 document.querySelector('.dropdown').addEventListener('click', (event) => {
-  console.log(event);
   OpenCloseDropDown();
 });
 
-/* Click Event Listener when ON dropdown menu to toggle open/close */
-document.querySelector('#dropdownBtn').addEventListener('keyup', (event) => {
+/* Click Event Listener when ON dropdown menu to toggle open/close (KEYBOARD USERS) */
+document.querySelector('#dropdownBtn').addEventListener('keypress', (event) => {
   if (event.key === 'Enter' || event.key === 13) {
     event.preventDefault();
     OpenCloseDropDown();
@@ -26,7 +25,6 @@ document.querySelector('#dropdownBtn').addEventListener('keyup', (event) => {
 
 /* If clicked outside of the dropdown then close dropdown */
 const CloseDropDown = (event) => {
-  console.log(event);
   const select = document.querySelector('.dropdown__selection');
   if (!select.contains(event.target)) {
     select.classList.remove('open');
@@ -42,7 +40,7 @@ const CloseDropDownKeyboard = () => {
   document.querySelector('#dropdownBtn').focus();
 };
 
-/* click & keyboard event listeners for outside of the dropdown menu: therefore close dropdown
+/* click & keyboard event listeners for outside of the dropdown menu: therefore close dropdown */
 window.addEventListener('click', (event) => {
   CloseDropDown(event);
 });
@@ -50,4 +48,4 @@ window.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' || event.key === 13) {
     CloseDropDown(event);
   }
-}); */
+});

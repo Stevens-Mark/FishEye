@@ -59,35 +59,29 @@ const SetFilters = (photographersMedia) => {
       }
     }
   };
-  // EVENT LISTENER ON FULL PHOTOGRAPHERS PAGE TO DISPLAY PHOTOS BASED ON TAG FILTER CHOICE (ON CLICK)
-  document.addEventListener('click', (event) => {
-    /* check if function should be invoked: was the selected element (clicked on)
-      the one we care about? */
-    if (!event.target.matches('.tags')) {
-      return;
-    }
-    // Make sure tag name is lowercase & remove the "#" ready for search*/
-    const tagSelected = event.target.textContent.toLowerCase().slice(1);
-    DisplayMediaByTagSelected(tagSelected);
-  });
-
-  // EVENT LISTENER TO DISPLAY PHOTOS BASED ON TAG FILTER CHOICE (ON KEYUP FOR KEYBOARD USERS)
-  document.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter' || event.key === 13) {
-      if (!event.target.matches('.tags')) {
-        return;
-      }
+  // EVENT LISTENERS ON TAGS FOR FILTERING
+  const tagList = document.querySelectorAll('.tags');
+  tagList.forEach((item) => {
+    item.addEventListener('click', (event) => {
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
       DisplayMediaByTagSelected(tagSelected);
-    }
+    });
+    /* Event Listener (for keyboard) for the like feature */
+    item.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        const tagSelected = event.target.textContent.toLowerCase().slice(1);
+        DisplayMediaByTagSelected(tagSelected);
+      }
+    });
   });
+
   // WHEN USER MAKES A CHOICE IN DROPDOWN MENU
   const listbox = document.querySelector('[role="listbox"]');
   const allOptionChoices = [...listbox.children]; /* sets array of all <li> elements */
 
   const OptionSelected = (event) => {
     /* when user selects an option in dropdown menu change title text */
-    document.querySelector('.choice').textContent = event.target.textContent;
+    document.querySelector('.choice').innerHTML = `${event.target.textContent}<i aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></i>`;
     /* Set attributes for assistive technology for dropdown menu */
     const optionChosen = event.target.closest('li');
     if (!optionChosen) return;
