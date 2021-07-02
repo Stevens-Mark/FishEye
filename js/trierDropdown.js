@@ -44,7 +44,7 @@ const CloseDropDownKeyboard = () => {
 window.addEventListener('click', (event) => {
   CloseDropDown(event);
 });
-window.addEventListener('keydown', (event) => {
+window.addEventListener('keypress', (event) => {
   if (event.key === 'Enter' || event.key === 13) {
     CloseDropDown(event);
   }
