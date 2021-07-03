@@ -52,7 +52,7 @@ ul {
 }
 .sr-only {
   border: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -62,12 +62,12 @@ ul {
 }
 
 /*
-
 *:focus {
    outline: none;
  }
 
-li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, textarea:focus, .modal__close:focus,
+li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, 
+input:focus, textarea:focus, .modal__close:focus,
 .header__logo.img:focus {
    border: 4px solid yellow;
 }*/
@@ -102,7 +102,7 @@ li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, 
   left: 0;
   border-radius: 1rem;
   background: #901C1C;
-  border: 1px solid #901C1C;
+  /* border: 1px solid $primary; */
   opacity: 0;
   /*layer hidden until hover*/
   z-index: -1;
@@ -198,7 +198,7 @@ li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, 
     font-weight: 700;
   }
   .dropdown__button {
-    /* position: relative;*/
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -227,7 +227,7 @@ li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, 
   .dropdown__orderlist {
     position: absolute;
     display: block;
-    left: 6.25rem;
+    left: 100px;
     top: -1px;
     padding: 0rem 0.438rem;
     border-radius: 0.313rem;
@@ -301,7 +301,7 @@ li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, 
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   height: 100%;
@@ -423,7 +423,7 @@ li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, 
 .lightbox-modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
   height: 100%;
@@ -784,6 +784,7 @@ button {
   height: 11.875rem;
   object-fit: cover;
   border-radius: 0.313rem;
+  /*z-index: 1;*/
   cursor: pointer;
 }
 @media only screen and (min-width: 600px) {

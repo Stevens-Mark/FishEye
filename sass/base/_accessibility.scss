@@ -1,6 +1,6 @@
 .sr-only {
     border: 0;
-    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
     overflow: hidden;
@@ -10,12 +10,12 @@
 }
 
 /*
-
 *:focus {
    outline: none;
  }
 
-li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, input:focus, textarea:focus, .modal__close:focus,
+li:focus, a:focus, button:focus, img:focus, .artwork__image:focus, 
+input:focus, textarea:focus, .modal__close:focus,
 .header__logo.img:focus {
    border: 4px solid yellow;
 }*/
