@@ -15,6 +15,7 @@ const CreatePhotograperPageProfile = (individual) => {
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');
   const pricePerDay = document.getElementById('pricePerDay');
+  const contactTitle = document.getElementById('modal__title');
   document.title = `${individual[0].name}`;
   /* Using DESTRUCTERING get the photographer's tag array data */
   const { tags } = individual[0];
@@ -23,12 +24,13 @@ const CreatePhotograperPageProfile = (individual) => {
       <h1 class="person-profile__name">${individual[0].name}</h1>
       <h2 class="person-profile__address">${individual[0].city}, ${individual[0].country}</h2>
       <h3 class="person-profile__tagline">${individual[0].tagline}</h3>
-      <ul class="person-profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul>`;
+      <ul class="person-profile__tags" aria-label="categories">${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul>`;
 
   photographerPhoto.innerHTML = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
   /* add price per day to bottom right of page */
   pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
   /* put photographer name in the modal */
+  contactTitle.setAttribute('aria-label', `Contact ${individual[0].name}`);
   contactName.textContent = individual[0].name;
 };
 

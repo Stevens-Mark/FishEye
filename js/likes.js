@@ -7,6 +7,7 @@ const Likes = (photographersMedia) => {
 
   let totalLikes = photographersMedia.map((item) => item.likes).reduce((accumulator, currentValue) => accumulator + currentValue);
   LikeElement.innerHTML = `${totalLikes}<img class="artwork__heart" src="/public/images/icons/blackheart.svg" alt="">`;
+
   const hearts = document.querySelectorAll('.artwork__button');
   hearts.forEach((heart) => {
     let likeClickedAlready = false;

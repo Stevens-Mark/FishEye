@@ -42,7 +42,9 @@ const OrderBy = (optionChosen, photographersMedia) => {
     const newPopularityOrder = items.sort((a, b) => (a.likes > b.likes ? -1 : 1));
     MediaFactory('gallery', newPopularityOrder);
   }
+  // AFTER IMAGES SORT & DISPLAY, RELOAD EVENT LISTENERS FOR THE LIKE & LIGHTBOX FEATURES
   Likes(photographersMedia);
+  lightboxActivation(photographersMedia);
 };
 
 // SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE, LIKES ETC)

@@ -14,12 +14,12 @@ const CreatePage = (photographers) => {
     photographerhtml += `
     <article class="profile">
       <a href="photographer-page.html?id=${person.id}"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
-      alt="link to photographers page ${person.name}">
+      alt="link to photographers page">
       <h2 class="profile__name">${person.name}</h2></a>
         <h3 class="profiles__address">${person.city}, ${person.country}</h3>
         <h4 class="profile__tagline">${person.tagline}</h4>
         <h5 class="profile__price">${person.price}€/jour</h5>
-        <ul class="profile__tags" >${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul> 
+        <ul class="profile__tags" aria-label="categories">${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li>`).join('')}</ul> 
     </article>`;
     photographerElement.innerHTML = photographerhtml;
     /* map & join etc solution found in sources folder */
@@ -29,14 +29,14 @@ const CreatePage = (photographers) => {
   const tagList = document.querySelectorAll('.tags');
   tagList.forEach((item) => {
     item.addEventListener('click', (event) => {
-      // Make sure tag name is lowercase & remove the "#" ready for search*/
+      /* Make sure tag name is lowercase & remove the "#" ready for search */
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
       DisplayPhotographerByTagSelected(tagSelected, photographers);
     });
     /* Event Listener (for keyboard) for the like feature */
     item.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        // Make sure tag name is lowercase & remove the "#" ready for search*/
+        /*  Make sure tag name is lowercase & remove the "#" ready for search */
         const tagSelected = event.target.textContent.toLowerCase().slice(1);
         DisplayPhotographerByTagSelected(tagSelected, photographers);
       }

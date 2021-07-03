@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars *//* eslint-disable no-param-reassign */
-/* eslint-disable no-undef *//* eslint-disable no-lonely-if */
-/* eslint-disable max-len */
+/* eslint-disable no-undef *//* eslint-disable max-len *//* eslint-disable no-lonely-if */
 
 // DOM Elements
 const lightboxModalbg = document.querySelector('.lightbox-modal');
@@ -9,6 +8,7 @@ const nextButton = document.querySelector('#next');
 const previousButton = document.querySelector('#previous');
 
 // FIX FOCUS IN LIGHTBOX MODAL FOR KEYBOARD USERS
+
 const LightBoxModalTrap = () => {
   /* add all the elements inside modal which we want to make focusable */
   const lightboxFocusableElements = 'button, [href], [tabindex]:not([tabindex="-1"])';
@@ -42,17 +42,18 @@ const LightBoxModalTrap = () => {
   });
 };
 
-// close modal Lightbox modal
+// CLOSE LIGHTBOX MODAL
+
 const closeLightboxModal = () => {
   mainWrapper.setAttribute('aria-hidden', 'false');
   lightboxModalbg.setAttribute('aria-hidden', 'true');
   lightboxModalbg.style.display = 'none';
   document.querySelector('#dropdownBtn').focus();
 };
-//  close Lightbox modal event listener
+// EVENT LISTENER: CLOSE LIGHBOX MODAL
 closeLightboxModalBtn.forEach((btn) => btn.addEventListener('click', closeLightboxModal));
 
-// close Lightbox modal on pressing the escape key event listener
+// EVENT LISTENER: CLOSE MODAL ON ESCAPE KEYPRESS
 lightboxModalbg.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeLightboxModal();
@@ -65,29 +66,29 @@ const initialiseLightboxModal = (Media, chosenMediaIndex) => {
   lightboxModalbg.setAttribute('aria-hidden', 'false');
   lightboxModalbg.style.display = 'flex';
   document.getElementById('close').focus();
-  /* "trap" user cursur inside modal */
+  /* "trap" user cursor inside modal */
   LightBoxModalTrap();
   /* Get correct image template to display in Lightbox */
   MediaFactory('lightbox', Media, chosenMediaIndex);
 
   // FUNCTION: MOVE TO NEXT PICTURE
   const nextImage = () => {
-    let newValue = chosenMediaIndex + 1;
-    if (newValue === Media.length) {
-      newValue = 0;
+    let newIndexValue = chosenMediaIndex + 1;
+    if (newIndexValue === Media.length) {
+      newIndexValue = 0;
     }
     MediaFactory('lightbox', Media, chosenMediaIndex);
-    chosenMediaIndex = newValue;
+    chosenMediaIndex = newIndexValue;
   };
 
   // FUNCTION: MOVE TO PREVIOUS PICTURE
   const previousImage = () => {
-    let newValue = chosenMediaIndex - 1;
-    if (newValue === -1) {
-      newValue = Media.length - 1;
+    let newIndexValue = chosenMediaIndex - 1;
+    if (newIndexValue === -1) {
+      newIndexValue = Media.length - 1;
     }
     MediaFactory('lightbox', Media, chosenMediaIndex);
-    chosenMediaIndex = newValue;
+    chosenMediaIndex = newIndexValue;
   };
 
   // EVENT LISTENERS ON ARROW / NAVIGATION KEYS (ON CLICK)
