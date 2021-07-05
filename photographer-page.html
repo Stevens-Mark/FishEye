@@ -12,10 +12,11 @@
 </head>    
 <body>
   <header class="photographer-header">
-      <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye Logo" role="link" aria-label="link back to the homepage"></a>
+      <a class="header__logo" href="index.html"><img src="/public/images/logo/fisheye.svg" alt="Fisheye Logo" role="link" aria-label="go back to the homepage"></a>
   </header>		
    
   <main id="main" aria-hidden="false" class="single-photographer-container">
+
     <section aria-label="photographer profile details" class="person-profile">
         <div class="person-profile__details"></div>
              <!-- JS Place to put Photographer profile details-->
@@ -36,21 +37,22 @@
               </ul>
           </div>
       </div>
-      <div lang="en" id="photographer-media" class="artwork d-flex">
-          <!--JS Place to put Photographer's photos/videos-->
-      </div>
-      <div id="TotalLikesAndPrice"> <!--JS Place to put price per day & total number of likes-->
-        <span id="photosTotalLikes"></span>
-        <span id="pricePerDay"></span>
-      </div>
-
+      <section aria-label="photographer's portfolio">
+        <div lang="en" id="photographer-media" class="artwork d-flex">
+            <!--JS Place to put Photographer's photos/videos-->
+        </div>
+        <div id="TotalLikesAndPrice"> <!--JS Place to put price per day & total number of likes-->
+          <span id="photosTotalLikes"></span>
+          <span id="pricePerDay"></span>
+        </div>
+      </section>
   </main>     
                               <!--contact me modal-->
       <div class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal__title"> 
           <div class="modal__content"> 
               <div class="modal__heading d-flex">
                   <h1 id="modal__title" class="modal__title">Contactez-moi</h1>
-                    <a class="modal__close" aria-label="link to close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="link to close contact form"></a>
+                    <a class="modal__close" aria-label="close contact form" href="#"><img class="modal__close" src="/public/images/icons/white_x.svg" alt="close contact form"></a>
               </div> 
               <h2 class="modal__photographerName">Photographer Name</h2>
             <div class="modal__body">
@@ -87,10 +89,10 @@
           </div>
     </div>
                                                       <!--lightBox modal-->
-    <div class="lightbox-modal" aria-hidden="true" role="dialog">  
+    <div class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="image closeup view">  
         <div class="lightbox-modal__container">
           <div class="lightbox-modal__column">
-            <button type="button" id="close" class="lightbox-modal__controls lightbox-modal__controls--close"><img class="lightbox-modal__controls" src="/public/images/icons/primarycolor_x.svg" alt="link to close photograph"></button>
+            <button type="button" id="close" class="lightbox-modal__controls lightbox-modal__controls--close"><img class="lightbox-modal__controls" src="/public/images/icons/primarycolor_x.svg" alt="close closeup view"></button>
 
             <div class="lightbox-modal__content d-flex">
                 <button id="previous" type="button"><img class="lightbox-modal__controls" src="/public/images/icons/chevron-left-solid.svg" alt="Go to previous picture"></button>

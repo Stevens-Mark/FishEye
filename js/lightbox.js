@@ -98,12 +98,14 @@ const initialiseLightboxModal = (Media, chosenMediaIndex) => {
   // EVENT LISTENERS ON ARROW / NAVIGATION KEYS (KEYBOARD USERS)
   lightboxModalbg.addEventListener('keyup', (event) => {
     if (event.key === 'ArrowRight' || event.key === 39) {
+      event.preventDefault();
       nextImage();
       document.querySelector('#next').focus();
     }
   });
   lightboxModalbg.addEventListener('keyup', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 37) {
+      event.preventDefault();
       previousImage();
       document.querySelector('#previous').focus();
     }

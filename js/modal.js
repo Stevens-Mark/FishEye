@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len *//* eslint-disable no-unused-vars */
 /* eslint-disable no-lonely-if *//* eslint-disable no-useless-escape */
 
@@ -80,7 +81,7 @@ const closeModal = () => {
   modalbg.setAttribute('aria-hidden', 'true');
   modalbg.style.display = 'none';
   document.querySelector('.contactBtn').focus();
-  /* return to contactez-moi button when modal closed with "ESC" key */
+  /* return to contactez-moi button when modal closed */
 };
 
 //  close modal event listener
@@ -163,6 +164,10 @@ function Validate(event) {
     message.focus();
     return false;
   }
+  console.log(firstName.value, lastName.value);
+  console.log(email.value);
+  console.log(message.value);
+
   document.getElementById('form').style.display = 'none';
   modalbg.style.display = 'none';
   /* message.style.display = "flex"; */
