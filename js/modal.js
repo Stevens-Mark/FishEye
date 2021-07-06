@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable max-len *//* eslint-disable no-unused-vars */
-/* eslint-disable no-lonely-if *//* eslint-disable no-useless-escape */
+/* eslint-disable no-console *//* eslint-disable max-len */
+/* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
 
 // DOM Elements
 const mainWrapper = document.getElementById('main');
@@ -46,14 +45,13 @@ const ModalTrap = () => {
         lastFocusableElement.focus(); // add focus for the last focusable element
         event.preventDefault();
       }
-    } else { // if tab key is pressed
-      /* if focused has reached to last focusable element then focus first focusable element
+    } else // if tab key is pressed
+    /* if focused has reached to last focusable element then focus first focusable element
     after pressing tab */
-      if (document.activeElement === lastFocusableElement) {
-        /* add focus for the first focusable element */
-        firstFocusableElement.focus();
-        event.preventDefault();
-      }
+    if (document.activeElement === lastFocusableElement) {
+      /* add focus for the first focusable element */
+      firstFocusableElement.focus();
+      event.preventDefault();
     }
   });
 };

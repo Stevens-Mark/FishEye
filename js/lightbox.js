@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars *//* eslint-disable no-param-reassign */
-/* eslint-disable no-undef *//* eslint-disable max-len *//* eslint-disable no-lonely-if */
+/* eslint-disable no-unused-vars *//* eslint-disable no-undef *//* eslint-disable max-len */
 
 // DOM Elements
 const lightboxModalbg = document.querySelector('.lightbox-modal');
@@ -30,14 +29,13 @@ const LightBoxModalTrap = () => {
         lastLightboxFocusableElement.focus(); // add focus for the last focusable element
         event.preventDefault();
       }
-    } else { // if tab key is pressed
-      /* if focused has reached to last focusable element then focus first focusable element
+    } else // if tab key is pressed
+    /* if focused has reached to last focusable element then focus first focusable element
     after pressing tab */
-      if (document.activeElement === lastLightboxFocusableElement) {
-        /* add focus for the first focusable element */
-        firstLightboxFocusableElement.focus();
-        event.preventDefault();
-      }
+    if (document.activeElement === lastLightboxFocusableElement) {
+      /* add focus for the first focusable element */
+      firstLightboxFocusableElement.focus();
+      event.preventDefault();
     }
   });
 };
@@ -61,7 +59,8 @@ lightboxModalbg.addEventListener('keydown', (event) => {
 });
 
 // LAUNCH LIGHTBOX MODAL & NAVIGATION CONTROLS
-const initialiseLightboxModal = (Media, chosenMediaIndex) => {
+const initialiseLightboxModal = (Media, chosenIndex) => {
+  let chosenMediaIndex = chosenIndex;
   mainWrapper.setAttribute('aria-hidden', 'true');
   lightboxModalbg.setAttribute('aria-hidden', 'false');
   lightboxModalbg.style.display = 'flex';
