@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <title>Fish Eye</title>
@@ -24,7 +24,7 @@
         <div class="person-profile__portraitPlaceholder"></div>
              <!--JS Place to put Photographer profile photo-->
     </section> 
-    <section aria-label="Order photographs">     
+    <div>     
       <div class="dropdown" lang="fr">  <!-- dropdwon menu to filter photos by title, date & pouplarity-->
           <div class="dropdown__selection d-flex">
               <div id="dropdowntitle" class="dropdown__title">Triez-par</div>
@@ -37,8 +37,8 @@
               </ul>
           </div>
       </div>
-    </section>  
-      <section aria-label="photographer's portfolio">
+    </div>  
+
         <div lang="en" id="photographer-media" class="artwork d-flex">
             <!--JS Place to put Photographer's photos/videos-->
         </div>
@@ -46,7 +46,7 @@
           <span id="photosTotalLikes"></span>
           <span id="pricePerDay"></span>
         </div>
-      </section>
+
   </main>     
                               <!--contact me modal-->
       <div class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal__title"> 
@@ -90,7 +90,7 @@
           </div>
     </div>
                                                       <!--lightBox modal-->
-    <div class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="image closeup view">  
+    <div lang="en" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="image closeup view">  
         <div class="lightbox-modal__container">
           <div class="lightbox-modal__column">
             <button type="button" id="close" class="lightbox-modal__controls lightbox-modal__controls--close"><img class="lightbox-modal__controls" src="/public/images/icons/primarycolor_x.svg" alt="close closeup view"></button>
