@@ -34,7 +34,6 @@ const ModalTrap = () => {
   const focusableContent = modal.querySelectorAll(focusableElements);
   /* get last element to be focused inside modal */
   const lastFocusableElement = focusableContent[focusableContent.length - 1];
-
   document.addEventListener('keydown', (event) => {
     const { key } = event;
     if (key !== 'Tab' || key === 9) {
@@ -65,8 +64,8 @@ const launchModal = () => {
   emailError.textContent = '';
   messageError.textContent = '';
   modalbg.style.display = 'block';
-  firstName.focus();
   document.getElementById('form').style.display = 'block';
+  firstName.focus();
   ModalTrap();
 };
 
@@ -126,7 +125,7 @@ email.addEventListener('blur', ($event) => {
 
 // CHECK MESSAGE IS VALID
 message.addEventListener('blur', ($event) => {
-  if (!$event.value || $event.value.trim().length < 2 || $event.value.trim().length > 400) {
+  if (!$event.target.value || $event.target.value.trim().length < 2 || $event.target.value.trim().length > 400) {
     messageError.textContent = 'Veuillez entrer votre message (400 caractères maximum).';
     /* messageError.setAttribute('aria-invalid', 'true'); */
   } else {
@@ -167,8 +166,7 @@ function Validate(event) {
   console.log(message.value);
 
   document.getElementById('form').style.display = 'none';
-  modalbg.style.display = 'none';
   /* message.style.display = "flex"; */
   document.getElementById('form').reset();
-  document.querySelector('.contactBtn').focus();
+  closeModal();
 }

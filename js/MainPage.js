@@ -11,6 +11,7 @@ const CreatePage = (photographers) => {
   photographers.forEach((person) => {
     /* Using DESTRUCTERING get just the tag array from photographers array */
     const { tags } = person;
+    console.log(tags);
     photographerhtml += `
     <article class="profile">
       <a href="photographer-page.html?id=${person.id}"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
@@ -51,6 +52,7 @@ fetch('./public/data.json')
   .then((data) => {
     /* Using DESTRUCTERING get just the photographers data array (not the MEDIA data) */
     const { photographers } = data;
+    console.log(photographers);
     CreatePage(photographers);
   })
   .catch((error) => console.error(error));
