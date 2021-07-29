@@ -1,6 +1,5 @@
 Fisheye
 
-website: https://stevens-mark.github.io/StevensMark_P6_09062021/
 
 Create an accessible site for a platform of photographers
 
@@ -16,6 +15,7 @@ I used:
 
 VSCode, EsLint, Live Server, NVDA Screen reader, WAVE, AXE Accessibility, HeadingsMap, AChecker.
 
+•	Download repository
 •	Install VSCode & Live Server to run the site.
 
 Competencies assessed
@@ -41,6 +41,8 @@ J'ai utilisé :
 
 VSCode, EsLint, Live Server, NVDA lecteurs d'écran, WAVE, AXE Accessibility, HeadingsMap, AChecker.
 
+
+• Téléchargez ce dépôt
 •	Installez VSCode et Live Server pour faire fonctionner le site.
 
 Compétences évaluées
