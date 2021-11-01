@@ -10,13 +10,12 @@ For more information (scenario, etc.) on this project, please see the "Project b
 
 •	Languages: HTML5, CSS3 et JavaScript
 
-I used:
+I used: VSCode, EsLint, Live Server, NVDA Screen reader, WAVE, AXE Accessibility, HeadingsMap, AChecker.
 
-VSCode, EsLint, Live Server, NVDA Screen reader, WAVE, AXE Accessibility, HeadingsMap, AChecker.
-
+•	Download repository
 •	Install VSCode & Live Server to run the site.
 
-Competencies assessed
+Competences assessed
 
 •	Develop a modular web application with design patterns
 •	Ensure the accessibility of a website
@@ -24,10 +23,7 @@ Competencies assessed
 •	Manage the events of a site with JavaScript
 
 
-
 Créez un site accessible pour une plateforme de photographes
-
-(Ce projet fait partie de la formation "Développeur Front-End" d'OpenClassrooms)
 
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. Ils ont récemment levé des fonds et aimeraient mettre à jour leur site web.
 
@@ -35,10 +31,9 @@ Pour plus d'informations (scénario, etc.) sur ce projet, veuillez consulter le 
 
 •	Langues : HTML5, CSS3 et JavaScript
 
-J'ai utilisé :
+J'ai utilisé : VSCode, EsLint, Live Server, NVDA lecteurs d'écran, WAVE, AXE Accessibility, HeadingsMap, AChecker.
 
-VSCode, EsLint, Live Server, NVDA lecteurs d'écran, WAVE, AXE Accessibility, HeadingsMap, AChecker.
-
+• Téléchargez ce dépôt
 •	Installez VSCode et Live Server pour faire fonctionner le site.
 
 Compétences évaluées
