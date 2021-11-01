@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars *//* eslint-disable no-undef *//* eslint-disable max-len */
+/* eslint-disable max-len *//* eslint-disable no-unused-vars *//* eslint-disable no-undef */
 
 // DOM Elements
 const lightboxModalbg = document.querySelector('.lightbox-modal');

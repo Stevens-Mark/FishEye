@@ -1,6 +1,7 @@
-/* eslint-disable max-len *//* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 
-// LOADS RELEVANT MEDIA TYPE INTO EITHER THE PHOTOGRAPHER MEDIA GALLERY OR THE LIGHTBOX (FACTORY FUNCTION)
+// LOADS RELEVANT MEDIA TYPE INTO EITHER THE PHOTOGRAPHER
+// MEDIA GALLERY OR THE LIGHTBOX (FACTORY FUNCTION)
 const MediaFactory = (type, photographersMedia, i) => {
   const photoartworkElement = document.querySelector('#photographer-media');
   const lightboxElement = document.querySelector('#placeHolder');

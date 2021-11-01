@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
-/* eslint-disable eqeqeq */
+/* eslint-disable no-console *//* eslint-disable no-undef *//* eslint-disable eqeqeq */
 
 // GET PHOTOGRAPHER ID FROM URL QUERY STRING TO BUILD PAGE
 const queryString = window.location.search;

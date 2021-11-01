@@ -1,4 +1,3 @@
-/* eslint-disable no-console *//* eslint-disable max-len */
 /* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
 
 // DOM Elements
@@ -114,7 +113,8 @@ email.addEventListener('blur', ($event) => {
 
 // CHECK MESSAGE IS VALID
 message.addEventListener('blur', ($event) => {
-  if (!$event.target.value || $event.target.value.trim().length < 2 || $event.target.value.trim().length > 400) {
+  if (!$event.target.value || $event.target.value.trim().length < 2
+  || $event.target.value.trim().length > 400) {
     messageError.textContent = 'Veuillez entrer votre message (400 caractères maximum).';
   } else {
     messageError.textContent = '';
@@ -124,12 +124,14 @@ message.addEventListener('blur', ($event) => {
 // FORM VALIDATION FUNCTION
 function Validate(event) {
   event.preventDefault();
-  if (!firstName.value || !nameRegex.test(firstName.value.trim()) || firstName.value.trim().length < 2) {
+  if (!firstName.value || !nameRegex.test(firstName.value.trim())
+  || firstName.value.trim().length < 2) {
     firstNameError.textContent = 'Veuillez entrer votre prénom (pas de caractères spéciaux)';
     firstName.focus();
     return false;
   }
-  if (!lastName.value || !nameRegex.test(lastName.value.trim()) || lastName.value.trim().length < 2) {
+  if (!lastName.value || !nameRegex.test(lastName.value.trim())
+  || lastName.value.trim().length < 2) {
     lastNameError.textContent = 'Veuillez entrer votre nom (pas de caractères spéciaux)';
     lastName.focus();
     return false;
@@ -144,10 +146,6 @@ function Validate(event) {
     message.focus();
     return false;
   }
-  console.log(firstName.value, lastName.value);
-  console.log(email.value);
-  console.log(message.value);
-
   document.getElementById('form').style.display = 'none';
   document.getElementById('form').reset();
   closeModal();
