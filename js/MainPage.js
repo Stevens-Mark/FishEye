@@ -4,14 +4,11 @@
 
 const CreatePage = (photographers) => {
   document.querySelector('.pass-to-maincontent').focus();
-  /* declare a place to put the photographers in the dom */
   const photographerElement = document.querySelector('#main');
   let photographerhtml = '';
 
   photographers.forEach((person) => {
-    /* Using DESTRUCTERING get just the tag array from photographers array */
     const { tags } = person;
-    console.log(tags);
     photographerhtml += `
     <article class="profile">
       <a href="photographer-page.html?id=${person.id}"><img class="profile__portrait" src="/public/images/photography/Photographers_id_photos/${person.portrait}"
@@ -30,14 +27,12 @@ const CreatePage = (photographers) => {
   const tagList = document.querySelectorAll('.tags');
   tagList.forEach((item) => {
     item.addEventListener('click', (event) => {
-      /* Make sure tag name is lowercase & remove the "#" ready for search */
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
       DisplayPhotographerByTagSelected(tagSelected, photographers);
     });
     /* Event Listener (for keyboard) for the like feature */
     item.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
-        /*  Make sure tag name is lowercase & remove the "#" ready for search */
         const tagSelected = event.target.textContent.toLowerCase().slice(1);
         DisplayPhotographerByTagSelected(tagSelected, photographers);
       }
@@ -50,9 +45,7 @@ const CreatePage = (photographers) => {
 fetch('./public/data.json')
   .then((response) => response.json())
   .then((data) => {
-    /* Using DESTRUCTERING get just the photographers data array (not the MEDIA data) */
     const { photographers } = data;
-    console.log(photographers);
     CreatePage(photographers);
   })
   .catch((error) => console.error(error));

@@ -1,4 +1,5 @@
-/* eslint-disable no-console *//* eslint-disable no-undef */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 /* eslint-disable eqeqeq */
 
 // GET PHOTOGRAPHER ID FROM URL QUERY STRING TO BUILD PAGE
@@ -10,7 +11,6 @@ const photographerId = urlParams.get('id');
 
 const CreatePhotograperPageProfile = (individual) => {
   document.querySelector('.header__logo').focus();
-  /* declare a place to put the photographer profile & photo in the DOM */
   const photographerProfile = document.querySelector('.person-profile__details');
   const photographerPhoto = document.querySelector('.person-profile__portraitPlaceholder');
   const contactName = document.querySelector('.modal__photographerName');
@@ -27,9 +27,7 @@ const CreatePhotograperPageProfile = (individual) => {
       <ul class="person-profile__tags" aria-label="categories">${tags.map((tag) => `<li tabindex="0" class="tags" arial-label="${tag}">#${tag}</li> `).join('')}</ul>`;
 
   photographerPhoto.innerHTML = `<img class="person-profile__portrait" src="/public/images/photography/Photographers_id_photos/${individual[0].portrait}"alt="${individual[0].name}">`;
-  /* add price per day to bottom right of page */
   pricePerDay.innerHTML = `${individual[0].price}€ / jour`;
-  /* put photographer name in the modal */
   contactTitle.setAttribute('aria-label', `Contact Me ${individual[0].name}`);
   contactName.textContent = individual[0].name;
 };
@@ -39,15 +37,11 @@ const CreatePhotograperPageProfile = (individual) => {
 fetch('./public/data.json')
   .then((response) => response.json())
   .then((data) => {
-    /* Using DESTRUCTERING get the photographers data array data */
     const { photographers } = data;
-    /* filter array by photographer ID to get the required person */
     const individual = photographers.filter((person) => person.id == photographerId);
     /* create photographers profile on page */
     CreatePhotograperPageProfile(individual);
-    /* Using DESTRUCTERING get  the MEDIA data array  data */
     const { media } = data;
-    /* filter array by photographerID to get the individual photographer's photo collection */
     const photographersMedia = media.filter((person) => person.photographerId == photographerId);
     // CREATE PHOTOGRAPHER'S PHOTOS & VIDEOS ON PAGE
     MediaFactory('gallery', photographersMedia);

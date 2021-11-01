@@ -27,12 +27,9 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 const ModalTrap = () => {
   /* add all the elements inside modal which we want to make focusable */
   const focusableElements = 'button, input, [href], textarea, [tabindex]:not([tabindex="-1"])';
-  /* select the modal by it's class id */
   const modal = document.querySelector('.modal');
-  /* get first element to be focused inside modal */
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
   const focusableContent = modal.querySelectorAll(focusableElements);
-  /* get last element to be focused inside modal */
   const lastFocusableElement = focusableContent[focusableContent.length - 1];
   document.addEventListener('keydown', (event) => {
     const { key } = event;
@@ -45,10 +42,7 @@ const ModalTrap = () => {
         event.preventDefault();
       }
     } else // if tab key is pressed
-    /* if focused has reached to last focusable element then focus first focusable element
-    after pressing tab */
     if (document.activeElement === lastFocusableElement) {
-      /* add focus for the first focusable element */
       firstFocusableElement.focus();
       event.preventDefault();
     }
@@ -78,7 +72,6 @@ const closeModal = () => {
   modalbg.setAttribute('aria-hidden', 'true');
   modalbg.style.display = 'none';
   document.querySelector('.contactBtn').focus();
-  /* return to contactez-moi button when modal closed */
 };
 
 //  close modal event listener
@@ -95,11 +88,9 @@ modalbg.addEventListener('keydown', (event) => {
 const checkString = (string, value) => {
   const name = value;
   if (!nameRegex.test(string.trim()) || string.trim().length < 2) {
-    name.textContent = 'Veuillez entrer un minimum de 2 caractères (pas de caractères spéciaux).'; /* Veuillez entrer 2 caractères ou plus pour ce champ. */
-    /* name.setAttribute('aria-invalid', 'true'); */
+    name.textContent = 'Veuillez entrer un minimum de 2 caractères (pas de caractères spéciaux).';
   } else {
     name.textContent = '';
-    /* name.setAttribute('aria-invalid', 'false'); */
   }
 };
 
@@ -116,10 +107,8 @@ lastName.addEventListener('blur', ($event) => {
 email.addEventListener('blur', ($event) => {
   if (!emailRegex.test($event.target.value.trim())) {
     emailError.textContent = 'Veuillez entrer une adresse e-mail valide.';
-    /* emailError.setAttribute('aria-invalid', 'true'); */
   } else {
     emailError.textContent = '';
-    /* emailError.setAttribute('aria-invalid', 'false'); */
   }
 });
 
@@ -127,10 +116,8 @@ email.addEventListener('blur', ($event) => {
 message.addEventListener('blur', ($event) => {
   if (!$event.target.value || $event.target.value.trim().length < 2 || $event.target.value.trim().length > 400) {
     messageError.textContent = 'Veuillez entrer votre message (400 caractères maximum).';
-    /* messageError.setAttribute('aria-invalid', 'true'); */
   } else {
     messageError.textContent = '';
-    /* messageError.setAttribute('aria-invalid', 'false'); */
   }
 });
 
@@ -139,25 +126,21 @@ function Validate(event) {
   event.preventDefault();
   if (!firstName.value || !nameRegex.test(firstName.value.trim()) || firstName.value.trim().length < 2) {
     firstNameError.textContent = 'Veuillez entrer votre prénom (pas de caractères spéciaux)';
-    /* firstNameError.setAttribute('aria-invalid', 'true'); */
     firstName.focus();
     return false;
   }
   if (!lastName.value || !nameRegex.test(lastName.value.trim()) || lastName.value.trim().length < 2) {
     lastNameError.textContent = 'Veuillez entrer votre nom (pas de caractères spéciaux)';
-    /* lastNameError.setAttribute('aria-invalid', 'true'); */
     lastName.focus();
     return false;
   }
   if (!email.value || !emailRegex.test(email.value.trim())) {
     emailError.textContent = 'Veuillez entrer votre adresse e-mail';
-    /* emailError.setAttribute('aria-invalid', 'true'); */
     email.focus();
     return false;
   }
   if (!message.value || message.value.trim().length < 2 || message.value.trim().length > 400) {
     messageError.textContent = 'Veuillez entrer votre message (entre 2 et 400 caractères).';
-    /* messageError.setAttribute('aria-invalid', 'true'); */
     message.focus();
     return false;
   }
@@ -166,7 +149,6 @@ function Validate(event) {
   console.log(message.value);
 
   document.getElementById('form').style.display = 'none';
-  /* message.style.display = "flex"; */
   document.getElementById('form').reset();
   closeModal();
 }

@@ -16,6 +16,7 @@ const Likes = (photographersMedia) => {
       event.preventDefault();
       const selectedHeart = event.target.parentNode.querySelector('.artwork__heart');
       const selectedLikeValue = event.target.parentNode.querySelector('.artwork__likes');
+
       if (!likeClickedAlready) {
         selectedLikeValue.innerHTML = parseInt(selectedLikeValue.innerHTML, 10) + 1;
         selectedHeart.style.fontWeight = 'bold';

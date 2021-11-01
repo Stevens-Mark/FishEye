@@ -9,14 +9,10 @@ const previousButton = document.querySelector('#previous');
 // FIX FOCUS IN LIGHTBOX MODAL FOR KEYBOARD USERS
 
 const LightBoxModalTrap = () => {
-  /* add all the elements inside modal which we want to make focusable */
   const lightboxFocusableElements = 'button, [href], [tabindex]:not([tabindex="-1"])';
-  /* select the modal by it's class id */
   const lightboxModal = document.querySelector('.lightbox-modal');
-  /* get first element to be focused inside modal */
   const firstLightboxFocusableElement = lightboxModal.querySelectorAll(lightboxFocusableElements)[0];
   const lightboxFocusableContent = lightboxModal.querySelectorAll(lightboxFocusableElements);
-  /* get last element to be focused inside modal */
   const lastLightboxFocusableElement = lightboxFocusableContent[lightboxFocusableContent.length - 1];
 
   document.addEventListener('keydown', (event) => {
@@ -26,14 +22,11 @@ const LightBoxModalTrap = () => {
     }
     if (event.shiftKey) { // if shift key pressed for shift + tab combination
       if (document.activeElement === firstLightboxFocusableElement) {
-        lastLightboxFocusableElement.focus(); // add focus for the last focusable element
+        lastLightboxFocusableElement.focus();
         event.preventDefault();
       }
     } else // if tab key is pressed
-    /* if focused has reached to last focusable element then focus first focusable element
-    after pressing tab */
     if (document.activeElement === lastLightboxFocusableElement) {
-      /* add focus for the first focusable element */
       firstLightboxFocusableElement.focus();
       event.preventDefault();
     }
