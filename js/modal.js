@@ -30,6 +30,7 @@ const ModalTrap = () => {
   const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
   const focusableContent = modal.querySelectorAll(focusableElements);
   const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
   document.addEventListener('keydown', (event) => {
     const { key } = event;
     if (key !== 'Tab' || key === 9) {

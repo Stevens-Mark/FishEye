@@ -25,6 +25,7 @@ const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
 // Date, Title or Likes
 const OrderBy = (optionChosen, photographersMedia) => {
   const items = photographersMedia;
+
   if (optionChosen === 'date') {
     const newDateOrder = items.sort((a, b) => (a.date > b.date ? -1 : 1));
     MediaFactory('gallery', newDateOrder);
@@ -46,6 +47,7 @@ const SetFilters = (photographersMedia) => {
   // FILTER PHOTOGRAPHER'S PICTURES BY TAG
   const DisplayMediaByTagSelected = (selectedTag) => {
     const allPhotographs = document.getElementsByTagName('article');
+
     for (let i = 0; i < photographersMedia.length; i++) {
       if (photographersMedia[i].tags[0] === selectedTag) {
         allPhotographs[i].style.display = 'flex';
@@ -56,6 +58,7 @@ const SetFilters = (photographersMedia) => {
   };
   // EVENT LISTENERS ON TAGS FOR FILTERING
   const tagList = document.querySelectorAll('.tags');
+
   tagList.forEach((item) => {
     item.addEventListener('click', (event) => {
       const tagSelected = event.target.textContent.toLowerCase().slice(1);
@@ -79,6 +82,7 @@ const SetFilters = (photographersMedia) => {
     document.querySelector('.choice').innerHTML = `${event.target.textContent}<i aria-hidden="true" class="fas fa-chevron-down dropdown__icons"></i>`;
     /* Set attributes for assistive technology for dropdown menu */
     const optionChosen = event.target.closest('li');
+
     if (!optionChosen) return;
     listbox.setAttribute('aria-activedescendant', optionChosen.id);
     allOptionChoices.forEach((element) => element.classList.remove('dropdown__orderlist__option--Selected'));
