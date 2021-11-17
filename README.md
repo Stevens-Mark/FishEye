@@ -17,6 +17,7 @@ For more information (scenario, etc.) on this project, please see the "Project b
 ## Used
 
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [sass](https://sass-lang.com/)
 - [EsLint] (https://eslint.org/) v2.2.2
 - [LiveServer] (https://ritwickdey.github.io/vscode-live-server/) v5.6.1
 - [NVDAScreenreader] (https://www.nvaccess.org/)
@@ -55,6 +56,7 @@ Pour plus d'informations (scénario, etc.) sur ce projet, veuillez consulter le 
 ## Utilisé
 
 - [Visual Studio Code](https://code.visualstudio.com/) 
+- [sass](https://sass-lang.com/)
 - [EsLint] (https://eslint.org/) v2.2.2
 - [LiveServer] (https://ritwickdey.github.io/vscode-live-server/) v5.6.1
 - [NVDAScreenreader] (https://www.nvaccess.org/)
