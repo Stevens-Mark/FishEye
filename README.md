@@ -21,13 +21,13 @@ Build a working prototype of a new website that can be presented to FishEye at t
 ## Used
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [sass](https://sass-lang.com/)
+- [SaSS](https://sass-lang.com/)
 - [EsLint](https://eslint.org/) v2.2.2
-- [LiveServer][https://ritwickdey.github.io/vscode-live-server/) v5.6.1
-- [NVDAScreenreader](https://www.nvaccess.org/)
+- [Live Server]https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [NVDA Screen reader](https://www.nvaccess.org/)
 - [WAVE](https://wave.webaim.org/)
-- [AXE]Accessibility(https://www.deque.com/axe/)
-_ [HeadingsMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
+- [AXE-Accessibility](https://www.deque.com/axe/)
+_ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
 - [AChecker](https://achecker.achecks.ca/checker/index.php)
 
 
@@ -64,13 +64,13 @@ Construire un prototype fonctionnel d'un nouveau site Web qui pourra être prés
 ## Utilisé
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [sass](https://sass-lang.com/)
+- [SaSS](https://sass-lang.com/)
 - [EsLint](https://eslint.org/) v2.2.2
-- [LiveServer][https://ritwickdey.github.io/vscode-live-server/) v5.6.1
-- [NVDAScreenreader](https://www.nvaccess.org/)
+- [Live Server]https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [NVDA Screen reader](https://www.nvaccess.org/)
 - [WAVE](https://wave.webaim.org/)
-- [AXE]Accessibility(https://www.deque.com/axe/)
-_ [HeadingsMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
+- [AXE-Accessibility](https://www.deque.com/axe/)
+_ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
 - [AChecker](https://achecker.achecks.ca/checker/index.php)
 
 
