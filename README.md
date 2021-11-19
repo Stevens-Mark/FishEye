@@ -23,7 +23,7 @@ Build a working prototype of a new website that can be presented to FishEye at t
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [SaSS](https://sass-lang.com/)
 - [EsLint](https://eslint.org/) v2.2.2
-- [Live Server]https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [Live Server](https://ritwickdey.github.io/vscode-live-server/) v5.6.1
 - [NVDA Screen reader](https://www.nvaccess.org/)
 - [WAVE](https://wave.webaim.org/)
 - [AXE-Accessibility](https://www.deque.com/axe/)
@@ -66,7 +66,7 @@ Construire un prototype fonctionnel d'un nouveau site Web qui pourra être prés
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [SaSS](https://sass-lang.com/)
 - [EsLint](https://eslint.org/) v2.2.2
-- [Live Server]https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [Live Server](https://ritwickdey.github.io/vscode-live-server/) v5.6.1
 - [NVDA Screen reader](https://www.nvaccess.org/)
 - [WAVE](https://wave.webaim.org/)
 - [AXE-Accessibility](https://www.deque.com/axe/)
