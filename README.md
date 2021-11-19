@@ -9,7 +9,9 @@
 
 FishEye is a website that allows independent photographers to showcase their best work. They recently raised some funds and would like to update their website.
 
-For more information (scenario, etc.) on this project, please see the "Project brief" folder.
+- [Figma](https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR-OLD?node-id=0%3A1)
+- Further information (scenario, etc.) on this project, please see the the folder `Project Briefs`
+
 
 -	Languages: HTML5, CSS3 et JavaScript
 
@@ -18,11 +20,11 @@ For more information (scenario, etc.) on this project, please see the "Project b
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [sass](https://sass-lang.com/)
-- [EsLint] (https://eslint.org/) v2.2.2
-- [LiveServer] (https://ritwickdey.github.io/vscode-live-server/) v5.6.1
-- [NVDAScreenreader] (https://www.nvaccess.org/)
-- [WAVE] (https://wave.webaim.org/)
-- [AXE] Accessibility(https://www.deque.com/axe/)
+- [EsLint](https://eslint.org/) v2.2.2
+- [LiveServer][https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [NVDAScreenreader](https://www.nvaccess.org/)
+- [WAVE](https://wave.webaim.org/)
+- [AXE]Accessibility(https://www.deque.com/axe/)
 _ [HeadingsMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
 - [AChecker](https://achecker.achecks.ca/checker/index.php)
 
@@ -50,18 +52,21 @@ FishEye est un site web qui permet aux photographes indépendants de présenter 
 
 Pour plus d'informations (scénario, etc.) sur ce projet, veuillez consulter le dossier " Project brief ".
 
+- [Figma](https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR-OLD?node-id=0%3A1)
+- Pour plus d'informations (scénario, etc.) sur ce projet, veuillez consulter le dossier `Project Briefs`
+
 -	Langues : HTML5, CSS3 et JavaScript
 
 
 ## Utilisé
 
-- [Visual Studio Code](https://code.visualstudio.com/) 
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [sass](https://sass-lang.com/)
-- [EsLint] (https://eslint.org/) v2.2.2
-- [LiveServer] (https://ritwickdey.github.io/vscode-live-server/) v5.6.1
-- [NVDAScreenreader] (https://www.nvaccess.org/)
-- [WAVE] (https://wave.webaim.org/)
-- [AXE] Accessibility(https://www.deque.com/axe/)
+- [EsLint](https://eslint.org/) v2.2.2
+- [LiveServer][https://ritwickdey.github.io/vscode-live-server/) v5.6.1
+- [NVDAScreenreader](https://www.nvaccess.org/)
+- [WAVE](https://wave.webaim.org/)
+- [AXE]Accessibility(https://www.deque.com/axe/)
 _ [HeadingsMap](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=en)
 - [AChecker](https://achecker.achecks.ca/checker/index.php)
 
