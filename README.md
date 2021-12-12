@@ -3,6 +3,10 @@
 
 # OPENCLASSROOMS PROJECT 6 *(English)*
 
+# Fisheye
+
+Open website at Git pages: https://stevens-mark.github.io/StevensMark_P6_09062021/
+
 # Create an accessible site for a platform of photographers
 
 (This project is part of the "Front-End Developer" training by OpenClassrooms).
@@ -47,6 +51,10 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 
 
 # OPENCLASSROOMS PROJET 6 *(Français)*
+
+# Fisheye
+
+Ouvrir le site web aux pages Git: https://stevens-mark.github.io/StevensMark_P6_09062021/
 
 ## Créez un site accessible pour une plateforme de photographes
 
