@@ -6,7 +6,7 @@
 
 # Fisheye
 
-Open website at [Fisheye-netifly](https://fisheye2021.netlify.app/)
+Open website at [Fisheye](https://fisheye2021.netlify.app/)
 
 # Create an accessible site for a platform of photographers
 
@@ -55,7 +55,7 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 
 # Fisheye
 
-Ouvrir le site web à [Fisheye-netifly](https://fisheye2021.netlify.app/)
+Ouvrir le site web à [Fisheye](https://fisheye2021.netlify.app/)
 
 ## Créez un site accessible pour une plateforme de photographes
 
