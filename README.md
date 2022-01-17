@@ -1,11 +1,12 @@
 ![FishEye](/public/images//logo/fisheye.svg)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52256332-6c4f-4549-a129-2fa933f98976/deploy-status)](https://app.netlify.com/sites/fisheye2021/deploys)
 
 # OPENCLASSROOMS PROJECT 6 *(English)*
 
 # Fisheye
 
-Open website at Git pages: https://stevens-mark.github.io/StevensMark_P6_09062021/
+Open website at [Fisheye-netifly](https://fisheye2021.netlify.app/)
 
 # Create an accessible site for a platform of photographers
 
@@ -54,7 +55,7 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 
 # Fisheye
 
-Ouvrir le site web aux pages Git: https://stevens-mark.github.io/StevensMark_P6_09062021/
+Ouvrir le site web à [Fisheye-netifly](https://fisheye2021.netlify.app/)
 
 ## Créez un site accessible pour une plateforme de photographes
 
