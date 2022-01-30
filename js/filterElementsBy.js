@@ -1,12 +1,14 @@
-/* eslint-disable no-undef *//* eslint-disable no-plusplus *//* eslint-disable no-unused-vars */
-
+/* eslint-disable no-undef */
 // FILTER PHOTOGRAPHER'S PROFILE BY TAG
 
+// eslint-disable-next-line no-unused-vars
 const DisplayPhotographerByTagSelected = (selectedTag, photographers) => {
   const allPhotographers = document.getElementsByTagName('article');
   /* check/loop through each photographer in array JSON */
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < photographers.length; i++) {
     let showPhotographer = false;
+    // eslint-disable-next-line no-plusplus
     for (let j = 0; j < photographers[i].tags.length; j++) {
       if (photographers[i].tags[j] === selectedTag) {
         showPhotographer = true;
@@ -43,11 +45,13 @@ const OrderBy = (optionChosen, photographersMedia) => {
 
 // SETUP THE FILTERS ON THE PHOTOGRAPHS (TAGS, DATE, TITLE, LIKES ETC)
 
+// eslint-disable-next-line no-unused-vars
 const SetFilters = (photographersMedia) => {
   // FILTER PHOTOGRAPHER'S PICTURES BY TAG
   const DisplayMediaByTagSelected = (selectedTag) => {
     const allPhotographs = document.getElementsByTagName('article');
 
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < photographersMedia.length; i++) {
       if (photographersMedia[i].tags[0] === selectedTag) {
         allPhotographs[i].style.display = 'flex';

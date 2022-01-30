@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars *//* eslint-disable no-useless-escape */
-
+/* eslint-disable no-useless-escape */
 // DOM Elements
 const mainWrapper = document.getElementById('main');
 const modalbg = document.querySelector('.modal');
@@ -19,7 +18,7 @@ const emailError = document.getElementById('emailError');
 const messageError = document.getElementById('messageError');
 
 // Patterns for name & email validation checks
-const nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z'-]+)*\s?$/; /* /^[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ](?:[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ]|['| |-](?=[A-zàâäèéêëîïôöœùûüÿğçÀÂÄÈÉÊËÎÏÔÖŒÙÛÜŸÇĞ]))*$/; */
+const nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z'-]+)*\s?$/;
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // FIX FOCUS IN MODAL FOR KEYBOARD USERS
@@ -123,6 +122,7 @@ message.addEventListener('blur', ($event) => {
 });
 
 // FORM VALIDATION FUNCTION
+// eslint-disable-next-line no-unused-vars
 function Validate(event) {
   event.preventDefault();
   if (!firstName.value || !nameRegex.test(firstName.value.trim())
@@ -147,6 +147,8 @@ function Validate(event) {
     message.focus();
     return false;
   }
+  // eslint-disable-next-line no-console
+  console.log(firstName.value, lastName.value, email.value);
   document.getElementById('form').style.display = 'none';
   document.getElementById('form').reset();
   closeModal();

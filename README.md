@@ -10,8 +10,6 @@ Open website at [Fisheye](https://fisheye2021.netlify.app/)
 
 # Create an accessible site for a platform of photographers
 
-(This project is part of the "Front-End Developer" training by OpenClassrooms).
-
 FishEye is a website that allows independent photographers to showcase their best work. They recently raised some funds and would like to update their website.
 
 ### Objective
