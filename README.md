@@ -2,9 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/52256332-6c4f-4549-a129-2fa933f98976/deploy-status)](https://app.netlify.com/sites/fisheye2021/deploys)
 
-# OPENCLASSROOMS PROJECT 6 *(English)*
-
-# Fisheye
+## Fisheye
 
 Open website at [Fisheye](https://fisheye2021.netlify.app/)
 
@@ -40,7 +38,7 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 -	Install VSCode & Live Server to run the site.
 
 
-## Competences assessed
+## Competences
 
 - [x]	Develop a modular web application with design patterns
 - [x]	Ensure the accessibility of a website
@@ -48,10 +46,7 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 - [x]	Manage the events of a site with JavaScript
 
 
-
-# OPENCLASSROOMS PROJET 6 *(Français)*
-
-# Fisheye
+## Fisheye
 
 Ouvrir le site web à [Fisheye](https://fisheye2021.netlify.app/)
 
@@ -87,7 +82,7 @@ _ [Headings Map](https://chrome.google.com/webstore/detail/headingsmap/flbjommeg
 - Installez VSCode et Live Server pour faire fonctionner le site.
 
 
-## Compétences évaluées
+## Compétences
 
 - [x]	Développer une application web modulaire avec des design patterns
 - [x]	Assurer l'accessibilité d'un site web
